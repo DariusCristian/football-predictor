@@ -6,4 +6,4 @@ data/*.csv
 data/*.json
 data/*.db
 .pytest_cache/
-.ipynb_checkpoints/
+.ipynb_checkpoints/docs/decisions.md
