@@ -53,7 +53,13 @@ report the improvement, so 1.0178 is optimistic. A held-out period
 would give an honest estimate.
 
 
-## 2026-10-03 — Final evaluation (held-out test set)
+## 2026-10-03 — Final evaluation (held-out test set) — SUPERSEDED
+
+> **Superseded** by "Final evaluation, frozen test window" below. This
+> run used an open-ended test window, so its 810 matches included 50
+> live 2026-27 matches from the football-data.org API (48 scored for
+> poisson). The set grew on every run and mixed two data sources. Kept
+> as a record; do not cite these numbers.
 
 Protocol: half-life tuned on validation window (2023-08-01 to
 2024-08-01), then evaluated once on the held-out test window
@@ -97,7 +103,56 @@ reflects 2023-24 being a more predictable season, not a better model.
 Log loss is not comparable across different match sets.
 
 
+## 2026-09-27 — Final evaluation, frozen test window
+
+Test window is now frozen: 2024-08-01 to 2026-06-30, i.e. the 2024-25
+and 2025-26 seasons only, all from OpenFootball history. The set no
+longer changes between runs. Same model as before (unweighted, rho=0),
+walk-forward, training only on matches completed strictly before each
+prediction. Run once.
+
+| model          |   n | log loss | Brier |
+|----------------|-----|----------|-------|
+| poisson        | 758 |   1.0494 | 0.614 |
+| league average | 760 |   1.0832 | 0.656 |
+| always home    | 760 |   1.7901 | 1.006 |
+
+**Headline: 3.1% improvement in log loss over the league-average
+baseline.**
+
+The earlier 0.9% included 50 live 2026-27 matches (48 scored for
+poisson). Removing them moved the result substantially: on those 48
+matches the model averaged roughly 1.49 log loss against about 1.12 for
+the baseline.
+
+**Cause: complete separation in the unregularised GLM.** It is not a
+data problem; the API rows match OpenFootball exactly for all 380
+2025-26 fixtures, orientation included. A promoted team with few
+matches and all-zero goals scored (or conceded) drives its attack (or
+defence) coefficient towards −∞, while statsmodels still reports
+`converged=True`. The model then assigns probabilities near 1e-10 to
+events that can happen. Coventry City, predicted on 2026-09-19 from 4
+matches with goals scored [0, 0, 0, 0]: attack coefficient −21.6,
+P(Coventry win) ≈ 1e-10. Coventry won; log loss 22.9. That one match
+adds ~0.48 to the 48-match average.
+
+**The same failure affects this frozen run.** Burnley v Sunderland,
+2025-08-23: Sunderland had conceded 0 in their only training match, so
+P(Burnley win) ≈ 8e-11. Burnley won; log loss 23.2. It contributes
+~0.031 to the 758-match average of 1.0494, which lowers the headline
+improvement by roughly 2.8 points. The 3.1% is a correct run of the
+locked model, but it is dominated by one degenerate prediction.
+
+poisson n is 2 lower: the opening matches of Ipswich (2024-25) and
+Sunderland (2025-26) are skipped because neither team is in the training
+data. On the common 758 matches the improvement is slightly larger.
+
+
 ## 2026-10-03 — Calibration analysis (test set, n=806)
+
+> `data/test_predictions.csv` was overwritten by the frozen-window run
+> (n=758), so the n=806 numbers in this section can no longer be
+> regenerated from it.
 
 Expected calibration error: 0.0337
 
