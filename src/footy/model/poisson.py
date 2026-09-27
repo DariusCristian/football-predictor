@@ -5,6 +5,8 @@ an attack strength and a defence strength per team, plus a global home
 advantage, and predicts a goal rate for any team pairing.
 """
 
+import warnings
+
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -103,8 +105,33 @@ def fit(
         family=sm.families.Poisson(),
         freq_weights=weights,
     ).fit()
+    _warn_if_degenerate(result.params)
     teams = set(long["team"])
     return PoissonModel(result, teams, rho=rho)
+
+
+# Real coefficients are log goal-rate ratios, well within +-3. Beyond
+# this, the fit has diverged: typically complete separation, e.g. a team
+# that scored zero in every training match. statsmodels still reports
+# converged=True, so check explicitly.
+DEGENERATE_COEF_LIMIT = 10.0
+
+
+class DegenerateFitWarning(UserWarning):
+    pass
+
+
+def _warn_if_degenerate(params: pd.Series) -> None:
+    """Warn, never raise: walk_forward treats ValueError as an unseen team
+    and would silently skip the match."""
+    for name, value in params.items():
+        if abs(value) > DEGENERATE_COEF_LIMIT:
+            warnings.warn(
+                f"Degenerate coefficient {name} = {value:.2f} "
+                f"(|value| > {DEGENERATE_COEF_LIMIT}); likely complete separation",
+                DegenerateFitWarning,
+                stacklevel=3,
+            )
 
 MAX_GOALS = 10
 

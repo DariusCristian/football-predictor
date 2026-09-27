@@ -1,9 +1,13 @@
+import warnings
+
 import numpy as np
 import pandas as pd
 import pytest
 
 from footy.model.poisson import (
+    DegenerateFitWarning,
     dixon_coles_correction,
+    fit,
     outcome_probabilities,
     score_matrix,
 )
@@ -119,3 +123,34 @@ def test_dixon_coles_changes_only_low_score_cells():
     changed = {(i, j) for i, j in zip(*np.where(~np.isclose(ratio, scale)))}
     assert changed == {(0, 0), (0, 1), (1, 0), (1, 1)}
     assert pytest.approx(corrected[2, 2] / scale) == base[2, 2]
+
+
+def _separation_matches():
+    """Round-robin of three normal teams plus Zeros, who never score."""
+    rows = []
+    teams = ["A", "B", "C", "Zeros"]
+    day = pd.Timestamp("2025-01-01")
+    for home in teams:
+        for away in teams:
+            if home == away:
+                continue
+            day += pd.Timedelta(days=1)
+            rows.append({
+                "date": day, "home": home, "away": away,
+                "home_goals": 0 if home == "Zeros" else 2,
+                "away_goals": 0 if away == "Zeros" else 1,
+            })
+    return pd.DataFrame(rows)
+
+
+def test_fit_warns_when_a_team_never_scores():
+    with pytest.warns(DegenerateFitWarning, match=r"C\(team\)\[T\.Zeros\]"):
+        fit(_separation_matches(), half_life_days=None)
+
+
+def test_fit_does_not_warn_on_ordinary_data():
+    matches = _separation_matches()
+    matches.loc[matches["home"] == "Zeros", "home_goals"] = 1
+    with warnings.catch_warnings():
+        warnings.simplefilter("error", DegenerateFitWarning)
+        fit(matches, half_life_days=None)
