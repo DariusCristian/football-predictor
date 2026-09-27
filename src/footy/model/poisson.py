@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
+from scipy.stats import poisson
 
 
 def to_long_format(matches: pd.DataFrame) -> pd.DataFrame:
@@ -32,6 +33,19 @@ def to_long_format(matches: pd.DataFrame) -> pd.DataFrame:
         }
     )
     return pd.concat([home_rows, away_rows], ignore_index=True)
+
+
+def decay_weights(
+    dates: pd.Series,
+    half_life_days: float,
+    reference_date: pd.Timestamp | None = None,
+) -> pd.Series:
+    """Exponential decay: a match half_life_days old gets weight 0.5."""
+    if half_life_days <= 0:
+        raise ValueError("half_life_days must be positive")
+    reference = reference_date if reference_date is not None else dates.max()
+    days_ago = (reference - dates).dt.days.clip(lower=0)
+    return 0.5 ** (days_ago / half_life_days)
 
 class PoissonModel:
     def __init__(self, result, teams: set[str]):
@@ -59,18 +73,31 @@ class PoissonModel:
             "most_likely_score": (int(i), int(j)),
             **probs,
         }
+    
+DEFAULT_HALF_LIFE_DAYS = 270  # tuned by backtest; see docs/results.md
 
-def fit(matches: pd.DataFrame) -> PoissonModel:
+
+def fit(
+    matches: pd.DataFrame,
+    half_life_days: float | None = DEFAULT_HALF_LIFE_DAYS,
+    reference_date: pd.Timestamp | None = None,
+) -> PoissonModel:
+    """Fit the model. half_life_days=None means all matches weighted equally."""
     long = to_long_format(matches)
+
+    if half_life_days is None:
+        weights = None
+    else:
+        weights = decay_weights(long["date"], half_life_days, reference_date)
+
     result = smf.glm(
         formula="goals ~ home + C(team) + C(opponent)",
         data=long,
         family=sm.families.Poisson(),
+        freq_weights=weights,
     ).fit()
     teams = set(long["team"])
     return PoissonModel(result, teams)
-
-from scipy.stats import poisson
 
 MAX_GOALS = 10
 
