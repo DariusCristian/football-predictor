@@ -13,17 +13,15 @@ from footy.model.scoring import actual_outcome, score_predictions
 def walk_forward(
     matches: pd.DataFrame,
     make_predictor,
-    start_date: str,
+    start_date,
+    end_date=None,
     retrain_every_days: int = 7,
 ) -> pd.DataFrame:
-    """Predict every match on or after start_date, training as we go.
-
-    make_predictor(training_frame) must return an object with
-    .predict(home, away) -> {"home_win", "draw", "away_win"}.
-    """
     matches = matches.sort_values("date").reset_index(drop=True)
     start = pd.Timestamp(start_date)
     to_predict = matches[matches["date"] >= start]
+    if end_date is not None:
+        to_predict = to_predict[to_predict["date"] < pd.Timestamp(end_date)]
 
     rows = []
     model = None
