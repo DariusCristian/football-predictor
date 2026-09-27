@@ -125,3 +125,36 @@ recalibration, not Dixon-Coles.
 
 **Finding 3 — away wins are well calibrated** (gaps < 0.01 in populated
 bins). The error concentrates in home wins and draws.
+
+## 2026-10-03 — Dixon-Coles adjustment: no improvement
+
+Grid search over rho on the validation window (2023-08-01 to 2024-08-01,
+n=378), unweighted model, matching CHOSEN_HALF_LIFE.
+
+| rho   | log loss |  Brier | draws predicted | draws actual |
+|-------|----------|--------|-----------------|--------------|
+| -0.20 |   0.9287 | 0.5474 |            99.0 |           82 |
+| -0.10 |   0.9250 | 0.5453 |            91.3 |           82 |
+| -0.05 |   0.9240 | 0.5447 |            87.4 |           82 |
+|  0.00 |   0.9236 | 0.5445 |            83.6 |           82 |
+|  0.05 |   0.9240 | 0.5446 |            79.7 |           82 |
+|  0.10 |   0.9250 | 0.5450 |            75.8 |           82 |
+|  0.20 |   0.9293 | 0.5469 |            68.1 |           82 |
+
+**Result: rho = 0 is optimal. Dixon-Coles is not adopted.**
+
+**Why the motivating evidence didn't hold.** The correction was
+motivated by a ~15% draw deficit observed on the test set. On the
+validation window the same model predicts draws almost exactly (83.6
+vs 82). The deficit is window-specific, not a structural property of
+the model.
+
+**Protocol error, recorded.** The calibration analysis that motivated
+this was run on the test set, which should be inspected once for the
+final number only. Had rho been non-zero, the resulting "improvement"
+would have been contaminated by held-out data. No harm occurred because
+validation selected rho = 0, but the diagnosis should have been run on
+the validation window. Calibration analysis has since been re-run there.
+
+Implementation retained behind `rho=0.0` (a no-op by default) with tests,
+so the option exists and the negative result is reproducible.
