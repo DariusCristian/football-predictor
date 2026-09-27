@@ -158,3 +158,35 @@ the validation window. Calibration analysis has since been re-run there.
 
 Implementation retained behind `rho=0.0` (a no-op by default) with tests,
 so the option exists and the negative result is reproducible.
+
+
+## 2026-10-03 — Calibration on validation: earlier findings do not replicate
+
+Same model (unweighted, rho=0) on the validation window (n=378).
+
+| outcome  | predicted | actual | difference |
+|----------|-----------|--------|------------|
+| home win |     169.8 |    174 |       +4.2 |
+| draw     |      83.6 |     82 |       -1.6 |
+| away win |     124.7 |    122 |       -2.7 |
+
+ECE: 0.0224 (test set: 0.0337)
+
+**Neither test-set finding replicates.**
+
+The ~15% draw deficit is absent: 83.6 predicted vs 82 actual.
+
+The overconfidence pattern is absent. On the test set, reliability gaps
+were positive below 0.3 and negative above, monotonically. Here they
+alternate sign, and the two highest bins are positive — the opposite
+direction.
+
+**Interpretation.** Both test-set findings were window-specific noise.
+With ~100 predictions per bin, the standard error on an observed
+frequency near 0.5 is roughly 0.05, larger than most of the gaps that
+were interpreted as systematic. A single window is not enough to
+establish a model defect; a claimed defect should either replicate
+across windows or come with interval estimates.
+
+**Consequence.** No shrinkage or recalibration step is adopted. The
+model appears adequately calibrated given the sample sizes available.
