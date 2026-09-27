@@ -4,6 +4,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import pandas as pd
 
+from footy.config import DATA_DIR
 from footy.data.training import load_all_matches
 from footy.model.backtest import walk_forward
 from footy.model.baselines import AlwaysHomeWin, LeagueAverage
@@ -30,6 +31,9 @@ rows = []
 for name, make in predictors.items():
     preds = walk_forward(matches, make, start_date=start, end_date=end)
     rows.append({"model": name, **score_predictions(preds)})
+
+    if name == "poisson":
+        preds.to_csv(DATA_DIR / "test_predictions.csv", index=False)
 
 results = pd.DataFrame(rows).sort_values("log_loss").reset_index(drop=True)
 print(results.to_string(index=False))

@@ -95,3 +95,33 @@ pay off.
 Validation log losses (~0.93) are much lower than test (~1.08). This
 reflects 2023-24 being a more predictable season, not a better model.
 Log loss is not comparable across different match sets.
+
+
+## 2026-10-03 — Calibration analysis (test set, n=806)
+
+Expected calibration error: 0.0337
+
+### Predicted vs actual totals
+
+| outcome  | predicted | actual | difference |
+|----------|-----------|--------|------------|
+| home win |     353.0 |    332 |      -21.0 |
+| draw     |     184.4 |    213 |      +28.6 |
+| away win |     268.5 |    261 |       -7.5 |
+
+**Finding 1 — draws under-predicted by ~15%.** Consistent with the
+Poisson independence assumption: the model treats home and away goals
+as independent, but real matches drift toward level scorelines. This is
+the defect Dixon-Coles corrects, now evidenced from this data rather
+than assumed.
+
+**Finding 2 — systematic overconfidence.** The reliability curve is
+flatter than the diagonal: outcomes below ~30% predicted happen more
+often than claimed, outcomes above ~30% happen less often. Worst
+populated bin is 0.6–0.7, where the model claims 64% and observes 56%.
+A separate defect from the draw deficit, likely from treating fitted
+coefficients as certain. Fixes would be shrinkage or post-hoc
+recalibration, not Dixon-Coles.
+
+**Finding 3 — away wins are well calibrated** (gaps < 0.01 in populated
+bins). The error concentrates in home wins and draws.
