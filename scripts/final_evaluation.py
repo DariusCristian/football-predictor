@@ -13,6 +13,7 @@ from footy.model.poisson import fit as fit_poisson
 from footy.model.scoring import score_predictions
 
 CHOSEN_HALF_LIFE = None  # selected on validation window; do not change
+CHOSEN_ALPHA = 1e-5  # ridge penalty; see docs/results.md, "Ridge regularisation"
 
 matches = load_all_matches()
 start, end = test_window()
@@ -22,7 +23,8 @@ print("Run once. Report whatever it says.\n")
 
 predictors = {
     "poisson": lambda t: fit_poisson(t, half_life_days=CHOSEN_HALF_LIFE,
-                                     reference_date=t["date"].max()),
+                                     reference_date=t["date"].max(),
+                                     alpha=CHOSEN_ALPHA),
     "league_average": lambda t: LeagueAverage().fit(t),
     "always_home": lambda t: AlwaysHomeWin().fit(t),
 }

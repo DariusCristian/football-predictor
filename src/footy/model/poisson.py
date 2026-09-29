@@ -13,6 +13,14 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from scipy.stats import poisson
 
+# Ridge penalty on team terms; see docs/results.md, "Ridge regularisation".
+# Validation alone picks 0, but unpenalised fits give ~1e-10 to outcomes
+# that happen (complete separation), a correctness failure regardless of
+# score. 1e-7 only caps the runaway; 1e-5 keeps the known cases near the
+# plausible range and costs 0.0002 log loss on validation, inside the
+# 0.0005 budget fixed in advance.
+DEFAULT_ALPHA = 1e-5
+
 
 def to_long_format(matches: pd.DataFrame) -> pd.DataFrame:
     """One row per (attacking team, defending team, venue)."""
@@ -78,7 +86,7 @@ class PoissonModel:
             **probs,
         }
     
-DEFAULT_HALF_LIFE_DAYS = 270  # tuned by backtest; see docs/results.md
+DEFAULT_HALF_LIFE_DAYS = None  # tuned by backtest; see docs/results.md
 
 
 def fit(
@@ -86,12 +94,21 @@ def fit(
     half_life_days: float | None = DEFAULT_HALF_LIFE_DAYS,
     reference_date: pd.Timestamp | None = None,
     rho: float = 0.0,
+    alpha: float = DEFAULT_ALPHA,
 ) -> PoissonModel:
     """Fit the model. half_life_days=None means all matches weighted equally.
 
     rho is the Dixon-Coles dependence parameter applied at predict time;
     it does not affect the GLM fit.
+
+    alpha is the ridge (L2) penalty on the team and opponent coefficients.
+    0.0 means the plain unpenalised fit. The intercept and home advantage
+    are never penalised: shrinking them would pull the league-wide goal
+    rate and home edge towards zero rather than just taming the teams.
     """
+    if alpha < 0:
+        raise ValueError("alpha must be non-negative")
+
     long = to_long_format(matches)
 
     if half_life_days is None:
@@ -99,15 +116,32 @@ def fit(
     else:
         weights = decay_weights(long["date"], half_life_days, reference_date)
 
-    result = smf.glm(
+    model = smf.glm(
         formula="goals ~ home + C(team) + C(opponent)",
         data=long,
         family=sm.families.Poisson(),
         freq_weights=weights,
-    ).fit()
+    )
+    if alpha == 0:
+        result = model.fit()
+    else:
+        # L1_wt=0 routes statsmodels to its pure-ridge solver, which
+        # accepts one penalty weight per coefficient.
+        result = model.fit_regularized(
+            alpha=_penalty_weights(model.exog_names, alpha), L1_wt=0.0
+        )
     _warn_if_degenerate(result.params)
     teams = set(long["team"])
     return PoissonModel(result, teams, rho=rho)
+
+
+UNPENALISED_TERMS = ("Intercept", "home")
+
+
+def _penalty_weights(exog_names: list[str], alpha: float) -> np.ndarray:
+    return np.array(
+        [0.0 if name in UNPENALISED_TERMS else alpha for name in exog_names]
+    )
 
 
 # Real coefficients are log goal-rate ratios, well within +-3. Beyond

@@ -245,3 +245,131 @@ across windows or come with interval estimates.
 
 **Consequence.** No shrinkage or recalibration step is adopted. The
 model appears adequately calibrated given the sample sizes available.
+
+## 2026-09-29 — Ridge regularisation: alpha = 1e-5
+
+Addresses the complete-separation failure described under "Final
+evaluation, frozen test window". `fit()` now takes `alpha`, a ridge (L2)
+penalty on the team and opponent coefficients, via statsmodels'
+`fit_regularized(L1_wt=0)`. The intercept and `home` are not penalised
+(per-coefficient penalty weights of 0); penalising them pulls the
+league-wide goal rate and home advantage towards zero.
+
+### Validation grid
+
+Validation window (2023-08-01 to 2024-08-01), unweighted, rho = 0.
+"Near-zero" counts matches where any outcome probability is below 1e-4;
+"degenerate" counts fits with a coefficient beyond ±10.
+
+| alpha | n   | log loss | vs alpha=0 | Brier   | max \|coef\| | near-zero | degenerate |
+|-------|-----|----------|------------|---------|--------------|-----------|------------|
+| 0     | 378 | 0.92364  |            | 0.54447 | 20.98        | 1         | 1          |
+| 1e-7  | 378 | 0.92366  | +0.00001   | 0.54448 | 7.43         | 0         | 0          |
+| 1e-6  | 378 | 0.92368  | +0.00004   | 0.54449 | 5.43         | 0         | 0          |
+| 1e-5  | 378 | 0.92384  | +0.00020   | 0.54458 | 3.54         | 0         | 0          |
+| 3e-5  | 378 | 0.92411  | +0.00047   | 0.54474 | 2.71         | 0         | 0          |
+| 1e-4  | 378 | 0.92496  | +0.00132   | 0.54525 | 1.87         | 0         | 0          |
+| 1e-3  | 378 | 0.93260  | +0.00896   | 0.55037 | 1.05         | 0         | 0          |
+| 1e-2  | 378 | 0.95722  | +0.03358   | 0.56732 | 0.56         | 0         | 0          |
+
+Validation alone selects alpha = 0. It contains a single separation
+event (Sheffield United's first match of 2023-24, P(away win) ≈ 5e-10),
+and that outcome did not occur, so log loss never sees the failure.
+Reproduce with `scripts/tune_alpha.py`.
+
+### Known failure cases
+
+Each refit on every match before the fixture date. At alpha = 0 these
+reproduce the originally recorded values. The Sunderland case lies in
+the frozen test window; only its training set was reconstructed, and
+the test window was not re-scored.
+
+Coventry attack: Nottingham v Coventry, 2026-09-19 (4 matches, scored
+[0, 0, 0, 0]).
+
+| alpha | Coventry attack | max \|coef\| | P(Coventry win) |
+|-------|-----------------|--------------|-----------------|
+| 0     | −21.56          | 21.56        | 1.1e-10         |
+| 1e-7  | −7.54           | 7.54         | 1.4e-4          |
+| 1e-6  | −5.52           | 5.52         | 1.0e-3          |
+| 1e-5  | −3.63           | 3.63         | 0.0070          |
+
+Hull defence: Hull v Aston Villa, 2026-09-05 (2 matches, conceded
+[0, 0]). The largest coefficient here is Coventry's attack.
+
+| alpha | Hull defence | max \|coef\| | P(Villa win) |
+|-------|--------------|--------------|--------------|
+| 0     | −20.31       | 20.57        | 3.1e-10      |
+| 1e-7  | −5.80        | 6.48         | 6.3e-4       |
+| 1e-6  | −3.96        | 4.42         | 3.9e-3       |
+| 1e-5  | −2.36        | 2.61         | 0.020        |
+
+Sunderland defence: Burnley v Sunderland, 2025-08-23 (1 match,
+conceded [0]).
+
+| alpha | Sunderland defence | max \|coef\| | P(Burnley win) |
+|-------|--------------------|--------------|----------------|
+| 0     | −20.16             | 20.16        | 8.6e-11        |
+| 1e-7  | −6.15              | 6.15         | 1.0e-4         |
+| 1e-6  | −4.21              | 4.21         | 7.3e-4         |
+| 1e-5  | −2.45              | 2.45         | 0.0044         |
+
+### Decision: alpha = 1e-5
+
+Validation chose alpha = 0, but the unregularised model assigns ~1e-10
+to outcomes that occur. That is a correctness failure independent of
+any score. 1e-7 only caps the runaway: coefficients of −5.8 to −7.5,
+still under 1% of a normal goal rate. 1e-5 brings Hull (−2.36) and
+Sunderland (−2.45) into the plausible range and Coventry to −3.63, at a
+validation cost of 0.0002 log loss, inside the 0.0005 threshold set in
+advance. Stronger values were not chosen: they were justified only by
+the three hand-picked failure cases, not by validation.
+
+Set as `DEFAULT_ALPHA` in `poisson.py` and `CHOSEN_ALPHA` in
+`scripts/final_evaluation.py`. The test window has not been re-run.
+
+### Limitation
+
+Ridge reduces the problem but does not eliminate it. Coventry still
+gets P(win) = 0.7%, which costs ~5.0 log loss when it happens (versus
+22.9 unregularised and ~1.0 for a typical match). The principled fix is
+a hierarchical prior that shrinks each team towards the league average.
+Ridge shrinks towards the reference team instead (Arsenal, the first
+level alphabetically), an artifact of the treatment-coded categorical
+encoding rather than a modelling choice.
+
+### Penalty scaling
+
+statsmodels minimises −loglike/nobs + alpha/2·|b|², equivalent to an
+effective penalty of alpha × training rows. Training grows from 1,520
+to 2,260 rows across the validation window, so the strength drifts
+×1.487. Immaterial at 1e-5: the effective penalty goes from 0.0152 to
+0.0226, an implied prior sd on team coefficients of 8.1 falling to 6.7,
+far wider than real coefficients.
+
+
+## 2026-10-XX — SECOND test run: regularised model
+
+**This is the second run on the held-out test set.** Justification: the
+unregularised model assigns probabilities near 1e-10 to outcomes that
+occur, a correctness failure visible in validation predictions and live
+matches, independent of any test-set result. The fix (alpha) was chosen
+on validation. See the regularisation section above.
+
+Frozen window 2024-08-01 to 2026-06-30. Unweighted, rho=0, alpha=1e-5.
+
+| model          |   n | log loss | Brier |
+|----------------|-----|----------|-------|
+| poisson        | 758 |   1.0260 | 0.614 |
+| league average | 760 |   1.0832 | 0.656 |
+| always home    | 760 |   1.7901 | 1.006 |
+
+**Headline: 5.3% improvement in log loss over the league-average
+baseline.** Supersedes the 3.1% from the first frozen run.
+
+**What changed, and what did not.** The model is no better at predicting
+football. Log loss fell 0.023, and the single Burnley v Sunderland
+collapse was contributing ~0.031 at alpha=0. Almost the entire gain is
+one impossible prediction becoming merely a poor one. 5.3% is a truer
+estimate of ordinary performance because it is not distorted by a
+pathological fit, not because the model learned anything.

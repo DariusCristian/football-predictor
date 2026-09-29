@@ -145,7 +145,7 @@ def _separation_matches():
 
 def test_fit_warns_when_a_team_never_scores():
     with pytest.warns(DegenerateFitWarning, match=r"C\(team\)\[T\.Zeros\]"):
-        fit(_separation_matches(), half_life_days=None)
+        fit(_separation_matches(), half_life_days=None, alpha=0.0)
 
 
 def test_fit_does_not_warn_on_ordinary_data():
@@ -153,4 +153,79 @@ def test_fit_does_not_warn_on_ordinary_data():
     matches.loc[matches["home"] == "Zeros", "home_goals"] = 1
     with warnings.catch_warnings():
         warnings.simplefilter("error", DegenerateFitWarning)
-        fit(matches, half_life_days=None)
+        fit(matches, half_life_days=None, alpha=0.0)
+
+
+def _ordinary_matches():
+    matches = _separation_matches()
+    matches.loc[matches["home"] == "Zeros", "home_goals"] = 1
+    return matches
+
+
+def _team_coefs(model):
+    params = model._result.params
+    return params[params.index.str.startswith("C(team)")]
+
+
+def test_alpha_zero_matches_unregularised_fit():
+    import statsmodels.api as sm
+    import statsmodels.formula.api as smf
+
+    from footy.model.poisson import to_long_format
+
+    matches = _ordinary_matches()
+    reference = smf.glm(
+        formula="goals ~ home + C(team) + C(opponent)",
+        data=to_long_format(matches),
+        family=sm.families.Poisson(),
+    ).fit().params
+    params = fit(matches, half_life_days=None, alpha=0.0)._result.params
+    pd.testing.assert_series_equal(params, reference, rtol=1e-12, atol=1e-12)
+
+
+def test_modest_alpha_keeps_coefficients_finite_under_separation():
+    with warnings.catch_warnings():
+        warnings.simplefilter("error", DegenerateFitWarning)
+        model = fit(_separation_matches(), half_life_days=None, alpha=0.01)
+    assert (model._result.params.abs() <= 10).all()
+
+
+def test_larger_alpha_shrinks_team_coefficient_spread():
+    matches = _separation_matches()
+    weak = _team_coefs(fit(matches, half_life_days=None, alpha=0.01))
+    strong = _team_coefs(fit(matches, half_life_days=None, alpha=1.0))
+    assert strong.std() < weak.std()
+
+
+def test_intercept_and_home_are_not_penalised():
+    # Under a huge penalty the team terms collapse to ~0, so the
+    # unpenalised terms should match a model with no team terms at all.
+    import statsmodels.api as sm
+    import statsmodels.formula.api as smf
+
+    from footy.model.poisson import to_long_format
+
+    matches = _ordinary_matches()
+    baseline = smf.glm(
+        formula="goals ~ home",
+        data=to_long_format(matches),
+        family=sm.families.Poisson(),
+    ).fit().params
+    model = fit(matches, half_life_days=None, alpha=1e4)
+    params = model._result.params
+    assert (_team_coefs(model).abs() < 1e-3).all()
+    assert pytest.approx(params["Intercept"], abs=1e-3) == baseline["Intercept"]
+    assert pytest.approx(params["home"], abs=1e-3) == baseline["home"]
+
+
+def test_regularised_model_predicts():
+    model = fit(_ordinary_matches(), half_life_days=None, alpha=0.01)
+    probs = model.predict("A", "Zeros")
+    assert pytest.approx(
+        probs["home_win"] + probs["draw"] + probs["away_win"], abs=1e-9
+    ) == 1.0
+
+
+def test_negative_alpha_rejected():
+    with pytest.raises(ValueError):
+        fit(_ordinary_matches(), half_life_days=None, alpha=-0.1)
