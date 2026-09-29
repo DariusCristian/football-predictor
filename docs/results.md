@@ -1,6 +1,6 @@
 # Backtest Results
 
-## 2026-10-03 — Baseline comparison
+## 2026-09-26 — Baseline comparison
 
 Walk-forward from 2023-08-01, retraining weekly, training only on
 matches completed strictly before each prediction date.
@@ -20,7 +20,7 @@ the training data are skipped, so the comparison is not over an
 identical set.
 
 
-## 2026-10-03 — Time weighting experiment
+## 2026-09-26 — Time weighting experiment
 
 Exponential decay weighting, `weight = 0.5 ** (days_ago / half_life)`,
 tuned by walk-forward backtest from 2023-08-01.
@@ -53,7 +53,7 @@ report the improvement, so 1.0178 is optimistic. A held-out period
 would give an honest estimate.
 
 
-## 2026-10-03 — Final evaluation (held-out test set) — SUPERSEDED
+## 2026-09-26 — Final evaluation (held-out test set) — SUPERSEDED
 
 > **Superseded** by "Final evaluation, frozen test window" below. This
 > run used an open-ended test window, so its 810 matches included 50
@@ -148,7 +148,7 @@ Sunderland (2025-26) are skipped because neither team is in the training
 data. On the common 758 matches the improvement is slightly larger.
 
 
-## 2026-10-03 — Calibration analysis (test set, n=806)
+## 2026-09-26 — Calibration analysis (test set, n=806)
 
 > `data/test_predictions.csv` was overwritten by the frozen-window run
 > (n=758), so the n=806 numbers in this section can no longer be
@@ -181,7 +181,7 @@ recalibration, not Dixon-Coles.
 **Finding 3 — away wins are well calibrated** (gaps < 0.01 in populated
 bins). The error concentrates in home wins and draws.
 
-## 2026-10-03 — Dixon-Coles adjustment: no improvement
+## 2026-09-26 — Dixon-Coles adjustment: no improvement
 
 Grid search over rho on the validation window (2023-08-01 to 2024-08-01,
 n=378), unweighted model, matching CHOSEN_HALF_LIFE.
@@ -215,7 +215,7 @@ Implementation retained behind `rho=0.0` (a no-op by default) with tests,
 so the option exists and the negative result is reproducible.
 
 
-## 2026-10-03 — Calibration on validation: earlier findings do not replicate
+## 2026-09-26 — Calibration on validation: earlier findings do not replicate
 
 Same model (unweighted, rho=0) on the validation window (n=378).
 
@@ -348,7 +348,7 @@ to 2,260 rows across the validation window, so the strength drifts
 far wider than real coefficients.
 
 
-## 2026-10-XX — SECOND test run: regularised model
+## 2026-09-29 — SECOND test run: regularised model
 
 **This is the second run on the held-out test set.** Justification: the
 unregularised model assigns probabilities near 1e-10 to outcomes that
