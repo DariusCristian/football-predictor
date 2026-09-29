@@ -1,3 +1,5 @@
+from datetime import UTC, datetime, timedelta
+
 import requests
 from footy.config import API_BASE, COMPETITION, FOOTBALL_DATA_TOKEN
 
@@ -64,3 +66,40 @@ def finished_matches_frame() -> pd.DataFrame:
     if not frame.empty:
         frame["date"] = pd.to_datetime(frame["date"])
     return frame
+
+UPCOMING_STATUSES = ("SCHEDULED", "TIMED")  # TIMED = kickoff time confirmed
+
+
+def upcoming_fixtures(within_days: int = 14, now: datetime | None = None) -> list[dict]:
+    """Unplayed fixtures kicking off in [now, now + within_days], canonical names."""
+    now = now or datetime.now(UTC)
+    horizon = now + timedelta(days=within_days)
+    fixtures = []
+    for match in fetch_matches():
+        if match["status"] not in UPCOMING_STATUSES:
+            continue
+        kickoff = datetime.fromisoformat(match["utcDate"])
+        if not now <= kickoff <= horizon:
+            continue
+        fixtures.append(
+            {
+                "match_date": match["utcDate"],
+                "season": _season_label(match["utcDate"]),
+                "home": from_api(match["homeTeam"]["shortName"]),
+                "away": from_api(match["awayTeam"]["shortName"]),
+            }
+        )
+    return sorted(fixtures, key=lambda f: (f["match_date"], f["home"]))
+
+
+def current_season_teams() -> list[str]:
+    """Canonical names of every team with a fixture this season."""
+    teams = set()
+    for match in fetch_matches():
+        teams.add(from_api(match["homeTeam"]["shortName"]))
+        teams.add(from_api(match["awayTeam"]["shortName"]))
+    return sorted(teams)
+
+
+def current_season(now: datetime | None = None) -> str:
+    return _season_label((now or datetime.now(UTC)).strftime("%Y-%m-%d"))

@@ -373,3 +373,55 @@ collapse was contributing ~0.031 at alpha=0. Almost the entire gain is
 one impossible prediction becoming merely a poor one. 5.3% is a truer
 estimate of ordinary performance because it is not distorted by a
 pathological fit, not because the model learned anything.
+
+## 2026-09-29 — Promoted teams in production
+
+The first live predictions (10 fixtures, 10–12 October 2026, committed
+to the store before kickoff) show the promoted-team problem in the
+production model: unweighted, rho=0, alpha=1e-5. No
+DegenerateFitWarning fired. Every coefficient stays well within the
+±10 limit, so these are not divergences. They are thin samples taken
+at face value.
+
+**Hull City: rated the best defence in the league on 5 matches.** The
+defence coefficient is −0.099, better than Arsenal (0, the reference)
+and Man City (−0.032). It comes from conceding 4 in 5 games. The
+committed prediction for Hull v Everton gives Hull 54% to win at home
+(draw 29%, Everton 17%).
+
+**Coventry City: attack coefficient −1.93, from 1 goal in 5 games.**
+That makes Coventry 5.4% to win at home to Newcastle (committed), and
+1.1% to win at Man City in the matrix.
+
+### What ridge did and did not do
+
+Ridge prevented divergence: without it, the known failure cases
+give ~1e-10 to outcomes that happen. It did not
+solve the underlying problem. Five matches are still taken close to
+face value.
+
+Shrinkage goes toward the reference team, not the league average.
+That is an artifact of treatment-coded categoricals, not a modelling
+choice. With Arsenal as the reference, a promoted team with little
+data is pulled toward Arsenal's defence and Arsenal's attack, both
+elite, rather than toward a typical side. For Hull that shrinkage
+makes the flattering defence number more flattering, not less. For
+Coventry it only partly offsets the attack signal.
+
+Centring the coefficients for display (subtracting the league mean)
+does not change this. It is a constant shift, so rankings and
+predictions are identical. Centred, Hull's defence is −0.438, still
+first, ahead of Man City at −0.371. Centring fixes how the numbers
+read (0 = league average), not what the model believes.
+
+The principled fix is a hierarchical prior: team coefficients drawn
+from a common distribution, so each is shrunk toward the league
+average in proportion to how little data it has.
+
+### What the site does about it
+
+The site surfaces sample size rather than hiding it. teams.json
+carries matches_in_training and a confidence level (low under 10,
+medium 10–25, high above 25). Each matrix.json pairing carries the
+lower of its two teams' levels. Hull and Coventry are "low", as are
+all 74 pairings involving them.
