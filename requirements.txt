@@ -10,7 +10,6 @@ cycler==0.12.1
 fastapi==0.141.1
 fonttools==4.65.0
 # Editable Git install with no remote (footy==0.1.0)
--e /Users/dariushoratau/Documents/projects/football-predictor
 formulaic==1.2.2
 h11==0.16.0
 idna==3.20
