@@ -88,10 +88,30 @@ a:hover { text-decoration-thickness: 2px; }
   border-bottom: 1px solid var(--rule-strong);
 }
 .site-name { margin: 0; font-weight: 700; }
+.site-name a { text-decoration: none; }
+.site-name a:hover { text-decoration: underline; }
+.site-sub { font-weight: 400; color: var(--level); }
 .masthead ul {
   display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem;
   list-style: none; margin: 0; padding: 0;
 }
+.masthead nav a { display: inline-block; padding: 0.15rem 0; }
+.masthead nav a[aria-current="page"] { font-weight: 600; text-decoration-thickness: 3px; }
+
+/* ---------- Routing ---------- */
+
+/* Focus moves to the view's heading on navigation so screen readers start
+   there; it isn't a control, so it gets no ring. Real controls keep theirs. */
+main:focus, h1[tabindex="-1"]:focus { outline: none; }
+.route-message:empty { display: none; }
+.route-message {
+  margin: 1.25rem 0 0;
+  padding: 0.75rem 0.9rem;
+  background: var(--chalk);
+  border-left: 4px solid var(--navy);
+  max-width: var(--measure);
+}
+.route-message p { margin: 0; }
 
 /* ---------- Layout: main column plus margin notes ---------- */
 
@@ -160,6 +180,13 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: 1.2rem; font-weight: 600; margin: 0;
 }
 .pair .away-name { text-align: right; }
+
+/* In the fixture list the pair is a link to the match page. */
+.pair-heading { margin: 0; font-size: inherit; }
+a.pair { text-decoration: none; }
+a.pair:hover .home-name, a.pair:hover .away-name {
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.18em;
+}
 
 .gauges {
   display: flex; justify-content: space-between; gap: 1rem;
@@ -280,6 +307,27 @@ select {
 .meetings { margin-top: 2rem; }
 .meetings table { width: 100%; }
 
+/* ---------- Match details ---------- */
+
+.back { margin: 0 0 0.25rem; font-size: 0.92rem; }
+#match .fixture { border-top: 0; padding-top: 0.5rem; }
+.match-detail .match-h { margin-top: 2.25rem; }
+.match-detail > .col-main > .match-h:first-child { margin-top: 0.5rem; }
+/* Same columns for both teams' tables; phones size them to content. */
+@media (min-width: 481px) {
+  .results { table-layout: fixed; }
+  .results th:nth-child(1) { width: 30%; }
+  .results th:nth-child(2) { width: 28%; }
+  .results th:nth-child(3), .results th:nth-child(5) { width: 14%; }
+}
+.match-h .tag { font-size: 0.95rem; }
+.recent { margin-bottom: 1.75rem; }
+.recent h3 { margin: 1rem 0 0.4rem; }
+.subnote { font-size: 0.85rem; color: var(--level); margin: 0 0 0.4rem; }
+.h2h-total { font-weight: 600; }
+.h2h-total .num { font-weight: 600; }
+.match-detail .meetings { margin-top: 0; }
+
 /* ---------- Plain data tables ---------- */
 
 .data {
@@ -295,6 +343,30 @@ select {
 .data thead th { font-weight: 600; border-bottom-color: var(--rule-strong); }
 .data .num { white-space: nowrap; }
 .data td.res { font-family: var(--mono); font-weight: 600; }
+
+@media (max-width: 480px) {
+  .data { font-size: 0.85rem; }
+  .data th, .data td { padding-right: 0.4rem; }
+  .data th:last-child, .data td:last-child { padding-right: 0; }
+}
+
+/* ---------- League table ---------- */
+
+.standings th.num, .standings td.num { text-align: right; padding-right: 0; padding-left: 0.5rem; }
+.standings th.pos, .standings td.pos { text-align: right; padding-right: 0.75rem; padding-left: 0; width: 2rem; color: var(--level); }
+.standings th.pos { color: var(--navy); }
+.standings tbody th { font-weight: 600; }
+.standings .c-points { font-weight: 600; padding-left: 0.9rem; }
+.standings .evidence { display: block; font-weight: 400; font-size: 0.78rem; color: var(--level); }
+
+@media (max-width: 480px) {
+  .standings { font-size: 0.85rem; }
+  .standings th.num, .standings td.num { padding-left: 0.35rem; }
+  .standings th.pos, .standings td.pos { padding-right: 0.5rem; width: 1.75rem; }
+  .standings .c-points { padding-left: 0.5rem; }
+  /* GD carries the goals; GF and GA return above phone width. */
+  .standings .c-goals_for, .standings .c-goals_against { display: none; }
+}
 
 /* ---------- Team table ---------- */
 

@@ -12,7 +12,7 @@
 <script src="app.js" defer></script>
 </head>
 <body>
-<a class="skip" href="#fixtures">Skip to fixtures</a>
+<a class="skip" href="#main">Skip to content</a>
 
 <!-- Shared hatch masks for strips drawn from thin evidence. Not display:none:
      some browsers drop patterns defined inside an undisplayed SVG. -->
@@ -33,27 +33,30 @@
   </defs>
 </svg>
 
+<!-- Links are rewritten from route() in app.js on load; these hrefs are
+     the same routes, so the markup reads correctly before it runs. -->
 <header class="masthead">
-  <p class="site-name">Premier League probabilities</p>
+  <p class="site-name"><a href="#/fixtures" data-route="fixtures" id="league-name">Premier League</a> <span class="site-sub">probabilities</span></p>
   <nav aria-label="Sections">
     <ul>
-      <li><a href="#fixtures">Fixtures</a></li>
-      <li><a href="#explorer">Head-to-head</a></li>
-      <li><a href="#teams">Teams</a></li>
-      <li><a href="#history">Team history</a></li>
-      <li><a href="#record">Record</a></li>
-      <li><a href="#method">Method</a></li>
+      <li><a href="#/fixtures" data-route="fixtures">Fixtures</a></li>
+      <li><a href="#/table" data-route="table">Table</a></li>
+      <li><a href="#/teams" data-route="teams">Teams</a></li>
+      <li><a href="#/record" data-route="record">Record</a></li>
+      <li><a href="#/method" data-route="method">Method</a></li>
     </ul>
   </nav>
 </header>
 
 <div id="load-errors" class="load-errors" role="alert" hidden></div>
+<div id="route-message" class="route-message" role="status"></div>
 
-<main>
+<main id="main" tabindex="-1">
+<div class="view" data-view="fixtures">
   <section id="fixtures" class="section" aria-labelledby="fixtures-h">
     <div class="layout">
       <div class="col-main">
-        <h1 id="fixtures-h">Next round</h1>
+        <h1 id="fixtures-h" tabindex="-1">Next round</h1>
         <div id="intro" class="intro"><p class="loading">Loading predictions…</p></div>
         <div id="key" class="key" hidden></div>
       </div>
@@ -61,25 +64,30 @@
     <div id="fixture-list" class="fixture-list"></div>
   </section>
 
-  <section id="explorer" class="section" aria-labelledby="explorer-h">
+</div>
+
+<div class="view" data-view="match" hidden>
+  <section id="match" class="section" aria-label="Match details">
+    <div id="match-out"></div>
+  </section>
+</div>
+
+<div class="view" data-view="table" hidden>
+  <section id="table" class="section" aria-labelledby="table-h">
     <div class="layout">
       <div class="col-main">
-        <h2 id="explorer-h">Head-to-head</h2>
-        <p class="lede">Pick any two teams in this season's league. The numbers are the current model's view of that fixture, not a recorded prediction.</p>
-        <form id="pair-form" class="pair-form" hidden>
-          <label>Home <select id="pick-home"></select></label>
-          <button type="button" id="swap" class="text-button">Swap</button>
-          <label>Away <select id="pick-away"></select></label>
-        </form>
+        <h1 id="table-h" tabindex="-1">Table</h1>
       </div>
     </div>
-    <div id="pair-out" aria-live="polite"></div>
+    <div id="table-out"></div>
   </section>
+</div>
 
+<div class="view" data-view="teams" hidden>
   <section id="teams" class="section" aria-labelledby="teams-h">
     <div class="layout">
       <div class="col-main">
-        <h2 id="teams-h">Teams</h2>
+        <h1 id="teams-h" tabindex="-1">Teams</h1>
         <p class="lede">How the model rates each side, as multiples of a league-average team. 1 means average. Ratings come from every match in the training data, not just this season, so they are only as solid as the match count beside them.</p>
       </div>
     </div>
@@ -99,17 +107,38 @@
     </div>
   </section>
 
+  <section id="explorer" class="section" aria-labelledby="explorer-h">
+    <div class="layout">
+      <div class="col-main">
+        <h2 id="explorer-h">Head-to-head</h2>
+        <p class="lede">Pick any two teams in this season's league. The numbers are the current model's view of that fixture, not a recorded prediction.</p>
+        <form id="pair-form" class="pair-form" hidden>
+          <label>Home <select id="pick-home"></select></label>
+          <button type="button" id="swap" class="text-button">Swap</button>
+          <label>Away <select id="pick-away"></select></label>
+        </form>
+      </div>
+    </div>
+    <div id="pair-out" aria-live="polite"></div>
+  </section>
+
+</div>
+
+<div class="view" data-view="record" hidden>
   <section id="record" class="section" aria-labelledby="record-h">
     <div class="layout">
-      <div class="col-main"><h2 id="record-h">Record</h2></div>
+      <div class="col-main"><h1 id="record-h" tabindex="-1">Record</h1></div>
     </div>
     <div id="record-out"></div>
   </section>
 
+</div>
+
+<div class="view" data-view="method" hidden>
   <section id="method" class="section" aria-labelledby="method-h">
     <div class="layout">
       <div class="col-main prose">
-        <h2 id="method-h">Method</h2>
+        <h1 id="method-h" tabindex="-1">Method</h1>
 
         <h3>What the model does</h3>
         <p>Each team gets two ratings: how many goals it tends to score (attack) and how many it tends to let in (defence). There is also one shared boost for playing at home. The ratings are fitted to every Premier League match since August 2021 using Poisson regression. For a fixture, the model turns the two teams' ratings into expected goals for each side, works out the chance of every scoreline, and adds those up into home win, draw and away win.</p>
@@ -150,6 +179,7 @@
       </div>
     </div>
   </section>
+</div>
 </main>
 
 <footer class="footer">

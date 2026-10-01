@@ -6,11 +6,15 @@
  */
 "use strict";
 
-const DATA_FILES = ["predictions", "matrix", "teams", "history", "scoreboard"];
+const DATA_FILES = ["predictions", "matrix", "teams", "history", "scoreboard",
+  "standings", "fixture_detail"];
 
-// Which files each section cannot work without.
+// Which files each section cannot work without. Match details also uses
+// fixture_detail, but only for its lower half, so it isn't listed here.
 const SECTIONS = {
   fixtures: { label: "Fixtures", needs: ["predictions", "matrix", "teams"] },
+  match: { label: "Match details", needs: ["predictions", "matrix", "teams"] },
+  table: { label: "Table", needs: ["standings"] },
   explorer: { label: "Head-to-head", needs: ["matrix", "teams"] },
   teams: { label: "Teams", needs: ["teams"] },
   history: { label: "Team history", needs: ["teams", "history"] },
@@ -25,6 +29,8 @@ const REQUIRED_KEY = {
   teams: "teams",
   history: "matches",
   scoreboard: "backtest",
+  standings: "standings",
+  fixture_detail: "fixtures",
 };
 
 const SEASON_LENGTH = 38;
@@ -103,8 +109,56 @@ function fmtRange(isoA, isoB) {
   return `${dA} ${mA} ${yA} – ${dB} ${mB} ${yB}`;
 }
 
+const fmtMonthYear = (ymd) =>
+  new Intl.DateTimeFormat("en-GB", { month: "long", year: "numeric", timeZone: "UTC" })
+    .format(new Date(`${ymd}T00:00:00Z`));
+
 const countWord = (n) => (n < NUMBER_WORDS.length ? NUMBER_WORDS[n] : String(n));
 const plural = (n, one, many) => (n === 1 ? one : many);
+
+/* ---------- Routes ----------
+ *
+ * Every link is built by route() and every hash is read by parseRoute(),
+ * so the URL scheme lives here and nowhere else. A second league would
+ * mean filling LEAGUE_SEGMENTS (say ["premier-league"]) and choosing the
+ * league from that segment; views and the links inside them don't change.
+ */
+
+const SITE_TITLE = "Premier League probabilities";
+const LEAGUE_SEGMENTS = [];
+const VIEWS = ["fixtures", "match", "table", "teams", "record", "method"];
+const DEFAULT_VIEW = "fixtures";
+const VIEW_PARAMS = { match: 1 }; // how many segments follow the view name
+// The old single-page anchors, so existing bookmarks still land somewhere.
+const LEGACY_ANCHORS = {
+  fixtures: "fixtures", explorer: "teams", teams: "teams", history: "teams",
+  record: "record", method: "method",
+};
+
+function route(view, ...params) {
+  return `#/${[...LEAGUE_SEGMENTS, view, ...params].map(encodeURIComponent).join("/")}`;
+}
+
+function safeDecode(segment) {
+  try { return decodeURIComponent(segment); } catch { return segment; }
+}
+
+// { view, params } plus `unknown` (the hash) when nothing matched, or
+// `redirect` when an old anchor should be rewritten to its route.
+function parseRoute(hash) {
+  const fallback = { view: DEFAULT_VIEW, params: [] };
+  if (hash === "" || hash === "#" || hash === "#/") return fallback;
+  if (!hash.startsWith("#/")) {
+    const legacy = LEGACY_ANCHORS[hash.slice(1)];
+    return legacy ? { view: legacy, params: [], redirect: true } : { ...fallback, unknown: hash };
+  }
+  const segments = hash.slice(2).split("/").filter(Boolean).map(safeDecode);
+  const league = segments.slice(0, LEAGUE_SEGMENTS.length);
+  if (league.join("/") !== LEAGUE_SEGMENTS.join("/")) return { ...fallback, unknown: hash };
+  const [view, ...params] = segments.slice(LEAGUE_SEGMENTS.length);
+  if (VIEWS.includes(view) && params.length === (VIEW_PARAMS[view] || 0)) return { view, params };
+  return { ...fallback, unknown: hash };
+}
 
 /* ---------- Loading ---------- */
 
@@ -160,8 +214,8 @@ function renderLoadBanner(loaded) {
     .map((s) => s.label);
   const parts = [
     el("p", {}, el("strong", { text: failed.length === DATA_FILES.length
-      ? "None of the five data files loaded."
-      : `${countWord(failed.length)} of the five data files didn't load.` })),
+      ? `None of the ${countWord(DATA_FILES.length).toLowerCase()} data files loaded.`
+      : `${countWord(failed.length)} of the ${countWord(DATA_FILES.length).toLowerCase()} data files didn't load.` })),
     el("ul", {}, failed.map((n) => el("li", {}, el("code", { text: `data/${n}.json` }), `: ${loaded[n].reason}.`))),
   ];
   if (location.protocol === "file:") {
@@ -201,6 +255,9 @@ function buildContext(loaded) {
   }
   if (loaded.matrix.ok) {
     ctx.pairing = new Map(loaded.matrix.data.pairings.map((p) => [`${p.home}|${p.away}`, p]));
+  }
+  if (loaded.predictions.ok) {
+    ctx.prediction = new Map(loaded.predictions.data.predictions.map((p) => [p.slug, p]));
   }
   return ctx;
 }
@@ -346,7 +403,7 @@ function renderFixtures(loaded, ctx) {
     if (model && "improvement_over_league_average" in bt) {
       introParts.push(el("p", {},
         `Tested on ${model.n} past matches it had never seen, the model scored ${(bt.improvement_over_league_average * 100).toFixed(1)}% better than assuming every match is a league-average one (by log loss, where lower is better). That is a small edge; football is mostly noise. `,
-        el("a", { href: "#record", text: "How this was tested" }), "."));
+        el("a", { href: route("record"), text: "How this was tested" }), "."));
     }
   }
   if (preds.every((p) => new Date(p.kickoff) < new Date())) {
@@ -365,43 +422,218 @@ function renderFixtures(loaded, ctx) {
   );
   key.hidden = false;
 
-  list.replaceChildren(...preds.map((pred) => {
-    const pairing = ctx.pairing.get(`${pred.home}|${pred.away}`);
-    const level = pairing ? pairing.confidence : "low";
-    const homeT = ctx.team.get(pred.home);
-    const awayT = ctx.team.get(pred.away);
-    const thin = thinTeams(ctx, pred.home, pred.away);
-    const top = pairing && pairing.top_scores && pairing.top_scores[0];
-    const [svg, nums] = strip(pred.probabilities, level, pred.home, pred.away);
+  list.replaceChildren(...preds.map((pred) => predictionCard(ctx, pred)));
+}
 
-    const main = el("div", { class: "col-main" },
-      el("p", { class: "kickoff" }, el("time", { datetime: pred.kickoff, text: fmtKickoff(pred.kickoff) }), hidden(" UK time")),
-      el("h3", { class: "pair" },
-        el("span", { class: "home-name" }, teamLabel(ctx, pred.home)),
-        hidden(" v "),
-        el("span", { class: "away-name" }, teamLabel(ctx, pred.away))),
-      el("div", { class: "gauges" },
-        homeT ? el("div", { class: "side-home gauge-wrap" }, gauge(homeT)) : el("span"),
-        awayT ? el("div", { class: "side-away gauge-wrap" }, gauge(awayT)) : el("span")),
-      svg, nums,
-      el("p", { class: "score-line" },
-        `Likeliest score ${pred.most_likely_score[0]}–${pred.most_likely_score[1]}`,
-        top && top.home === pred.most_likely_score[0] && top.away === pred.most_likely_score[1]
-          ? [": ", num(per100(top.p)), " in 100"] : null,
-        confidenceText(level),
-        ". ",
-        el("a", { href: "#explorer", "data-home": pred.home, "data-away": pred.away, class: "pair-link",
-          text: "Scorelines and past meetings" }),
-        hidden(` for ${pred.home} v ${pred.away}`)));
+/* One recorded prediction. In the fixtures list the team names link to the
+ * match page; on the match page (asPage) they are its h1 instead. */
+function predictionCard(ctx, pred, asPage = false) {
+  const pairing = ctx.pairing.get(`${pred.home}|${pred.away}`);
+  const level = pairing ? pairing.confidence : "low";
+  const homeT = ctx.team.get(pred.home);
+  const awayT = ctx.team.get(pred.away);
+  const thin = thinTeams(ctx, pred.home, pred.away);
+  const top = pairing && pairing.top_scores && pairing.top_scores[0];
+  const [svg, nums] = strip(pred.probabilities, level, pred.home, pred.away);
+  const names = [
+    el("span", { class: "home-name" }, teamLabel(ctx, pred.home)),
+    hidden(" v "),
+    el("span", { class: "away-name" }, teamLabel(ctx, pred.away)),
+  ];
+  const heading = asPage
+    ? el("h1", { class: "pair", tabindex: "-1" }, names)
+    : el("h3", { class: "pair-heading" }, el("a", { class: "pair", href: route("match", pred.slug) }, names));
 
-    return el("article", { class: `fixture layout c-${level}` },
-      main, el("aside", { class: "col-note" }, noteBlock(ctx, thin)));
-  }));
+  const main = el("div", { class: "col-main" },
+    el("p", { class: "kickoff" }, el("time", { datetime: pred.kickoff, text: fmtKickoff(pred.kickoff) }), hidden(" UK time")),
+    heading,
+    el("div", { class: "gauges" },
+      homeT ? el("div", { class: "side-home gauge-wrap" }, gauge(homeT)) : el("span"),
+      awayT ? el("div", { class: "side-away gauge-wrap" }, gauge(awayT)) : el("span")),
+    svg, nums,
+    el("p", { class: "score-line" },
+      `Likeliest score ${pred.most_likely_score[0]}–${pred.most_likely_score[1]}`,
+      top && top.home === pred.most_likely_score[0] && top.away === pred.most_likely_score[1]
+        ? [": ", num(per100(top.p)), " in 100"] : null,
+      confidenceText(level),
+      ".",
+      asPage ? null : [" ",
+        el("a", { href: route("match", pred.slug), text: "Scorelines, form and past meetings" }),
+        hidden(` for ${pred.home} v ${pred.away}`)]));
 
-  list.addEventListener("click", (e) => {
-    const link = e.target.closest(".pair-link");
-    if (link && window.selectPair) window.selectPair(link.dataset.home, link.dataset.away);
-  });
+  return el("article", { class: `fixture layout c-${level}${asPage ? " big" : ""}` },
+    main, el("aside", { class: "col-note" }, noteBlock(ctx, thin)));
+}
+
+/* ---------- Match details ---------- */
+
+// Draws the page for slug. Returns false when no upcoming fixture has it.
+function renderMatch(loaded, ctx, slug) {
+  const out = document.getElementById("match-out");
+  const back = el("div", { class: "layout" }, el("div", { class: "col-main" },
+    el("p", { class: "back" }, el("a", { href: route("fixtures") },
+      el("span", { "aria-hidden": "true", text: "← " }), "All fixtures"))));
+  const missing = missingFor(loaded, SECTIONS.match.needs);
+  if (missing.length) {
+    const err = el("div");
+    sectionError(err, loaded, missing, "This match page");
+    out.replaceChildren(back, el("div", { class: "layout" }, el("div", { class: "col-main" },
+      el("h1", { tabindex: "-1", text: "Match details" }), err)));
+    document.title = `Match details · ${SITE_TITLE}`;
+    return true;
+  }
+  const pred = ctx.prediction.get(slug);
+  if (!pred) return false;
+  const { home, away } = pred;
+  const pairing = ctx.pairing.get(`${home}|${away}`);
+
+  const main = el("div", { class: "col-main" });
+  if (pairing && pairing.top_scores && pairing.top_scores.length) {
+    main.append(el("h2", { class: "match-h", text: "Scorelines" }),
+      el("p", { class: "xg" }, "On average the model expects ",
+        `${home} to score `, num(pairing.expected_goals.home.toFixed(2)),
+        ` and ${away} `, num(pairing.expected_goals.away.toFixed(2)), "."),
+      scoreGrid(pairing.top_scores, home, away, pairing.confidence));
+  } else {
+    main.append(el("div", { class: "section-error" }, el("p", {}, `matrix.json has no score grid for ${home} v ${away}.`)));
+  }
+
+  const history = el("div");
+  if (!loaded.fixture_detail.ok) {
+    sectionError(history, loaded, ["fixture_detail"], "Recent results and head-to-head");
+  } else {
+    const detail = loaded.fixture_detail.data.fixtures[slug];
+    if (!detail) {
+      history.append(el("div", { class: "section-error" }, el("p", {},
+        el("code", { text: "data/fixture_detail.json" }), ` has no entry for ${home} v ${away}; it may be from an older build than `,
+        el("code", { text: "data/predictions.json" }), ".")));
+    } else {
+      const { recent_results: k, data_starts: since } = loaded.fixture_detail.data;
+      history.append(
+        el("h2", { class: "match-h" }, `Last ${k} results`, el("span", { class: "tag", text: " most recent first" })),
+        recentBlock(ctx, home, detail.recent.home, k),
+        recentBlock(ctx, away, detail.recent.away, k),
+        headToHead(home, away, detail.head_to_head, since));
+    }
+  }
+  main.append(history);
+
+  out.replaceChildren(back, predictionCard(ctx, pred, true),
+    el("div", { class: "layout match-detail" }, main, el("aside", { class: "col-note" })));
+  document.title = `${home} v ${away} · ${SITE_TITLE}`;
+  return true;
+}
+
+function recentBlock(ctx, team, results, k) {
+  const wrap = el("div", { class: "recent" }, el("h3", {}, teamLabel(ctx, team)));
+  if (!results.length) {
+    wrap.append(el("p", { text: `No Premier League matches for ${team} in the data.` }));
+    return wrap;
+  }
+  if (results.length < k) {
+    wrap.append(el("p", { class: "subnote", text: `Only ${results.length} Premier League ${plural(results.length, "match", "matches")} in the data.` }));
+  }
+  wrap.append(el("table", { class: "data results" },
+    el("caption", { class: "visually-hidden", text: `${team}: last ${results.length} results, most recent first` }),
+    el("thead", {}, el("tr", {},
+      el("th", { scope: "col", text: "Date" }),
+      el("th", { scope: "col", text: "Opponent" }),
+      el("th", { scope: "col", text: "Venue" }),
+      el("th", { scope: "col" }, "Score", el("span", { class: "axis-note", text: `${team} first` })),
+      el("th", { scope: "col", text: "Result" }))),
+    el("tbody", {}, results.map((r) => el("tr", {},
+      el("td", { class: "num", text: fmtShortDate(r.date) }),
+      el("td", { text: r.opponent }),
+      el("td", { text: r.venue }),
+      el("td", { class: "num", text: `${r.goals_for}–${r.goals_against}` }),
+      el("td", { class: `res f-${r.result}`, text: r.result }))))));
+  return wrap;
+}
+
+function headToHead(home, away, h2h, since) {
+  const wrap = el("div", { class: "meetings" }, el("h2", { class: "match-h", text: "Head-to-head" }));
+  const from = since ? fmtMonthYear(since) : null;
+  if (!h2h.played) {
+    wrap.append(el("p", { text: `${home} and ${away} have never met in the Premier League data${from ? `, which starts in ${from}` : ""}.` }));
+    return wrap;
+  }
+  wrap.append(
+    el("p", {}, `${countWord(h2h.played)} previous ${plural(h2h.played, "meeting", "meetings")}${from ? ` since ${from}` : ""}, at either ground.`),
+    el("p", { class: "h2h-total" },
+      `From ${home}'s side: `,
+      el("span", { class: "f-W" }, "won ", num(String(h2h.won))), ", ",
+      el("span", { class: "f-D" }, "drawn ", num(String(h2h.drawn))), ", ",
+      el("span", { class: "f-L" }, "lost ", num(String(h2h.lost))), "."),
+    el("table", { class: "data" },
+      el("caption", { class: "visually-hidden", text: `Meetings between ${home} and ${away}, most recent first` }),
+      el("thead", {}, el("tr", {},
+        el("th", { scope: "col", text: "Date" }),
+        el("th", { scope: "col", text: "Home" }),
+        el("th", { scope: "col", text: "Score" }),
+        el("th", { scope: "col", text: "Away" }),
+        el("th", { scope: "col" }, "Result", el("span", { class: "axis-note", text: `for ${home}` })))),
+      el("tbody", {}, h2h.meetings.map((m) => el("tr", {},
+        el("td", { class: "num", text: fmtShortDate(m.date) }),
+        el("td", { text: m.home }),
+        el("td", { class: "num", text: `${m.home_goals}–${m.away_goals}` }),
+        el("td", { text: m.away }),
+        el("td", { class: `res f-${m.result}`, text: m.result }))))));
+  return wrap;
+}
+
+/* ---------- Table ---------- */
+
+const STANDING_COLUMNS = [
+  ["played", "P", "Played"], ["won", "W", "Won"], ["drawn", "D", "Drawn"], ["lost", "L", "Lost"],
+  ["goals_for", "GF", "Goals for"], ["goals_against", "GA", "Goals against"],
+  ["goal_difference", "GD", "Goal difference"], ["points", "Pts", "Points"],
+];
+
+const signed = (n) => (n > 0 ? `+${n}` : String(n).replace("-", "−"));
+
+function renderTable(loaded) {
+  const out = document.getElementById("table-out");
+  const missing = missingFor(loaded, SECTIONS.table.needs);
+  if (missing.length) { sectionError(out, loaded, missing, "The table"); return; }
+  const { standings, matchday, season } = loaded.standings.data;
+  if (matchday > 0) document.getElementById("table-h").textContent = `Table after matchday ${matchday}`;
+  const thin = standings.filter((r) => isThin(r.confidence));
+
+  const main = el("div", { class: "col-main" },
+    el("p", { class: "lede" }, matchday > 0
+      ? `${season}, from every completed league match. Ordered by points, then goal difference, then goals scored.`
+      : `${season} hasn't started yet: no league matches have been completed.`),
+    thin.length ? el("div", { class: "key" }, el("span", {}, "† few matches in the model's training data")) : null,
+    el("table", { class: "data standings" },
+      el("caption", { class: "visually-hidden", text: `${season} league table${matchday > 0 ? ` after matchday ${matchday}` : ""}` }),
+      el("thead", {}, el("tr", {},
+        el("th", { scope: "col", class: "pos" }, el("span", { "aria-hidden": "true", text: "#" }), hidden("Position")),
+        el("th", { scope: "col", text: "Team" }),
+        STANDING_COLUMNS.map(([key, short, full]) => el("th", { scope: "col", class: `num c-${key}` },
+          el("span", { "aria-hidden": "true", text: short }), hidden(full))))),
+      el("tbody", {}, standings.map((r) => {
+        const isT = isThin(r.confidence);
+        return el("tr", { class: isT ? "thin-row" : null },
+          el("td", { class: "num pos", text: String(r.position) }),
+          el("th", { scope: "row", class: "team" }, r.team,
+            isT ? el("span", { class: "dagger", "aria-hidden": "true", text: "†" }) : null,
+            isT ? el("span", { class: "evidence", text: `${r.matches_in_training} ${plural(r.matches_in_training, "match", "matches")} in the data` }) : null,
+            isT ? hidden(`, ${r.confidence} confidence`) : null),
+          STANDING_COLUMNS.map(([key]) => el("td", { class: `num c-${key}`,
+            text: key === "goal_difference" ? signed(r[key]) : String(r[key]) })));
+      }))));
+
+  const notes = el("aside", { class: "col-note" });
+  if (thin.length) {
+    const list = thin.map((r) => `${r.team} (${r.matches_in_training})`);
+    const named = list.length === 1 ? list[0] : `${list.slice(0, -1).join(", ")} and ${list[list.length - 1]}`;
+    notes.append(el("p", { class: "note" },
+      el("span", { class: "dagger", "aria-hidden": "true", text: "†" }),
+      `Matches in the training data: ${named}. These are the promoted sides the model knows least about, so every prediction involving them is marked † and hatched on the `,
+      el("a", { href: route("fixtures"), text: "fixtures page" }), "."));
+  }
+  notes.append(el("p", { class: "note", text: "Teams level on points, goal difference and goals scored are listed alphabetically; the league's head-to-head tiebreaks aren't applied." }));
+  out.replaceChildren(el("div", { class: "layout" }, main, notes));
 }
 
 /* ---------- Head-to-head explorer ---------- */
@@ -784,7 +1016,7 @@ function backtestBlock(bt) {
 
   const notes = el("aside", { class: "col-note" },
     el("p", { class: "note" }, "The test window was opened twice. The first run (3.1%) was dominated by one impossible prediction. Ridge regularisation, chosen on separate validation data, fixed that, and the test window was run once more. ",
-      el("a", { href: "#method", text: "The full story" }), "."),
+      el("a", { href: route("method"), text: "The full story" }), "."),
     el("p", { class: "note", text: `The model is scored on ${base.n - model.n} fewer matches than the baselines. A newly promoted team's first match can't be predicted when the team has no matches in the data yet (Ipswich in 2024-25, Sunderland in 2025-26).` }));
 
   return el("div", { class: "layout record-block" }, main, notes);
@@ -884,37 +1116,106 @@ function renderFooter(loaded) {
   foot.replaceChildren(
     "Probabilities, not tips. ",
     stamps.length ? `Data generated ${fmtStamp(stamps[stamps.length - 1])}. ` : "",
-    version ? ["Model ", el("span", { class: "num", text: version }), "."] : "");
+    ...(version ? ["Model ", el("span", { class: "num", text: version }), "."] : []));
+}
+
+/* ---------- Router ---------- */
+
+// Guards a renderer so one view's bug can't blank the others.
+function safely(key, target, fn) {
+  try {
+    return fn();
+  } catch (err) {
+    console.error(err);
+    const node = document.getElementById(target);
+    if (node) {
+      node.replaceChildren(el("div", { class: "section-error" },
+        el("p", { text: `${SECTIONS[key].label} couldn't be drawn: ${err.message}. The data loaded, so this is a bug in the page.` })));
+    }
+    return true;
+  }
+}
+
+const VIEW_TITLES = { fixtures: null, table: "Table", teams: "Teams", record: "Record", method: "Method" };
+
+function showView(view) {
+  for (const node of document.querySelectorAll(".view")) node.hidden = node.dataset.view !== view;
+  // A match page sits under Fixtures.
+  const section = view === "match" ? "fixtures" : view;
+  for (const a of document.querySelectorAll("nav a[data-route]")) {
+    if (a.dataset.route === section) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  }
+  if (view !== "match") {
+    document.title = VIEW_TITLES[view] ? `${VIEW_TITLES[view]} · ${SITE_TITLE}` : SITE_TITLE;
+  }
+}
+
+function setRouteMessage(text) {
+  document.getElementById("route-message").replaceChildren(text ? el("p", { text }) : "");
+}
+
+let routed = false;
+
+function applyRoute(loaded, ctx) {
+  const parsed = parseRoute(location.hash);
+  if (parsed.redirect) history.replaceState(null, "", route(parsed.view));
+  let { view } = parsed;
+  let message = parsed.unknown
+    ? `There's no page at “${parsed.unknown}”, so here are this round's fixtures.`
+    : null;
+
+  if (view === "match") {
+    const slug = parsed.params[0];
+    const found = loaded
+      ? safely("match", "match-out", () => renderMatch(loaded, ctx, slug))
+      : (document.getElementById("match-out").replaceChildren(el("p", { class: "loading", text: "Loading match…" })), true);
+    if (!found) {
+      view = "fixtures";
+      message = `There's no upcoming fixture at “${slug}”. Predictions leave this list once a match kicks off, so here are this round's fixtures.`;
+    }
+  }
+  setRouteMessage(message);
+  showView(view);
+
+  // Not on first load: the browser starts at the top, and stealing focus
+  // from the address bar would be unexpected.
+  if (routed && loaded) {
+    window.scrollTo({ top: 0, behavior: "instant" });
+    const heading = document.querySelector(`.view[data-view="${view}"] h1`);
+    if (heading) heading.focus({ preventScroll: true });
+  }
+  if (loaded) routed = true;
 }
 
 /* ---------- Boot ---------- */
 
 async function main() {
+  for (const a of document.querySelectorAll("a[data-route]")) a.setAttribute("href", route(a.dataset.route));
+  document.querySelector(".skip").addEventListener("click", (e) => {
+    // A plain #main would be read as a route.
+    e.preventDefault();
+    document.getElementById("main").focus();
+  });
+  applyRoute(null, null); // show the right view while the data loads
+
   const loaded = await loadAll();
   renderLoadBanner(loaded);
   const ctx = buildContext(loaded);
   const steps = [
     ["fixtures", renderFixtures, "fixture-list"],
+    ["table", renderTable, "table-out"],
     ["explorer", renderExplorer, "pair-out"],
     ["teams", renderTeams, "team-table"],
     ["history", renderHistory, "history-out"],
     ["record", renderRecord, "record-out"],
     ["method", renderMethodNow, "method-now"],
   ];
-  for (const [key, fn, target] of steps) {
-    try {
-      fn(loaded, ctx);
-    } catch (err) {
-      // One section's bug shouldn't blank the rest of the page.
-      console.error(err);
-      const node = document.getElementById(target);
-      if (node) {
-        node.replaceChildren(el("div", { class: "section-error" },
-          el("p", { text: `${SECTIONS[key].label} couldn't be drawn: ${err.message}. The data loaded, so this is a bug in the page.` })));
-      }
-    }
-  }
+  for (const [key, fn, target] of steps) safely(key, target, () => fn(loaded, ctx));
   renderFooter(loaded);
+
+  window.addEventListener("hashchange", () => applyRoute(loaded, ctx));
+  applyRoute(loaded, ctx);
 }
 
 main();

@@ -5,12 +5,19 @@ import pandas as pd
 import pytest
 
 from footy.web.site_data import (
+    SlugCollisionError,
+    check_unique_slugs,
     confidence_level,
+    fixture_detail_payload,
     live_scoreboard,
+    match_slug,
     matrix_payload,
+    predictions_payload,
     relative_improvement,
     round_probabilities,
     scoreboard_payload,
+    slugify,
+    standings_payload,
     teams_payload,
     top_scores,
 )
@@ -191,3 +198,150 @@ def test_scoreboard_publishes_improvement_and_uniform_reference():
     backtest = scoreboard_payload(_stored([]), "t")["backtest"]
     assert backtest["improvement_over_league_average"] == pytest.approx(0.0528, abs=1e-4)
     assert backtest["uniform_log_loss"] == pytest.approx(math.log(3), abs=1e-4)
+
+
+# ---------- Slugs ----------
+
+@pytest.mark.parametrize(
+    "name, slug",
+    [("Leeds United", "leeds-united"), ("Arsenal", "arsenal"), ("Man City", "man-city"),
+     ("Brighton Hove", "brighton-hove"), ("Nott'm Forest", "nott-m-forest"),
+     ("Brighton & Hove Albion", "brighton-hove-albion")],
+)
+def test_slugify(name, slug):
+    assert slugify(name) == slug
+
+
+def test_match_slug_is_home_then_away():
+    assert match_slug("Arsenal", "Leeds United") == "arsenal-leeds-united"
+    assert match_slug("Leeds United", "Arsenal") == "leeds-united-arsenal"
+
+
+def test_check_unique_slugs_raises_on_collision():
+    # "Man" v "City Hull" and "Man City" v "Hull" join to the same slug:
+    # the case the build guards against.
+    slugs = [match_slug("Man", "City Hull"), match_slug("Man City", "Hull")]
+    with pytest.raises(SlugCollisionError, match="man-city-hull"):
+        check_unique_slugs(slugs, "pairing")
+
+
+def test_payloads_carry_slugs():
+    matches = _toy_matches()
+    model, _ = fit_production_model(matches)
+    pairings = matrix_payload(model, matches, ["A", "B", "C", "D"], "t")["pairings"]
+    assert all(p["slug"] == match_slug(p["home"], p["away"]) for p in pairings)
+    teams = teams_payload(model, matches, ["A", "B"], "2026-27", "t")["teams"]
+    assert [t["slug"] for t in teams] == ["a", "b"]
+
+
+def _stored_upcoming(rows):
+    columns = ["match_date", "home", "away", "p_home", "p_draw", "p_away",
+               "most_likely_home", "most_likely_away", "model_version",
+               "created_at", "scored_at"]
+    return pd.DataFrame([(*r, 0.5, 0.3, 0.2, 1, 0, "v", "2026-10-01T00:00:00Z", None)
+                         for r in rows], columns=columns)
+
+
+def test_predictions_payload_slug():
+    stored = _stored_upcoming([("2026-10-10T14:00:00Z", "Arsenal", "Leeds United")])
+    pred = predictions_payload(stored, "2026-10-02T00:00:00Z")["predictions"][0]
+    assert pred["slug"] == "arsenal-leeds-united"
+
+
+# ---------- Standings ----------
+
+def _match(date, home, away, hg, ag, season="2026-27"):
+    return {"season": season, "date": pd.Timestamp(date), "home": home, "away": away,
+            "home_goals": hg, "away_goals": ag}
+
+
+def test_standings_identities_hold_for_every_team():
+    matches = _toy_matches()
+    table = standings_payload(matches, ["A", "B", "C", "D"], "2026-27", "t")["standings"]
+    assert len(table) == 4
+    for row in table:
+        assert row["points"] == 3 * row["won"] + row["drawn"]
+        assert row["played"] == row["won"] + row["drawn"] + row["lost"]
+        assert row["goal_difference"] == row["goals_for"] - row["goals_against"]
+    assert sum(r["goals_for"] for r in table) == sum(r["goals_against"] for r in table)
+    assert [r["position"] for r in table] == [1, 2, 3, 4]
+
+
+def test_standings_sorted_by_points_then_goal_difference_then_goals_for():
+    matches = pd.DataFrame([
+        # A and B both 3 points, GD +1; B scored more. C 3 points, GD +2.
+        _match("2026-08-16", "A", "D", 1, 0),
+        _match("2026-08-16", "B", "E", 3, 2),
+        _match("2026-08-16", "C", "F", 2, 0),
+        # G: 4 points from two matches, tops the table.
+        _match("2026-08-09", "G", "H", 1, 1),
+        _match("2026-08-23", "H", "G", 0, 1),
+        # Last season's results don't count.
+        _match("2026-03-01", "D", "A", 9, 0, season="2025-26"),
+    ])
+    payload = standings_payload(matches, list("ABCDEFGH"), "2026-27", "t")
+    order = [r["team"] for r in payload["standings"]]
+    assert order[:4] == ["G", "C", "B", "A"]
+    a = next(r for r in payload["standings"] if r["team"] == "A")
+    assert (a["played"], a["won"], a["goals_for"], a["goals_against"]) == (1, 1, 1, 0)
+    assert payload["matchday"] == 2
+    assert payload["season"] == "2026-27"
+
+
+def test_standings_include_teams_yet_to_play_and_mark_confidence():
+    matches = _toy_matches()
+    table = standings_payload(matches, ["A", "B", "C", "D", "Z"], "2026-27", "t")["standings"]
+    z = next(r for r in table if r["team"] == "Z")
+    assert (z["played"], z["points"], z["position"]) == (0, 0, 5)
+    assert z["confidence"] == "low"
+    a = next(r for r in table if r["team"] == "A")
+    assert (a["matches_in_training"], a["confidence"]) == (36, "high")
+
+
+def test_standings_empty_season():
+    payload = standings_payload(_toy_matches(), ["A", "B"], "2030-31", "t")
+    assert payload["matchday"] == 0
+    assert all(r["played"] == 0 for r in payload["standings"])
+
+
+# ---------- Fixture detail ----------
+
+def _history():
+    return pd.DataFrame([
+        _match("2024-09-01", "A", "B", 2, 0, "2024-25"),
+        _match("2025-02-01", "B", "A", 1, 1, "2024-25"),
+        _match("2025-09-01", "B", "A", 3, 1, "2025-26"),
+        _match("2025-10-01", "A", "C", 0, 1, "2025-26"),
+        _match("2026-10-10", "A", "B", 5, 0, "2026-27"),  # the fixture's own day
+    ])
+
+
+def test_head_to_head_from_home_perspective_most_recent_first():
+    preds = [{"slug": "a-b", "home": "A", "away": "B", "kickoff": "2026-10-10T14:00:00Z"}]
+    h2h = fixture_detail_payload(preds, _history(), "t")["fixtures"]["a-b"]["head_to_head"]
+    assert h2h["perspective"] == "A"
+    assert [m["date"] for m in h2h["meetings"]] == ["2025-09-01", "2025-02-01", "2024-09-01"]
+    assert [m["result"] for m in h2h["meetings"]] == ["L", "D", "W"]
+    assert (h2h["played"], h2h["won"], h2h["drawn"], h2h["lost"]) == (3, 1, 1, 1)
+
+
+def test_head_to_head_empty_when_never_met():
+    preds = [{"slug": "b-c", "home": "B", "away": "C", "kickoff": "2026-10-10T14:00:00Z"}]
+    h2h = fixture_detail_payload(preds, _history(), "t")["fixtures"]["b-c"]["head_to_head"]
+    assert h2h["played"] == 0 and h2h["meetings"] == []
+
+
+def test_recent_results_capped_newest_first_and_before_kickoff():
+    rows = [_match(pd.Timestamp("2025-08-01") + pd.Timedelta(days=7 * i), "A", "B", i % 3, 1)
+            for i in range(14)]
+    rows.append(_match("2026-10-10", "A", "B", 9, 9))  # kickoff day: excluded
+    preds = [{"slug": "b-a", "home": "B", "away": "A", "kickoff": "2026-10-10T14:00:00Z"}]
+    recent = fixture_detail_payload(preds, pd.DataFrame(rows), "t")["fixtures"]["b-a"]["recent"]
+    assert len(recent["home"]) == 10
+    dates = [r["date"] for r in recent["away"]]
+    assert dates == sorted(dates, reverse=True)
+    assert "2026-10-10" not in dates
+    latest = recent["away"][0]  # i = 13: A 1-1 B at home
+    assert (latest["opponent"], latest["venue"], latest["goals_for"],
+            latest["goals_against"], latest["result"]) == ("B", "home", 1, 1, "D")
+    assert recent["home"][0]["venue"] == "away"

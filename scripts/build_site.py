@@ -13,10 +13,12 @@ from footy.data.training import load_all_matches
 from footy.production import fit_production_model
 from footy.store import load_predictions, utc_now
 from footy.web.site_data import (
+    fixture_detail_payload,
     history_payload,
     matrix_payload,
     predictions_payload,
     scoreboard_payload,
+    standings_payload,
     teams_payload,
 )
 
@@ -32,12 +34,17 @@ model, degenerate = fit_production_model(matches)
 for message in degenerate:
     print(f"WARNING DegenerateFitWarning: {message}")
 
+predictions = predictions_payload(stored, generated_at)
+season = current_season()
 payloads = {
-    "predictions.json": predictions_payload(stored, generated_at),
+    "predictions.json": predictions,
     "matrix.json": matrix_payload(model, matches, teams, generated_at),
-    "teams.json": teams_payload(model, matches, teams, current_season(), generated_at),
+    "teams.json": teams_payload(model, matches, teams, season, generated_at),
     "history.json": history_payload(matches, generated_at),
     "scoreboard.json": scoreboard_payload(stored, generated_at),
+    "standings.json": standings_payload(matches, teams, season, generated_at),
+    "fixture_detail.json": fixture_detail_payload(
+        predictions["predictions"], matches, generated_at),
 }
 
 OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -49,6 +56,6 @@ for name, payload in payloads.items():
               f"{HISTORY_SIZE_LIMIT // 1024} KB; trim before shipping")
         continue
     (OUT_DIR / name).write_text(text)
-    print(f"wrote {name:<16} {size / 1024:7.1f} KB")
+    print(f"wrote {name:<20} {size / 1024:7.1f} KB")
 
 print(f"\n{len(degenerate)} DegenerateFitWarning(s)")

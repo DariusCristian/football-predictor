@@ -5,6 +5,9 @@ does the fetching and writing. Probabilities are published to 4
 decimals, rounded as a triple so each still sums to exactly 1.
 """
 
+import re
+from collections import Counter
+
 import numpy as np
 import pandas as pd
 
@@ -49,13 +52,42 @@ def _probs(p_home: float, p_draw: float, p_away: float) -> dict:
     return {"home": home, "draw": draw, "away": away}
 
 
+def slugify(name: str) -> str:
+    """'Leeds United' -> 'leeds-united'.
+
+    Lowercase, spaces to hyphens. Any other run of characters outside
+    a-z and 0-9 also becomes one hyphen, so a future name with an
+    apostrophe or ampersand still gives a clean URL segment; no current
+    team name has one.
+    """
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
+
+def match_slug(home: str, away: str) -> str:
+    """'arsenal-leeds-united' for Arsenal at home to Leeds United."""
+    return f"{slugify(home)}-{slugify(away)}"
+
+
+class SlugCollisionError(ValueError):
+    pass
+
+
+def check_unique_slugs(slugs: list[str], what: str) -> None:
+    """Raise if two entries share a slug; the site would show the wrong one."""
+    repeated = sorted(slug for slug, n in Counter(slugs).items() if n > 1)
+    if repeated:
+        raise SlugCollisionError(f"duplicate {what} slugs: {', '.join(repeated)}")
+
+
 def predictions_payload(stored: pd.DataFrame, generated_at: str) -> dict:
     """Committed predictions for matches not yet kicked off."""
     upcoming = stored[stored["scored_at"].isna() & (stored["match_date"] >= generated_at)]
+    check_unique_slugs([match_slug(r.home, r.away) for r in upcoming.itertuples()], "prediction")
     return {
         "generated_at": generated_at,
         "predictions": [
             {
+                "slug": match_slug(row.home, row.away),
                 "kickoff": row.match_date,
                 "home": row.home,
                 "away": row.away,
@@ -131,6 +163,7 @@ def matrix_payload(
             p = model.predict(home, away)
             pairings.append(
                 {
+                    "slug": match_slug(home, away),
                     "home": home,
                     "away": away,
                     "probabilities": _probs(p["home_win"], p["draw"], p["away_win"]),
@@ -144,6 +177,7 @@ def matrix_payload(
                                       key=CONFIDENCE_ORDER.index),
                 }
             )
+    check_unique_slugs([p["slug"] for p in pairings], "pairing")
     return {
         "generated_at": generated_at,
         "model_version": MODEL_VERSION,
@@ -183,9 +217,11 @@ def _team_matches(matches: pd.DataFrame, team: str) -> pd.DataFrame:
     return pd.concat(
         [
             pd.DataFrame({"date": home["date"], "season": home["season"],
+                          "opponent": home["away"], "venue": "home",
                           "goals_for": home["home_goals"],
                           "goals_against": home["away_goals"]}),
             pd.DataFrame({"date": away["date"], "season": away["season"],
+                          "opponent": away["home"], "venue": "away",
                           "goals_for": away["away_goals"],
                           "goals_against": away["home_goals"]}),
         ]
@@ -199,6 +235,7 @@ def teams_payload(
     current_season: str,
     generated_at: str,
 ) -> dict:
+    check_unique_slugs([slugify(t) for t in teams], "team")
     coefficients = team_coefficients(model)
     # Display only: centre on the mean over the published teams. A shift,
     # so rankings and predictions are unchanged; 0 now means league average.
@@ -210,6 +247,7 @@ def teams_payload(
         season = played[played["season"] == current_season]
         entry = {
             "name": team,
+            "slug": slugify(team),
             "attack": round(coefficients[team]["attack"], DECIMALS),
             "defence": round(coefficients[team]["defence"], DECIMALS),
             "attack_centred": round(coefficients[team]["attack"] - mean_attack, DECIMALS),
@@ -267,6 +305,143 @@ def history_payload(matches: pd.DataFrame, generated_at: str) -> dict:
             }
             for m in matches.itertuples()
         ],
+    }
+
+
+def standings_payload(
+    matches: pd.DataFrame, teams: list[str], current_season: str, generated_at: str
+) -> dict:
+    """The current-season league table from completed matches.
+
+    Sorted by points, then goal difference, then goals scored; teams level
+    on all three are listed alphabetically and still get distinct
+    positions (the league's own head-to-head tiebreaks aren't applied).
+    matches_in_training and confidence come from every match in the
+    data, as in teams_payload, so promoted teams can be marked.
+    """
+    season = matches[matches["season"] == current_season]
+    names = sorted(set(teams) | set(season["home"]) | set(season["away"]))
+    evidence = matches_in_training(matches, names)
+    rows = []
+    for team in names:
+        played = _team_matches(season, team)
+        won = int((played["goals_for"] > played["goals_against"]).sum())
+        drawn = int((played["goals_for"] == played["goals_against"]).sum())
+        lost = int((played["goals_for"] < played["goals_against"]).sum())
+        goals_for = int(played["goals_for"].sum())
+        goals_against = int(played["goals_against"].sum())
+        rows.append({
+            "team": team,
+            "slug": slugify(team),
+            "played": len(played),
+            "won": won,
+            "drawn": drawn,
+            "lost": lost,
+            "goals_for": goals_for,
+            "goals_against": goals_against,
+            "goal_difference": goals_for - goals_against,
+            "points": 3 * won + drawn,
+            "matches_in_training": evidence[team],
+            "confidence": confidence_level(evidence[team]),
+        })
+    rows.sort(key=lambda r: (-r["points"], -r["goal_difference"], -r["goals_for"], r["team"]))
+    return {
+        "generated_at": generated_at,
+        "season": current_season,
+        # No matchday field in the match data: the most matches any team
+        # has played. Equal to the matchday when the round is complete.
+        "matchday": max((r["played"] for r in rows), default=0),
+        "notes": {
+            "order": ("Points, then goal difference, then goals scored; "
+                      "teams level on all three are listed alphabetically."),
+            "matchday": "The most league matches played by any team so far.",
+            "confidence": "From matches_in_training, as in teams.json.",
+        },
+        "standings": [{"position": i, **row} for i, row in enumerate(rows, start=1)],
+    }
+
+
+# Results shown per team on a match page.
+RECENT_RESULTS = 10
+
+
+def _recent_results(before: pd.DataFrame, team: str, k: int = RECENT_RESULTS) -> list[dict]:
+    """A team's last k results, most recent first, from its perspective."""
+    played = _team_matches(before, team).tail(k).iloc[::-1]
+    return [
+        {
+            "date": m.date.strftime("%Y-%m-%d"),
+            "season": m.season,
+            "opponent": m.opponent,
+            "venue": m.venue,
+            "goals_for": int(m.goals_for),
+            "goals_against": int(m.goals_against),
+            "result": _result_letter(m.goals_for, m.goals_against),
+        }
+        for m in played.itertuples()
+    ]
+
+
+def _head_to_head(before: pd.DataFrame, home: str, away: str) -> dict:
+    """Every earlier meeting at either venue, most recent first.
+
+    result and the totals are from home's perspective: home is the team
+    at home in the upcoming fixture, not in each past meeting.
+    """
+    meetings = before[((before["home"] == home) & (before["away"] == away))
+                      | ((before["home"] == away) & (before["away"] == home))]
+    meetings = meetings.sort_values("date", ascending=False, kind="stable")
+    rows = []
+    for m in meetings.itertuples():
+        home_for, home_against = ((m.home_goals, m.away_goals) if m.home == home
+                                  else (m.away_goals, m.home_goals))
+        rows.append({
+            "date": m.date.strftime("%Y-%m-%d"),
+            "season": m.season,
+            "home": m.home,
+            "away": m.away,
+            "home_goals": int(m.home_goals),
+            "away_goals": int(m.away_goals),
+            "result": _result_letter(home_for, home_against),
+        })
+    letters = [r["result"] for r in rows]
+    return {
+        "perspective": home,
+        "played": len(rows),
+        "won": letters.count("W"),
+        "drawn": letters.count("D"),
+        "lost": letters.count("L"),
+        "meetings": rows,
+    }
+
+
+def fixture_detail_payload(
+    predictions: list[dict], matches: pd.DataFrame, generated_at: str
+) -> dict:
+    """Recent form and head-to-head for each upcoming fixture, by slug.
+
+    predictions are predictions_payload entries. Only matches dated
+    before the kickoff day count, so nothing from the fixture itself or
+    after it can appear.
+    """
+    fixtures = {}
+    for p in predictions:
+        before = matches[matches["date"] < pd.Timestamp(p["kickoff"][:10])]
+        fixtures[p["slug"]] = {
+            "home": p["home"],
+            "away": p["away"],
+            "kickoff": p["kickoff"],
+            "recent": {
+                "home": _recent_results(before, p["home"]),
+                "away": _recent_results(before, p["away"]),
+            },
+            "head_to_head": _head_to_head(before, p["home"], p["away"]),
+        }
+    return {
+        "generated_at": generated_at,
+        "data_starts": matches["date"].min().strftime("%Y-%m-%d") if len(matches) else None,
+        "recent_results": RECENT_RESULTS,
+        "fixtures": fixtures,
     }
 
 
