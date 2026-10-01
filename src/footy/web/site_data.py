@@ -8,7 +8,7 @@ decimals, rounded as a triple so each still sums to exactly 1.
 import numpy as np
 import pandas as pd
 
-from footy.model.poisson import PoissonModel
+from footy.model.poisson import PoissonModel, dixon_coles_correction, score_matrix
 from footy.model.scoring import log_loss
 from footy.production import MODEL_VERSION
 
@@ -87,6 +87,30 @@ def matches_in_training(training: pd.DataFrame, teams: list[str]) -> dict[str, i
     return {team: int(counts.get(team, 0)) for team in teams}
 
 
+# Scorelines published per pairing, likeliest first.
+TOP_SCORES = 10
+
+
+def top_scores(model: PoissonModel, home: str, away: str, k: int = TOP_SCORES) -> list[dict]:
+    """The k likeliest scorelines, from the matrix model.predict() sums.
+
+    Built the way PoissonModel.predict builds it (score_matrix, then the
+    Dixon-Coles step, which also normalises), so the site displays these
+    rather than recomputing Poisson maths in JavaScript. Ties break on
+    fewer home goals, then fewer away goals, so output is deterministic.
+    """
+    home_rate = model.expected_goals(home, away, at_home=True)
+    away_rate = model.expected_goals(away, home, at_home=False)
+    matrix = dixon_coles_correction(
+        score_matrix(home_rate, away_rate), home_rate, away_rate, model.rho
+    )
+    cells = sorted(np.ndindex(matrix.shape), key=lambda ij: (-matrix[ij], ij))[:k]
+    return [
+        {"home": int(i), "away": int(j), "p": round(float(matrix[i, j]), DECIMALS)}
+        for i, j in cells
+    ]
+
+
 def matrix_payload(
     model: PoissonModel, training: pd.DataFrame, teams: list[str], generated_at: str
 ) -> dict:
@@ -115,6 +139,7 @@ def matrix_payload(
                         "away": round(p["away_rate"], DECIMALS),
                     },
                     "most_likely_score": list(p["most_likely_score"]),
+                    "top_scores": top_scores(model, home, away),
                     "confidence": min(levels[home], levels[away],
                                       key=CONFIDENCE_ORDER.index),
                 }
@@ -189,6 +214,11 @@ def teams_payload(
             "defence": round(coefficients[team]["defence"], DECIMALS),
             "attack_centred": round(coefficients[team]["attack"] - mean_attack, DECIMALS),
             "defence_centred": round(coefficients[team]["defence"] - mean_defence, DECIMALS),
+            # exp(centred): goals scored / conceded relative to league average.
+            "attack_multiplier": round(
+                float(np.exp(coefficients[team]["attack"] - mean_attack)), DECIMALS),
+            "defence_multiplier": round(
+                float(np.exp(coefficients[team]["defence"] - mean_defence)), DECIMALS),
             "matches_in_training": len(played),
             "confidence": confidence_level(len(played)),
             "season_matches": len(season),
@@ -211,7 +241,8 @@ def teams_payload(
                 f"({min(model.teams)}, 0 for both). Higher attack scores more; "
                 "higher defence concedes more. attack_centred and "
                 "defence_centred subtract the mean across the teams listed "
-                "here, so 0 is league average."
+                "here, so 0 is league average. The _multiplier fields are "
+                "exp(centred): 1.2 means 20% more goals than league average."
             ),
             "confidence": (
                 "From matches_in_training: low under 10, medium 10-25, high above 25."
@@ -252,9 +283,25 @@ def live_scoreboard(stored: pd.DataFrame) -> dict:
     return live
 
 
+def relative_improvement(backtest: dict, model: str = "poisson",
+                         baseline: str = "league_average") -> float:
+    """Fractional log-loss reduction of model against baseline."""
+    loss = {m["model"]: m["log_loss"] for m in backtest["models"]}
+    return 1 - loss[model] / loss[baseline]
+
+
+# Log loss of guessing 1/3 for every outcome: a fixed reference, not a model.
+UNIFORM_LOG_LOSS = round(float(np.log(3)), DECIMALS)
+
+
 def scoreboard_payload(stored: pd.DataFrame, generated_at: str) -> dict:
     return {
         "generated_at": generated_at,
-        "backtest": BACKTEST_RESULT,
+        "backtest": {
+            **BACKTEST_RESULT,
+            "improvement_over_league_average": round(
+                relative_improvement(BACKTEST_RESULT), DECIMALS),
+            "uniform_log_loss": UNIFORM_LOG_LOSS,
+        },
         "live": live_scoreboard(stored),
     }

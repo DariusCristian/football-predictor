@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Premier League Probabilities</title>
+<meta name="description" content="Premier League match probabilities from a Poisson model, recorded before kickoff, with sample size shown next to every number.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#fixtures">Skip to fixtures</a>
+
+<!-- Shared hatch masks for strips drawn from thin evidence. Not display:none:
+     some browsers drop patterns defined inside an undisplayed SVG. -->
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="hatch-low" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="3.5" height="9" fill="#fff"/>
+    </pattern>
+    <pattern id="hatch-medium" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="6.5" height="9" fill="#fff"/>
+    </pattern>
+    <mask id="mask-low" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="40">
+      <rect width="1000" height="40" fill="url(#hatch-low)"/>
+    </mask>
+    <mask id="mask-medium" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="40">
+      <rect width="1000" height="40" fill="url(#hatch-medium)"/>
+    </mask>
+  </defs>
+</svg>
+
+<header class="masthead">
+  <p class="site-name">Premier League probabilities</p>
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#fixtures">Fixtures</a></li>
+      <li><a href="#explorer">Head-to-head</a></li>
+      <li><a href="#teams">Teams</a></li>
+      <li><a href="#history">Team history</a></li>
+      <li><a href="#record">Record</a></li>
+      <li><a href="#method">Method</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div id="load-errors" class="load-errors" role="alert" hidden></div>
+
+<main>
+  <section id="fixtures" class="section" aria-labelledby="fixtures-h">
+    <div class="layout">
+      <div class="col-main">
+        <h1 id="fixtures-h">Next round</h1>
+        <div id="intro" class="intro"><p class="loading">Loading predictions…</p></div>
+        <div id="key" class="key" hidden></div>
+      </div>
+    </div>
+    <div id="fixture-list" class="fixture-list"></div>
+  </section>
+
+  <section id="explorer" class="section" aria-labelledby="explorer-h">
+    <div class="layout">
+      <div class="col-main">
+        <h2 id="explorer-h">Head-to-head</h2>
+        <p class="lede">Pick any two teams in this season's league. The numbers are the current model's view of that fixture, not a recorded prediction.</p>
+        <form id="pair-form" class="pair-form" hidden>
+          <label>Home <select id="pick-home"></select></label>
+          <button type="button" id="swap" class="text-button">Swap</button>
+          <label>Away <select id="pick-away"></select></label>
+        </form>
+      </div>
+    </div>
+    <div id="pair-out" aria-live="polite"></div>
+  </section>
+
+  <section id="teams" class="section" aria-labelledby="teams-h">
+    <div class="layout">
+      <div class="col-main">
+        <h2 id="teams-h">Teams</h2>
+        <p class="lede">How the model rates each side, as multiples of a league-average team. 1 means average. Ratings come from every match in the training data, not just this season, so they are only as solid as the match count beside them.</p>
+      </div>
+    </div>
+    <div id="team-table"></div>
+  </section>
+
+  <section id="history" class="section" aria-labelledby="history-h">
+    <div class="layout">
+      <div class="col-main">
+        <h2 id="history-h" tabindex="-1">Team history</h2>
+        <p class="lede">Premier League results from 2021-22 onwards: the matches the model learned from.</p>
+        <form id="history-form" class="pair-form" hidden>
+          <label>Team <select id="pick-team"></select></label>
+        </form>
+        <div id="history-out" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="record" class="section" aria-labelledby="record-h">
+    <div class="layout">
+      <div class="col-main"><h2 id="record-h">Record</h2></div>
+    </div>
+    <div id="record-out"></div>
+  </section>
+
+  <section id="method" class="section" aria-labelledby="method-h">
+    <div class="layout">
+      <div class="col-main prose">
+        <h2 id="method-h">Method</h2>
+
+        <h3>What the model does</h3>
+        <p>Each team gets two ratings: how many goals it tends to score (attack) and how many it tends to let in (defence). There is also one shared boost for playing at home. The ratings are fitted to every Premier League match since August 2021 using Poisson regression. For a fixture, the model turns the two teams' ratings into expected goals for each side, works out the chance of every scoreline, and adds those up into home win, draw and away win.</p>
+        <p>It knows results and nothing else: no injuries, transfers, managers or fixture congestion.</p>
+
+        <h3>The rule it never breaks</h3>
+        <p>A prediction only ever uses matches played before it. When the model is tested on past seasons, it predicts them a week at a time, refitting as it goes, as though later matches hadn't happened yet. Live predictions are written to a store before kickoff and are never edited afterwards.</p>
+
+        <h3>How it was tested</h3>
+        <p>The matches were split three ways. Training data fits the ratings. A validation season (2023-24) is used to choose between versions of the model. A test window (2024-25 and 2025-26) is kept aside to measure the finished model, and nothing is chosen by looking at it.</p>
+        <p>The score is <dfn>log loss</dfn>: how surprised the model was by what actually happened. Being confident and wrong is punished hard. Lower is better. The baseline to beat predicts the league's overall home, draw and away rates for every match, ignoring who is playing.</p>
+
+        <h3>Four changes tried, one adopted</h3>
+        <dl class="ledger-list">
+          <dt>Time weighting <span class="verdict">rejected</span></dt>
+          <dd>Counting recent matches more heavily. Validation preferred no weighting. It had only looked helpful when it was tuned and measured on the same matches.</dd>
+          <dt>Dixon–Coles adjustment <span class="verdict">rejected</span></dt>
+          <dd>A correction that adds draws and low scores. The best setting on validation was zero, meaning no correction. The draw shortage that prompted it appeared in the test window and not in validation.</dd>
+          <dt>Recalibration <span class="verdict">rejected</span></dt>
+          <dd>Pulling confident probabilities towards the middle. The overconfidence it was meant to fix showed up in the test window but didn't recur in validation. With about 100 predictions per probability band, those gaps were within noise.</dd>
+          <dt>Ridge regularisation <span class="verdict verdict-adopted">adopted, as a correctness fix</span></dt>
+          <dd>A small penalty that stops ratings running off to extremes. Without it, a newly promoted team that hadn't scored in its first few matches got an attack rating heading towards minus infinity, and the model gave outcomes that then happened odds of about 1 in 10 billion. The strength was chosen on validation, where it cost 0.0002 in log loss. It wasn't adopted to improve accuracy, and on validation it didn't.</dd>
+        </dl>
+        <p>Separately, expected-goals (xG) data was considered as an extra input. No freely licensed Premier League xG source was found, so the model doesn't use it.</p>
+
+        <h3>The headline number, and why it moved</h3>
+        <ol class="trajectory">
+          <li><span class="num">5.4%</span> Time weighting tuned and reported on the same matches. Not a fair test: most of that apparent gain was the result of choosing a setting and then grading it on the same games.</li>
+          <li><span class="num">0.9%</span> The first held-out test. The test window had been left open, so live 2026-27 matches leaked in and the set changed on every run. Withdrawn.</li>
+          <li><span class="num">3.1%</span> The test window frozen at 758 matches. One impossible prediction dominated: Burnley v Sunderland, with a Burnley win given about 1 in 10 billion. Burnley won.</li>
+          <li><span class="num">5.3%</span> The second, and final, run on the test window, after ridge regularisation was chosen on validation. Almost all of the change is that one impossible prediction becoming merely a poor one. The model isn't any better at football than in the 3.1% run; the number is just no longer distorted.</li>
+        </ol>
+
+        <h3>Where it is weakest: newly promoted teams</h3>
+        <p>A team with only a handful of Premier League matches in the data gets ratings that take those few results at face value. Regularisation stops them running to infinity, but it pulls them towards the reference team (Arsenal, first alphabetically), not towards an average side, so a promoted team's flattering defence can look even better than it should.</p>
+        <p id="method-now"></p>
+        <p>The proper fix is a hierarchical prior, which pulls each team towards the league average in proportion to how little data it has. That isn't built. Until it is, this site shows the match count beside every team and marks predictions that depend on thin evidence with <span class="dagger-inline">†</span> and hatching.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p id="footer-meta">Probabilities, not tips.</p>
+</footer>
+</body>
+</html>

@@ -8,9 +8,11 @@ from footy.web.site_data import (
     confidence_level,
     live_scoreboard,
     matrix_payload,
+    relative_improvement,
     round_probabilities,
     scoreboard_payload,
     teams_payload,
+    top_scores,
 )
 from footy.production import fit_production_model
 
@@ -138,3 +140,54 @@ def test_centred_coefficients_average_zero_and_preserve_order():
         assert sum(t[centred] for t in teams) == pytest.approx(0, abs=1e-3)
         diffs = {round(t[raw] - t[centred], 3) for t in teams}
         assert len(diffs) == 1  # a constant shift
+
+
+def test_top_scores_agree_with_predict():
+    """top_scores rebuilds predict()'s matrix; pin the two together."""
+    model, _ = fit_production_model(_toy_matches())
+    cells = 11 * 11
+    tolerance = cells * 0.5 * 10**-4  # worst case: every cell rounded to 4 dp
+    for home, away in [("A", "B"), ("C", "D"), ("D", "A")]:
+        p = model.predict(home, away)
+        everything = top_scores(model, home, away, k=cells)
+        assert (everything[0]["home"], everything[0]["away"]) == p["most_likely_score"]
+        assert sum(c["p"] for c in everything) == pytest.approx(1.0, abs=tolerance)
+        home_win = sum(c["p"] for c in everything if c["home"] > c["away"])
+        draw = sum(c["p"] for c in everything if c["home"] == c["away"])
+        assert home_win == pytest.approx(p["home_win"], abs=tolerance)
+        assert draw == pytest.approx(p["draw"], abs=tolerance)
+
+
+def test_top_scores_sorted_and_sized():
+    model, _ = fit_production_model(_toy_matches())
+    scores = top_scores(model, "A", "B")
+    assert len(scores) == 10
+    assert len({(c["home"], c["away"]) for c in scores}) == 10
+    ps = [c["p"] for c in scores]
+    assert ps == sorted(ps, reverse=True)
+
+
+def test_matrix_pairings_carry_top_scores():
+    model, _ = fit_production_model(_toy_matches())
+    pairing = matrix_payload(model, _toy_matches(), ["A", "B"], "t")["pairings"][0]
+    assert pairing["top_scores"] == top_scores(model, "A", "B")
+
+
+def test_multipliers_are_exp_of_centred():
+    matches = _toy_matches()
+    model, _ = fit_production_model(matches)
+    for team in teams_payload(model, matches, ["A", "B", "C", "D"], "2026-27", "t")["teams"]:
+        assert team["attack_multiplier"] == pytest.approx(math.exp(team["attack_centred"]), abs=1e-3)
+        assert team["defence_multiplier"] == pytest.approx(math.exp(team["defence_centred"]), abs=1e-3)
+
+
+def test_relative_improvement_matches_headline():
+    backtest = {"models": [{"model": "poisson", "log_loss": 1.0260},
+                           {"model": "league_average", "log_loss": 1.0832}]}
+    assert relative_improvement(backtest) == pytest.approx(0.0528, abs=1e-4)
+
+
+def test_scoreboard_publishes_improvement_and_uniform_reference():
+    backtest = scoreboard_payload(_stored([]), "t")["backtest"]
+    assert backtest["improvement_over_league_average"] == pytest.approx(0.0528, abs=1e-4)
+    assert backtest["uniform_log_loss"] == pytest.approx(math.log(3), abs=1e-4)
