@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-10-02T08:06:55Z",
+  "backtest": {
+    "window_start": "2024-08-01",
+    "window_end": "2026-06-30",
+    "config": "unweighted, rho=0, alpha=1e-5",
+    "models": [
+      {
+        "model": "poisson",
+        "n": 758,
+        "log_loss": 1.026
+      },
+      {
+        "model": "league_average",
+        "n": 760,
+        "log_loss": 1.0832
+      },
+      {
+        "model": "always_home",
+        "n": 760,
+        "log_loss": 1.7901
+      }
+    ],
+    "improvement_over_league_average": 0.0528,
+    "uniform_log_loss": 1.0986
+  },
+  "live": {
+    "n": 0
+  }
+}

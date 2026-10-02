@@ -19,3 +19,10 @@ predictions before matches, and scores them afterwards against baselines.
 ## Working style
 - Explain design choices before implementing
 - Write tests alongside code, especially for probability math
+
+## Deploying
+- The static site in site/ is built with `python scripts/build_site.py`,
+  which writes site/data/*.json
+- The generated JSON is committed (not gitignored) so GitHub Pages can serve it
+- Pushing to main deploys site/ via .github/workflows/deploy.yml; the
+  workflow runs no Python, so rebuild and commit the JSON before pushing

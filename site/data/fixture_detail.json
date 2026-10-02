@@ -1,0 +1,2419 @@
+{
+  "generated_at": "2026-10-02T08:06:55Z",
+  "data_starts": "2021-08-13",
+  "recent_results": 10,
+  "fixtures": {
+    "arsenal-leeds-united": {
+      "home": "Arsenal",
+      "away": "Leeds United",
+      "kickoff": "2026-10-10T11:30:00Z",
+      "recent": {
+        "home": [
+          {
+            "date": "2026-09-19",
+            "season": "2026-27",
+            "opponent": "Brighton Hove",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Sunderland",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-06",
+            "season": "2026-27",
+            "opponent": "Chelsea",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-08-31",
+            "season": "2026-27",
+            "opponent": "Aston Villa",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-08-21",
+            "season": "2026-27",
+            "opponent": "Coventry City",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Crystal Palace",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-18",
+            "season": "2025-26",
+            "opponent": "Burnley",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-10",
+            "season": "2025-26",
+            "opponent": "West Ham",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-02",
+            "season": "2025-26",
+            "opponent": "Fulham",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-04-25",
+            "season": "2025-26",
+            "opponent": "Newcastle",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          }
+        ],
+        "away": [
+          {
+            "date": "2026-09-20",
+            "season": "2026-27",
+            "opponent": "Crystal Palace",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "D"
+          },
+          {
+            "date": "2026-09-14",
+            "season": "2026-27",
+            "opponent": "Newcastle",
+            "venue": "home",
+            "goals_for": 4,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Brighton Hove",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-30",
+            "season": "2026-27",
+            "opponent": "Brentford",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-22",
+            "season": "2026-27",
+            "opponent": "Nottingham",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "West Ham",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-17",
+            "season": "2025-26",
+            "opponent": "Brighton Hove",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-11",
+            "season": "2025-26",
+            "opponent": "Tottenham",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-01",
+            "season": "2025-26",
+            "opponent": "Burnley",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-04-22",
+            "season": "2025-26",
+            "opponent": "Bournemouth",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          }
+        ]
+      },
+      "head_to_head": {
+        "perspective": "Arsenal",
+        "played": 6,
+        "won": 6,
+        "drawn": 0,
+        "lost": 0,
+        "meetings": [
+          {
+            "date": "2026-01-31",
+            "season": "2025-26",
+            "home": "Leeds United",
+            "away": "Arsenal",
+            "home_goals": 0,
+            "away_goals": 4,
+            "result": "W"
+          },
+          {
+            "date": "2025-08-23",
+            "season": "2025-26",
+            "home": "Arsenal",
+            "away": "Leeds United",
+            "home_goals": 5,
+            "away_goals": 0,
+            "result": "W"
+          },
+          {
+            "date": "2023-04-01",
+            "season": "2022-23",
+            "home": "Arsenal",
+            "away": "Leeds United",
+            "home_goals": 4,
+            "away_goals": 1,
+            "result": "W"
+          },
+          {
+            "date": "2022-10-16",
+            "season": "2022-23",
+            "home": "Leeds United",
+            "away": "Arsenal",
+            "home_goals": 0,
+            "away_goals": 1,
+            "result": "W"
+          },
+          {
+            "date": "2022-05-08",
+            "season": "2021-22",
+            "home": "Arsenal",
+            "away": "Leeds United",
+            "home_goals": 2,
+            "away_goals": 1,
+            "result": "W"
+          },
+          {
+            "date": "2021-12-18",
+            "season": "2021-22",
+            "home": "Leeds United",
+            "away": "Arsenal",
+            "home_goals": 1,
+            "away_goals": 4,
+            "result": "W"
+          }
+        ]
+      }
+    },
+    "aston-villa-brentford": {
+      "home": "Aston Villa",
+      "away": "Brentford",
+      "kickoff": "2026-10-10T14:00:00Z",
+      "recent": {
+        "home": [
+          {
+            "date": "2026-09-19",
+            "season": "2026-27",
+            "opponent": "Tottenham",
+            "venue": "away",
+            "goals_for": 3,
+            "goals_against": 2,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Nottingham",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Hull City",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-31",
+            "season": "2026-27",
+            "opponent": "Arsenal",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2026-08-23",
+            "season": "2026-27",
+            "opponent": "Brighton Hove",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 4,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Man City",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-15",
+            "season": "2025-26",
+            "opponent": "Liverpool",
+            "venue": "home",
+            "goals_for": 4,
+            "goals_against": 2,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-10",
+            "season": "2025-26",
+            "opponent": "Burnley",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-03",
+            "season": "2025-26",
+            "opponent": "Tottenham",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-04-25",
+            "season": "2025-26",
+            "opponent": "Fulham",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          }
+        ],
+        "away": [
+          {
+            "date": "2026-09-18",
+            "season": "2026-27",
+            "opponent": "Chelsea",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Bournemouth",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Sunderland",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-30",
+            "season": "2026-27",
+            "opponent": "Leeds United",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-22",
+            "season": "2026-27",
+            "opponent": "Tottenham",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Liverpool",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-17",
+            "season": "2025-26",
+            "opponent": "Crystal Palace",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-09",
+            "season": "2025-26",
+            "opponent": "Man City",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-02",
+            "season": "2025-26",
+            "opponent": "West Ham",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-04-27",
+            "season": "2025-26",
+            "opponent": "Man United",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "L"
+          }
+        ]
+      },
+      "head_to_head": {
+        "perspective": "Aston Villa",
+        "played": 10,
+        "won": 4,
+        "drawn": 3,
+        "lost": 3,
+        "meetings": [
+          {
+            "date": "2026-02-01",
+            "season": "2025-26",
+            "home": "Aston Villa",
+            "away": "Brentford",
+            "home_goals": 0,
+            "away_goals": 1,
+            "result": "L"
+          },
+          {
+            "date": "2025-08-23",
+            "season": "2025-26",
+            "home": "Brentford",
+            "away": "Aston Villa",
+            "home_goals": 1,
+            "away_goals": 0,
+            "result": "L"
+          },
+          {
+            "date": "2025-03-08",
+            "season": "2024-25",
+            "home": "Brentford",
+            "away": "Aston Villa",
+            "home_goals": 0,
+            "away_goals": 1,
+            "result": "W"
+          },
+          {
+            "date": "2024-12-04",
+            "season": "2024-25",
+            "home": "Aston Villa",
+            "away": "Brentford",
+            "home_goals": 3,
+            "away_goals": 1,
+            "result": "W"
+          },
+          {
+            "date": "2024-04-06",
+            "season": "2023-24",
+            "home": "Aston Villa",
+            "away": "Brentford",
+            "home_goals": 3,
+            "away_goals": 3,
+            "result": "D"
+          },
+          {
+            "date": "2023-12-17",
+            "season": "2023-24",
+            "home": "Brentford",
+            "away": "Aston Villa",
+            "home_goals": 1,
+            "away_goals": 2,
+            "result": "W"
+          },
+          {
+            "date": "2023-04-22",
+            "season": "2022-23",
+            "home": "Brentford",
+            "away": "Aston Villa",
+            "home_goals": 1,
+            "away_goals": 1,
+            "result": "D"
+          },
+          {
+            "date": "2022-10-23",
+            "season": "2022-23",
+            "home": "Aston Villa",
+            "away": "Brentford",
+            "home_goals": 4,
+            "away_goals": 0,
+            "result": "W"
+          },
+          {
+            "date": "2022-01-02",
+            "season": "2021-22",
+            "home": "Brentford",
+            "away": "Aston Villa",
+            "home_goals": 2,
+            "away_goals": 1,
+            "result": "L"
+          },
+          {
+            "date": "2021-08-28",
+            "season": "2021-22",
+            "home": "Aston Villa",
+            "away": "Brentford",
+            "home_goals": 1,
+            "away_goals": 1,
+            "result": "D"
+          }
+        ]
+      }
+    },
+    "chelsea-bournemouth": {
+      "home": "Chelsea",
+      "away": "Bournemouth",
+      "kickoff": "2026-10-10T14:00:00Z",
+      "recent": {
+        "home": [
+          {
+            "date": "2026-09-18",
+            "season": "2026-27",
+            "opponent": "Brentford",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Hull City",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-09-06",
+            "season": "2026-27",
+            "opponent": "Arsenal",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-08-30",
+            "season": "2026-27",
+            "opponent": "Brighton Hove",
+            "venue": "home",
+            "goals_for": 4,
+            "goals_against": 3,
+            "result": "W"
+          },
+          {
+            "date": "2026-08-24",
+            "season": "2026-27",
+            "opponent": "Fulham",
+            "venue": "away",
+            "goals_for": 3,
+            "goals_against": 2,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Sunderland",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-19",
+            "season": "2025-26",
+            "opponent": "Tottenham",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-09",
+            "season": "2025-26",
+            "opponent": "Liverpool",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-04",
+            "season": "2025-26",
+            "opponent": "Nottingham",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-04-21",
+            "season": "2025-26",
+            "opponent": "Brighton Hove",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "L"
+          }
+        ],
+        "away": [
+          {
+            "date": "2026-09-20",
+            "season": "2026-27",
+            "opponent": "Liverpool",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Brentford",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Newcastle",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-29",
+            "season": "2026-27",
+            "opponent": "Everton",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-23",
+            "season": "2026-27",
+            "opponent": "Man City",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Nottingham",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-19",
+            "season": "2025-26",
+            "opponent": "Man City",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-09",
+            "season": "2025-26",
+            "opponent": "Fulham",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-03",
+            "season": "2025-26",
+            "opponent": "Crystal Palace",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-04-22",
+            "season": "2025-26",
+            "opponent": "Leeds United",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          }
+        ]
+      },
+      "head_to_head": {
+        "perspective": "Chelsea",
+        "played": 8,
+        "won": 4,
+        "drawn": 4,
+        "lost": 0,
+        "meetings": [
+          {
+            "date": "2025-12-30",
+            "season": "2025-26",
+            "home": "Chelsea",
+            "away": "Bournemouth",
+            "home_goals": 2,
+            "away_goals": 2,
+            "result": "D"
+          },
+          {
+            "date": "2025-12-06",
+            "season": "2025-26",
+            "home": "Bournemouth",
+            "away": "Chelsea",
+            "home_goals": 0,
+            "away_goals": 0,
+            "result": "D"
+          },
+          {
+            "date": "2025-01-14",
+            "season": "2024-25",
+            "home": "Chelsea",
+            "away": "Bournemouth",
+            "home_goals": 2,
+            "away_goals": 2,
+            "result": "D"
+          },
+          {
+            "date": "2024-09-14",
+            "season": "2024-25",
+            "home": "Bournemouth",
+            "away": "Chelsea",
+            "home_goals": 0,
+            "away_goals": 1,
+            "result": "W"
+          },
+          {
+            "date": "2024-05-19",
+            "season": "2023-24",
+            "home": "Chelsea",
+            "away": "Bournemouth",
+            "home_goals": 2,
+            "away_goals": 1,
+            "result": "W"
+          },
+          {
+            "date": "2023-09-17",
+            "season": "2023-24",
+            "home": "Bournemouth",
+            "away": "Chelsea",
+            "home_goals": 0,
+            "away_goals": 0,
+            "result": "D"
+          },
+          {
+            "date": "2023-05-06",
+            "season": "2022-23",
+            "home": "Bournemouth",
+            "away": "Chelsea",
+            "home_goals": 1,
+            "away_goals": 3,
+            "result": "W"
+          },
+          {
+            "date": "2022-12-27",
+            "season": "2022-23",
+            "home": "Chelsea",
+            "away": "Bournemouth",
+            "home_goals": 2,
+            "away_goals": 0,
+            "result": "W"
+          }
+        ]
+      }
+    },
+    "ipswich-town-fulham": {
+      "home": "Ipswich Town",
+      "away": "Fulham",
+      "kickoff": "2026-10-10T14:00:00Z",
+      "recent": {
+        "home": [
+          {
+            "date": "2026-09-19",
+            "season": "2026-27",
+            "opponent": "Everton",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Crystal Palace",
+            "venue": "away",
+            "goals_for": 3,
+            "goals_against": 2,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-04",
+            "season": "2026-27",
+            "opponent": "Liverpool",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-08-30",
+            "season": "2026-27",
+            "opponent": "Man United",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 5,
+            "result": "L"
+          },
+          {
+            "date": "2026-08-22",
+            "season": "2026-27",
+            "opponent": "Sunderland",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2025-05-25",
+            "season": "2024-25",
+            "opponent": "West Ham",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2025-05-18",
+            "season": "2024-25",
+            "opponent": "Leicester City",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2025-05-10",
+            "season": "2024-25",
+            "opponent": "Brentford",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2025-05-03",
+            "season": "2024-25",
+            "opponent": "Everton",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2025-04-26",
+            "season": "2024-25",
+            "opponent": "Newcastle",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "L"
+          }
+        ],
+        "away": [
+          {
+            "date": "2026-09-20",
+            "season": "2026-27",
+            "opponent": "Man United",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Liverpool",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "D"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Crystal Palace",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-08-30",
+            "season": "2026-27",
+            "opponent": "Sunderland",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2026-08-24",
+            "season": "2026-27",
+            "opponent": "Chelsea",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Newcastle",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-17",
+            "season": "2025-26",
+            "opponent": "Wolves",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-09",
+            "season": "2025-26",
+            "opponent": "Bournemouth",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-02",
+            "season": "2025-26",
+            "opponent": "Arsenal",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-04-25",
+            "season": "2025-26",
+            "opponent": "Aston Villa",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          }
+        ]
+      },
+      "head_to_head": {
+        "perspective": "Ipswich Town",
+        "played": 2,
+        "won": 0,
+        "drawn": 2,
+        "lost": 0,
+        "meetings": [
+          {
+            "date": "2025-01-05",
+            "season": "2024-25",
+            "home": "Fulham",
+            "away": "Ipswich Town",
+            "home_goals": 2,
+            "away_goals": 2,
+            "result": "D"
+          },
+          {
+            "date": "2024-08-31",
+            "season": "2024-25",
+            "home": "Ipswich Town",
+            "away": "Fulham",
+            "home_goals": 1,
+            "away_goals": 1,
+            "result": "D"
+          }
+        ]
+      }
+    },
+    "sunderland-brighton-hove": {
+      "home": "Sunderland",
+      "away": "Brighton Hove",
+      "kickoff": "2026-10-10T14:00:00Z",
+      "recent": {
+        "home": [
+          {
+            "date": "2026-09-20",
+            "season": "2026-27",
+            "opponent": "Man City",
+            "venue": "away",
+            "goals_for": 3,
+            "goals_against": 5,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Arsenal",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Brentford",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-30",
+            "season": "2026-27",
+            "opponent": "Fulham",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-08-22",
+            "season": "2026-27",
+            "opponent": "Ipswich Town",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Chelsea",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-17",
+            "season": "2025-26",
+            "opponent": "Everton",
+            "venue": "away",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-09",
+            "season": "2025-26",
+            "opponent": "Man United",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-02",
+            "season": "2025-26",
+            "opponent": "Wolves",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-04-24",
+            "season": "2025-26",
+            "opponent": "Nottingham",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 5,
+            "result": "L"
+          }
+        ],
+        "away": [
+          {
+            "date": "2026-09-19",
+            "season": "2026-27",
+            "opponent": "Arsenal",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-13",
+            "season": "2026-27",
+            "opponent": "Coventry City",
+            "venue": "away",
+            "goals_for": 5,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Leeds United",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-30",
+            "season": "2026-27",
+            "opponent": "Chelsea",
+            "venue": "away",
+            "goals_for": 3,
+            "goals_against": 4,
+            "result": "L"
+          },
+          {
+            "date": "2026-08-23",
+            "season": "2026-27",
+            "opponent": "Aston Villa",
+            "venue": "home",
+            "goals_for": 4,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Man United",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-17",
+            "season": "2025-26",
+            "opponent": "Leeds United",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-09",
+            "season": "2025-26",
+            "opponent": "Wolves",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-02",
+            "season": "2025-26",
+            "opponent": "Newcastle",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-04-21",
+            "season": "2025-26",
+            "opponent": "Chelsea",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "W"
+          }
+        ]
+      },
+      "head_to_head": {
+        "perspective": "Sunderland",
+        "played": 2,
+        "won": 0,
+        "drawn": 1,
+        "lost": 1,
+        "meetings": [
+          {
+            "date": "2026-03-14",
+            "season": "2025-26",
+            "home": "Sunderland",
+            "away": "Brighton Hove",
+            "home_goals": 0,
+            "away_goals": 1,
+            "result": "L"
+          },
+          {
+            "date": "2025-12-20",
+            "season": "2025-26",
+            "home": "Brighton Hove",
+            "away": "Sunderland",
+            "home_goals": 0,
+            "away_goals": 0,
+            "result": "D"
+          }
+        ]
+      }
+    },
+    "man-united-tottenham": {
+      "home": "Man United",
+      "away": "Tottenham",
+      "kickoff": "2026-10-10T16:30:00Z",
+      "recent": {
+        "home": [
+          {
+            "date": "2026-09-20",
+            "season": "2026-27",
+            "opponent": "Fulham",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-09-13",
+            "season": "2026-27",
+            "opponent": "Man City",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-06",
+            "season": "2026-27",
+            "opponent": "Everton",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-30",
+            "season": "2026-27",
+            "opponent": "Ipswich Town",
+            "venue": "home",
+            "goals_for": 5,
+            "goals_against": 2,
+            "result": "W"
+          },
+          {
+            "date": "2026-08-22",
+            "season": "2026-27",
+            "opponent": "Hull City",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Brighton Hove",
+            "venue": "away",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-17",
+            "season": "2025-26",
+            "opponent": "Nottingham",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 2,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-09",
+            "season": "2025-26",
+            "opponent": "Sunderland",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-03",
+            "season": "2025-26",
+            "opponent": "Liverpool",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 2,
+            "result": "W"
+          },
+          {
+            "date": "2026-04-27",
+            "season": "2025-26",
+            "opponent": "Brentford",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "W"
+          }
+        ],
+        "away": [
+          {
+            "date": "2026-09-19",
+            "season": "2026-27",
+            "opponent": "Aston Villa",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Everton",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "D"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Nottingham",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-29",
+            "season": "2026-27",
+            "opponent": "Newcastle",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-08-22",
+            "season": "2026-27",
+            "opponent": "Brentford",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Everton",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-19",
+            "season": "2025-26",
+            "opponent": "Chelsea",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-11",
+            "season": "2025-26",
+            "opponent": "Leeds United",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-03",
+            "season": "2025-26",
+            "opponent": "Aston Villa",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-04-25",
+            "season": "2025-26",
+            "opponent": "Wolves",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          }
+        ]
+      },
+      "head_to_head": {
+        "perspective": "Man United",
+        "played": 10,
+        "won": 4,
+        "drawn": 3,
+        "lost": 3,
+        "meetings": [
+          {
+            "date": "2026-02-07",
+            "season": "2025-26",
+            "home": "Man United",
+            "away": "Tottenham",
+            "home_goals": 2,
+            "away_goals": 0,
+            "result": "W"
+          },
+          {
+            "date": "2025-11-08",
+            "season": "2025-26",
+            "home": "Tottenham",
+            "away": "Man United",
+            "home_goals": 2,
+            "away_goals": 2,
+            "result": "D"
+          },
+          {
+            "date": "2025-02-16",
+            "season": "2024-25",
+            "home": "Tottenham",
+            "away": "Man United",
+            "home_goals": 1,
+            "away_goals": 0,
+            "result": "L"
+          },
+          {
+            "date": "2024-09-29",
+            "season": "2024-25",
+            "home": "Man United",
+            "away": "Tottenham",
+            "home_goals": 0,
+            "away_goals": 3,
+            "result": "L"
+          },
+          {
+            "date": "2024-01-14",
+            "season": "2023-24",
+            "home": "Man United",
+            "away": "Tottenham",
+            "home_goals": 2,
+            "away_goals": 2,
+            "result": "D"
+          },
+          {
+            "date": "2023-08-19",
+            "season": "2023-24",
+            "home": "Tottenham",
+            "away": "Man United",
+            "home_goals": 2,
+            "away_goals": 0,
+            "result": "L"
+          },
+          {
+            "date": "2023-04-27",
+            "season": "2022-23",
+            "home": "Tottenham",
+            "away": "Man United",
+            "home_goals": 2,
+            "away_goals": 2,
+            "result": "D"
+          },
+          {
+            "date": "2022-10-19",
+            "season": "2022-23",
+            "home": "Man United",
+            "away": "Tottenham",
+            "home_goals": 2,
+            "away_goals": 0,
+            "result": "W"
+          },
+          {
+            "date": "2022-03-12",
+            "season": "2021-22",
+            "home": "Man United",
+            "away": "Tottenham",
+            "home_goals": 3,
+            "away_goals": 2,
+            "result": "W"
+          },
+          {
+            "date": "2021-10-30",
+            "season": "2021-22",
+            "home": "Tottenham",
+            "away": "Man United",
+            "home_goals": 0,
+            "away_goals": 3,
+            "result": "W"
+          }
+        ]
+      }
+    },
+    "crystal-palace-nottingham": {
+      "home": "Crystal Palace",
+      "away": "Nottingham",
+      "kickoff": "2026-10-11T13:00:00Z",
+      "recent": {
+        "home": [
+          {
+            "date": "2026-09-20",
+            "season": "2026-27",
+            "opponent": "Leeds United",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "D"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Ipswich Town",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Fulham",
+            "venue": "away",
+            "goals_for": 3,
+            "goals_against": 2,
+            "result": "W"
+          },
+          {
+            "date": "2026-08-28",
+            "season": "2026-27",
+            "opponent": "Man City",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 4,
+            "result": "L"
+          },
+          {
+            "date": "2026-08-22",
+            "season": "2026-27",
+            "opponent": "Everton",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Arsenal",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-17",
+            "season": "2025-26",
+            "opponent": "Brentford",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-13",
+            "season": "2025-26",
+            "opponent": "Man City",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-10",
+            "season": "2025-26",
+            "opponent": "Everton",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-03",
+            "season": "2025-26",
+            "opponent": "Bournemouth",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "L"
+          }
+        ],
+        "away": [
+          {
+            "date": "2026-09-19",
+            "season": "2026-27",
+            "opponent": "Coventry City",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Aston Villa",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Tottenham",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-29",
+            "season": "2026-27",
+            "opponent": "Liverpool",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-22",
+            "season": "2026-27",
+            "opponent": "Leeds United",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Bournemouth",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-17",
+            "season": "2025-26",
+            "opponent": "Man United",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-10",
+            "season": "2025-26",
+            "opponent": "Newcastle",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-04",
+            "season": "2025-26",
+            "opponent": "Chelsea",
+            "venue": "away",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-04-24",
+            "season": "2025-26",
+            "opponent": "Sunderland",
+            "venue": "away",
+            "goals_for": 5,
+            "goals_against": 0,
+            "result": "W"
+          }
+        ]
+      },
+      "head_to_head": {
+        "perspective": "Crystal Palace",
+        "played": 8,
+        "won": 0,
+        "drawn": 6,
+        "lost": 2,
+        "meetings": [
+          {
+            "date": "2026-02-01",
+            "season": "2025-26",
+            "home": "Nottingham",
+            "away": "Crystal Palace",
+            "home_goals": 1,
+            "away_goals": 1,
+            "result": "D"
+          },
+          {
+            "date": "2025-08-24",
+            "season": "2025-26",
+            "home": "Crystal Palace",
+            "away": "Nottingham",
+            "home_goals": 1,
+            "away_goals": 1,
+            "result": "D"
+          },
+          {
+            "date": "2025-05-05",
+            "season": "2024-25",
+            "home": "Crystal Palace",
+            "away": "Nottingham",
+            "home_goals": 1,
+            "away_goals": 1,
+            "result": "D"
+          },
+          {
+            "date": "2024-10-21",
+            "season": "2024-25",
+            "home": "Nottingham",
+            "away": "Crystal Palace",
+            "home_goals": 1,
+            "away_goals": 0,
+            "result": "L"
+          },
+          {
+            "date": "2024-03-30",
+            "season": "2023-24",
+            "home": "Nottingham",
+            "away": "Crystal Palace",
+            "home_goals": 1,
+            "away_goals": 1,
+            "result": "D"
+          },
+          {
+            "date": "2023-10-07",
+            "season": "2023-24",
+            "home": "Crystal Palace",
+            "away": "Nottingham",
+            "home_goals": 0,
+            "away_goals": 0,
+            "result": "D"
+          },
+          {
+            "date": "2023-05-28",
+            "season": "2022-23",
+            "home": "Crystal Palace",
+            "away": "Nottingham",
+            "home_goals": 1,
+            "away_goals": 1,
+            "result": "D"
+          },
+          {
+            "date": "2022-11-12",
+            "season": "2022-23",
+            "home": "Nottingham",
+            "away": "Crystal Palace",
+            "home_goals": 1,
+            "away_goals": 0,
+            "result": "L"
+          }
+        ]
+      }
+    },
+    "hull-city-everton": {
+      "home": "Hull City",
+      "away": "Everton",
+      "kickoff": "2026-10-11T13:00:00Z",
+      "recent": {
+        "home": [
+          {
+            "date": "2026-09-19",
+            "season": "2026-27",
+            "opponent": "Newcastle",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Chelsea",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Aston Villa",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-29",
+            "season": "2026-27",
+            "opponent": "Coventry City",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-08-22",
+            "season": "2026-27",
+            "opponent": "Man United",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "W"
+          }
+        ],
+        "away": [
+          {
+            "date": "2026-09-19",
+            "season": "2026-27",
+            "opponent": "Ipswich Town",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Tottenham",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "D"
+          },
+          {
+            "date": "2026-09-06",
+            "season": "2026-27",
+            "opponent": "Man United",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-29",
+            "season": "2026-27",
+            "opponent": "Bournemouth",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-22",
+            "season": "2026-27",
+            "opponent": "Crystal Palace",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Tottenham",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-17",
+            "season": "2025-26",
+            "opponent": "Sunderland",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-10",
+            "season": "2025-26",
+            "opponent": "Crystal Palace",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-04",
+            "season": "2025-26",
+            "opponent": "Man City",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 3,
+            "result": "D"
+          },
+          {
+            "date": "2026-04-25",
+            "season": "2025-26",
+            "opponent": "West Ham",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "L"
+          }
+        ]
+      },
+      "head_to_head": {
+        "perspective": "Hull City",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "meetings": []
+      }
+    },
+    "liverpool-man-city": {
+      "home": "Liverpool",
+      "away": "Man City",
+      "kickoff": "2026-10-11T15:30:00Z",
+      "recent": {
+        "home": [
+          {
+            "date": "2026-09-20",
+            "season": "2026-27",
+            "opponent": "Bournemouth",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-12",
+            "season": "2026-27",
+            "opponent": "Fulham",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "D"
+          },
+          {
+            "date": "2026-09-04",
+            "season": "2026-27",
+            "opponent": "Ipswich Town",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-08-29",
+            "season": "2026-27",
+            "opponent": "Nottingham",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-23",
+            "season": "2026-27",
+            "opponent": "Newcastle",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Brentford",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-15",
+            "season": "2025-26",
+            "opponent": "Aston Villa",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 4,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-09",
+            "season": "2025-26",
+            "opponent": "Chelsea",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-03",
+            "season": "2025-26",
+            "opponent": "Man United",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 3,
+            "result": "L"
+          },
+          {
+            "date": "2026-04-25",
+            "season": "2025-26",
+            "opponent": "Crystal Palace",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "W"
+          }
+        ],
+        "away": [
+          {
+            "date": "2026-09-20",
+            "season": "2026-27",
+            "opponent": "Sunderland",
+            "venue": "home",
+            "goals_for": 5,
+            "goals_against": 3,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-13",
+            "season": "2026-27",
+            "opponent": "Man United",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Coventry City",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-08-28",
+            "season": "2026-27",
+            "opponent": "Crystal Palace",
+            "venue": "away",
+            "goals_for": 4,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-08-23",
+            "season": "2026-27",
+            "opponent": "Bournemouth",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Aston Villa",
+            "venue": "home",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-19",
+            "season": "2025-26",
+            "opponent": "Bournemouth",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-13",
+            "season": "2025-26",
+            "opponent": "Crystal Palace",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-09",
+            "season": "2025-26",
+            "opponent": "Brentford",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-04",
+            "season": "2025-26",
+            "opponent": "Everton",
+            "venue": "away",
+            "goals_for": 3,
+            "goals_against": 3,
+            "result": "D"
+          }
+        ]
+      },
+      "head_to_head": {
+        "perspective": "Liverpool",
+        "played": 10,
+        "won": 3,
+        "drawn": 4,
+        "lost": 3,
+        "meetings": [
+          {
+            "date": "2026-02-08",
+            "season": "2025-26",
+            "home": "Liverpool",
+            "away": "Man City",
+            "home_goals": 1,
+            "away_goals": 2,
+            "result": "L"
+          },
+          {
+            "date": "2025-11-09",
+            "season": "2025-26",
+            "home": "Man City",
+            "away": "Liverpool",
+            "home_goals": 3,
+            "away_goals": 0,
+            "result": "L"
+          },
+          {
+            "date": "2025-02-23",
+            "season": "2024-25",
+            "home": "Man City",
+            "away": "Liverpool",
+            "home_goals": 0,
+            "away_goals": 2,
+            "result": "W"
+          },
+          {
+            "date": "2024-12-01",
+            "season": "2024-25",
+            "home": "Liverpool",
+            "away": "Man City",
+            "home_goals": 2,
+            "away_goals": 0,
+            "result": "W"
+          },
+          {
+            "date": "2024-03-10",
+            "season": "2023-24",
+            "home": "Liverpool",
+            "away": "Man City",
+            "home_goals": 1,
+            "away_goals": 1,
+            "result": "D"
+          },
+          {
+            "date": "2023-11-25",
+            "season": "2023-24",
+            "home": "Man City",
+            "away": "Liverpool",
+            "home_goals": 1,
+            "away_goals": 1,
+            "result": "D"
+          },
+          {
+            "date": "2023-04-01",
+            "season": "2022-23",
+            "home": "Man City",
+            "away": "Liverpool",
+            "home_goals": 4,
+            "away_goals": 1,
+            "result": "L"
+          },
+          {
+            "date": "2022-10-16",
+            "season": "2022-23",
+            "home": "Liverpool",
+            "away": "Man City",
+            "home_goals": 1,
+            "away_goals": 0,
+            "result": "W"
+          },
+          {
+            "date": "2022-04-10",
+            "season": "2021-22",
+            "home": "Man City",
+            "away": "Liverpool",
+            "home_goals": 2,
+            "away_goals": 2,
+            "result": "D"
+          },
+          {
+            "date": "2021-10-03",
+            "season": "2021-22",
+            "home": "Liverpool",
+            "away": "Man City",
+            "home_goals": 2,
+            "away_goals": 2,
+            "result": "D"
+          }
+        ]
+      }
+    },
+    "coventry-city-newcastle": {
+      "home": "Coventry City",
+      "away": "Newcastle",
+      "kickoff": "2026-10-12T19:00:00Z",
+      "recent": {
+        "home": [
+          {
+            "date": "2026-09-19",
+            "season": "2026-27",
+            "opponent": "Nottingham",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-13",
+            "season": "2026-27",
+            "opponent": "Brighton Hove",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 5,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Man City",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2026-08-29",
+            "season": "2026-27",
+            "opponent": "Hull City",
+            "venue": "home",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          },
+          {
+            "date": "2026-08-21",
+            "season": "2026-27",
+            "opponent": "Arsenal",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "L"
+          }
+        ],
+        "away": [
+          {
+            "date": "2026-09-19",
+            "season": "2026-27",
+            "opponent": "Hull City",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-09-14",
+            "season": "2026-27",
+            "opponent": "Leeds United",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 4,
+            "result": "L"
+          },
+          {
+            "date": "2026-09-05",
+            "season": "2026-27",
+            "opponent": "Bournemouth",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-08-29",
+            "season": "2026-27",
+            "opponent": "Tottenham",
+            "venue": "away",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "W"
+          },
+          {
+            "date": "2026-08-23",
+            "season": "2026-27",
+            "opponent": "Liverpool",
+            "venue": "home",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-24",
+            "season": "2025-26",
+            "opponent": "Fulham",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "L"
+          },
+          {
+            "date": "2026-05-17",
+            "season": "2025-26",
+            "opponent": "West Ham",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-05-10",
+            "season": "2025-26",
+            "opponent": "Nottingham",
+            "venue": "away",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "D"
+          },
+          {
+            "date": "2026-05-02",
+            "season": "2025-26",
+            "opponent": "Brighton Hove",
+            "venue": "home",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "W"
+          },
+          {
+            "date": "2026-04-25",
+            "season": "2025-26",
+            "opponent": "Arsenal",
+            "venue": "away",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "L"
+          }
+        ]
+      },
+      "head_to_head": {
+        "perspective": "Coventry City",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "meetings": []
+      }
+    }
+  }
+}
