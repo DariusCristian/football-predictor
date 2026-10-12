@@ -44,28 +44,113 @@ def test_independent_rounding_would_not_sum_to_one():
 
 
 def _stored(rows):
-    columns = ["p_home", "p_draw", "p_away", "outcome", "scored_at"]
-    return pd.DataFrame(rows, columns=columns)
+    """rows of (match_date, home, away, p_home, p_draw, p_away, score or None)."""
+    records = []
+    for date, home, away, ph, pd_, pa, score in rows:
+        hg, ag = score if score else (None, None)
+        outcome = None
+        if score:
+            outcome = "home_win" if hg > ag else "draw" if hg == ag else "away_win"
+        records.append({
+            "created_at": "2026-09-29T11:00:00Z", "match_date": date, "home": home,
+            "away": away, "p_home": ph, "p_draw": pd_, "p_away": pa,
+            "most_likely_home": 1, "most_likely_away": 0,
+            "actual_home_goals": hg, "actual_away_goals": ag, "outcome": outcome,
+            "scored_at": "2026-10-11T00:00:00Z" if score else None,
+        })
+    return pd.DataFrame(records, columns=[
+        "created_at", "match_date", "home", "away", "p_home", "p_draw", "p_away",
+        "most_likely_home", "most_likely_away", "actual_home_goals",
+        "actual_away_goals", "outcome", "scored_at"])
+
+
+def _base_history():
+    """Three earlier matches: one home win, one draw, one away win."""
+    return pd.DataFrame([
+        _match("2026-08-01", "A", "B", 1, 0),
+        _match("2026-08-02", "C", "D", 1, 1),
+        _match("2026-08-03", "B", "C", 0, 2),
+    ])
 
 
 def test_live_scoreboard_empty():
-    live = live_scoreboard(_stored([]))
+    live = live_scoreboard(_stored([]), _base_history())
     assert live == {"n": 0}
 
 
 def test_live_scoreboard_log_loss():
     stored = _stored([
-        (0.5, 0.3, 0.2, "home_win", "2026-10-11T00:00:00Z"),
-        (0.5, 0.3, 0.2, "draw", "2026-10-11T00:00:00Z"),
-        (0.5, 0.3, 0.2, None, None),  # unscored, excluded
+        ("2026-10-04T14:00:00Z", "A", "B", 0.5, 0.3, 0.2, (2, 1)),
+        ("2026-10-05T14:00:00Z", "C", "D", 0.5, 0.3, 0.2, (0, 0)),
+        ("2026-10-18T14:00:00Z", "A", "C", 0.5, 0.3, 0.2, None),  # unscored, excluded
     ])
-    live = live_scoreboard(stored)
+    live = live_scoreboard(stored, _base_history())
     assert live["n"] == 2
     assert live["log_loss"] == round(-(math.log(0.5) + math.log(0.3)) / 2, 4)
 
 
+def test_live_rows_most_recent_first_with_outcome_probability():
+    stored = _stored([
+        ("2026-10-04T14:00:00Z", "A", "B", 0.5, 0.3, 0.2, (2, 1)),
+        ("2026-10-05T14:00:00Z", "C", "D", 0.6, 0.25, 0.15, (0, 3)),
+    ])
+    rows = live_scoreboard(stored, _base_history())["matches"]
+    assert [r["slug"] for r in rows] == ["c-d", "a-b"]
+    latest = rows[0]
+    assert latest["score"] == [0, 3]
+    assert latest["outcome"] == "away"
+    assert latest["p_outcome"] == latest["probabilities"]["away"] == 0.15
+    assert latest["log_loss"] == round(-math.log(0.15), 4)
+    assert sum(latest["probabilities"].values()) == pytest.approx(1.0, abs=1e-12)
+
+
+def test_live_row_losses_average_to_headline():
+    stored = _stored([
+        ("2026-10-04T14:00:00Z", "A", "B", 0.5, 0.3, 0.2, (2, 1)),
+        ("2026-10-05T14:00:00Z", "C", "D", 0.6, 0.25, 0.15, (0, 3)),
+        ("2026-10-05T16:30:00Z", "B", "A", 0.3, 0.3, 0.4, (1, 1)),
+    ])
+    live = live_scoreboard(stored, _base_history())
+    mean = np.mean([r["log_loss"] for r in live["matches"]])
+    assert live["log_loss"] == pytest.approx(mean, abs=1e-4)
+
+
+def test_live_references_on_the_same_matches():
+    stored = _stored([("2026-10-04T14:00:00Z", "A", "B", 0.5, 0.3, 0.2, (2, 1))])
+    history = pd.concat([_base_history(), pd.DataFrame([
+        _match("2026-10-04", "A", "B", 2, 1),   # the match itself: excluded
+        _match("2026-10-20", "C", "A", 0, 0),   # after it: excluded
+    ])])
+    live = live_scoreboard(stored, history)
+    assert live["uniform_log_loss"] == pytest.approx(math.log(3), abs=1e-4)
+    # Fitted on the three earlier matches only: one in three were home wins.
+    assert live["league_average_log_loss"] == round(math.log(3), 4)
+
+
+def test_live_rough_range_is_two_standard_errors():
+    stored = _stored([
+        ("2026-10-04T14:00:00Z", "A", "B", 0.5, 0.3, 0.2, (2, 1)),
+        ("2026-10-05T14:00:00Z", "C", "D", 0.6, 0.25, 0.15, (0, 3)),
+    ])
+    live = live_scoreboard(stored, _base_history())
+    losses = [-math.log(0.5), -math.log(0.15)]
+    half = 2 * np.std(losses, ddof=1) / math.sqrt(2)
+    assert live["rough_range"] == [round(np.mean(losses) - half, 4),
+                                   round(np.mean(losses) + half, 4)]
+    one = live_scoreboard(stored.iloc[:1], _base_history())
+    assert "rough_range" not in one
+
+
+def test_live_confidence_from_evidence_at_kickoff():
+    stored = _stored([("2026-10-04T14:00:00Z", "A", "B", 0.5, 0.3, 0.2, (2, 1))])
+    later = pd.DataFrame([_match(pd.Timestamp("2026-10-05") + pd.Timedelta(days=i), "A", "B", 1, 0)
+                          for i in range(40)])
+    history = pd.concat([_base_history(), later])
+    assert live_scoreboard(stored, history)["matches"][0]["confidence"] == "low"
+
+
 def test_scoreboard_sections_separate():
-    board = scoreboard_payload(_stored([]), "2026-09-29T00:00:00Z")
+    board = scoreboard_payload(_stored([]), _base_history(), "2026-09-29T00:00:00Z")
     assert board["backtest"]["models"][0] == {"model": "poisson", "n": 758, "log_loss": 1.0260}
     assert board["live"] == {"n": 0}
 
@@ -195,7 +280,7 @@ def test_relative_improvement_matches_headline():
 
 
 def test_scoreboard_publishes_improvement_and_uniform_reference():
-    backtest = scoreboard_payload(_stored([]), "t")["backtest"]
+    backtest = scoreboard_payload(_stored([]), _base_history(), "t")["backtest"]
     assert backtest["improvement_over_league_average"] == pytest.approx(0.0528, abs=1e-4)
     assert backtest["uniform_log_loss"] == pytest.approx(math.log(3), abs=1e-4)
 
@@ -345,3 +430,9 @@ def test_recent_results_capped_newest_first_and_before_kickoff():
     assert (latest["opponent"], latest["venue"], latest["goals_for"],
             latest["goals_against"], latest["result"]) == ("B", "home", 1, 1, "D")
     assert recent["home"][0]["venue"] == "away"
+
+
+def test_fixture_detail_rejects_duplicate_slugs():
+    preds = [{"slug": "a-b", "home": "A", "away": "B", "kickoff": "2026-10-10T14:00:00Z"}] * 2
+    with pytest.raises(SlugCollisionError):
+        fixture_detail_payload(preds, _history(), "t")

@@ -35,16 +35,20 @@ for message in degenerate:
     print(f"WARNING DegenerateFitWarning: {message}")
 
 predictions = predictions_payload(stored, generated_at)
+scoreboard = scoreboard_payload(stored, matches, generated_at)
 season = current_season()
 payloads = {
     "predictions.json": predictions,
     "matrix.json": matrix_payload(model, matches, teams, generated_at),
     "teams.json": teams_payload(model, matches, teams, season, generated_at),
     "history.json": history_payload(matches, generated_at),
-    "scoreboard.json": scoreboard_payload(stored, generated_at),
+    "scoreboard.json": scoreboard,
     "standings.json": standings_payload(matches, teams, season, generated_at),
+    # Scored matches too, so the record's rows can link to a match page.
     "fixture_detail.json": fixture_detail_payload(
-        predictions["predictions"], matches, generated_at),
+        predictions["predictions"]
+        + [{**m, "kickoff": m["date"]} for m in scoreboard["live"].get("matches", [])],
+        matches, generated_at),
 }
 
 OUT_DIR.mkdir(parents=True, exist_ok=True)

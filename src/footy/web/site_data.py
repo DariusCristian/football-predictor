@@ -11,8 +11,9 @@ from collections import Counter
 import numpy as np
 import pandas as pd
 
+from footy.model.baselines import LeagueAverage
 from footy.model.poisson import PoissonModel, dixon_coles_correction, score_matrix
-from footy.model.scoring import log_loss
+from footy.model.scoring import OUTCOMES, log_loss
 from footy.production import MODEL_VERSION
 
 DECIMALS = 4
@@ -418,15 +419,17 @@ def _head_to_head(before: pd.DataFrame, home: str, away: str) -> dict:
 def fixture_detail_payload(
     predictions: list[dict], matches: pd.DataFrame, generated_at: str
 ) -> dict:
-    """Recent form and head-to-head for each upcoming fixture, by slug.
+    """Recent form and head-to-head for each recorded fixture, by slug.
 
-    predictions are predictions_payload entries. Only matches dated
+    predictions need slug, home, away and kickoff: predictions_payload
+    entries, and scored ones from live_scoreboard. Only matches dated
     before the kickoff day count, so nothing from the fixture itself or
-    after it can appear.
+    after it can appear, even once it has been played.
     """
+    check_unique_slugs([p["slug"] for p in predictions], "fixture detail")
     fixtures = {}
     for p in predictions:
-        before = matches[matches["date"] < pd.Timestamp(p["kickoff"][:10])]
+        before = _before_kickoff(matches, p["kickoff"])
         fixtures[p["slug"]] = {
             "home": p["home"],
             "away": p["away"],
@@ -445,16 +448,69 @@ def fixture_detail_payload(
     }
 
 
-def live_scoreboard(stored: pd.DataFrame) -> dict:
-    """Running log loss over scored predictions. n=0 has no log_loss key."""
+# Store outcome labels to the home/draw/away keys of published probabilities.
+OUTCOME_KEYS = dict(zip(OUTCOMES, ["home", "draw", "away"]))
+
+
+def scored_predictions(stored: pd.DataFrame) -> pd.DataFrame:
+    """Scored rows, most recent kickoff first."""
     scored = stored[stored["scored_at"].notna()]
-    losses = [
-        log_loss({"home_win": r.p_home, "draw": r.p_draw, "away_win": r.p_away}, r.outcome)
-        for r in scored.itertuples()
-    ]
-    live = {"n": len(losses)}
-    if losses:
-        live["log_loss"] = round(float(np.mean(losses)), DECIMALS)
+    return scored.sort_values(["match_date", "home"], ascending=[False, True], kind="stable")
+
+
+def _before_kickoff(matches: pd.DataFrame, kickoff: str) -> pd.DataFrame:
+    """Matches dated before the kickoff day: the backtest's walk-forward cutoff."""
+    return matches[matches["date"] < pd.Timestamp(kickoff[:10])]
+
+
+def live_scoreboard(stored: pd.DataFrame, matches: pd.DataFrame) -> dict:
+    """Scored predictions and their running log loss against two references.
+
+    n=0 has only the n key. rough_range is the mean plus and minus two
+    standard errors of the per-match losses: crude at small n, but enough
+    to show which comparisons the sample can and cannot settle.
+    """
+    scored = scored_predictions(stored)
+    if scored.empty:
+        return {"n": 0}
+    rows, losses, baseline = [], [], []
+    for r in scored.itertuples():
+        raw = {"home_win": r.p_home, "draw": r.p_draw, "away_win": r.p_away}
+        loss = log_loss(raw, r.outcome)
+        losses.append(loss)
+        before = _before_kickoff(matches, r.match_date)
+        # Refitted per match, so the baseline never sees the match it is scored on.
+        baseline.append(log_loss(
+            LeagueAverage().fit(before).predict(r.home, r.away), r.outcome))
+        probs = _probs(r.p_home, r.p_draw, r.p_away)
+        # Evidence as it stood at kickoff, not as it is now.
+        levels = [confidence_level(n) for n in matches_in_training(before, [r.home, r.away]).values()]
+        rows.append({
+            "date": r.match_date,
+            "home": r.home,
+            "away": r.away,
+            "slug": match_slug(r.home, r.away),
+            "score": [int(r.actual_home_goals), int(r.actual_away_goals)],
+            "probabilities": probs,
+            "outcome": OUTCOME_KEYS[r.outcome],
+            "p_outcome": probs[OUTCOME_KEYS[r.outcome]],
+            "log_loss": round(loss, DECIMALS),
+            "most_likely_score": [int(r.most_likely_home), int(r.most_likely_away)],
+            "predicted_at": r.created_at,
+            "confidence": min(levels, key=CONFIDENCE_ORDER.index),
+        })
+    check_unique_slugs([row["slug"] for row in rows], "scored prediction")
+    mean = float(np.mean(losses))
+    spread = 2 * float(np.std(losses, ddof=1)) / np.sqrt(len(losses)) if len(losses) > 1 else None
+    live = {
+        "n": len(losses),
+        "log_loss": round(mean, DECIMALS),
+        "uniform_log_loss": UNIFORM_LOG_LOSS,
+        "league_average_log_loss": round(float(np.mean(baseline)), DECIMALS),
+    }
+    if spread is not None:
+        live["rough_range"] = [round(mean - spread, DECIMALS), round(mean + spread, DECIMALS)]
+    live["matches"] = rows
     return live
 
 
@@ -469,7 +525,7 @@ def relative_improvement(backtest: dict, model: str = "poisson",
 UNIFORM_LOG_LOSS = round(float(np.log(3)), DECIMALS)
 
 
-def scoreboard_payload(stored: pd.DataFrame, generated_at: str) -> dict:
+def scoreboard_payload(stored: pd.DataFrame, matches: pd.DataFrame, generated_at: str) -> dict:
     return {
         "generated_at": generated_at,
         "backtest": {
@@ -478,5 +534,5 @@ def scoreboard_payload(stored: pd.DataFrame, generated_at: str) -> dict:
                 relative_improvement(BACKTEST_RESULT), DECIMALS),
             "uniform_log_loss": UNIFORM_LOG_LOSS,
         },
-        "live": live_scoreboard(stored),
+        "live": live_scoreboard(stored, matches),
     }
