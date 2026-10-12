@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T08:06:55Z",
+  "generated_at": "2026-10-12T15:07:23Z",
   "matches": [
     {
       "season": "2021-22",
@@ -2140,14 +2140,6 @@
     {
       "season": "2021-22",
       "date": "2022-03-10",
-      "home": "Leeds United",
-      "away": "Aston Villa",
-      "home_goals": 0,
-      "away_goals": 3
-    },
-    {
-      "season": "2021-22",
-      "date": "2022-03-10",
       "home": "Wolves",
       "away": "Watford",
       "home_goals": 4,
@@ -2168,6 +2160,14 @@
       "away": "Newcastle",
       "home_goals": 1,
       "away_goals": 2
+    },
+    {
+      "season": "2021-22",
+      "date": "2022-03-10",
+      "home": "Leeds United",
+      "away": "Aston Villa",
+      "home_goals": 0,
+      "away_goals": 3
     },
     {
       "season": "2021-22",
@@ -2404,18 +2404,18 @@
     {
       "season": "2021-22",
       "date": "2022-04-09",
-      "home": "Aston Villa",
-      "away": "Tottenham",
-      "home_goals": 0,
-      "away_goals": 4
+      "home": "Arsenal",
+      "away": "Brighton Hove",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2021-22",
       "date": "2022-04-09",
-      "home": "Southampton",
-      "away": "Chelsea",
+      "home": "Aston Villa",
+      "away": "Tottenham",
       "home_goals": 0,
-      "away_goals": 6
+      "away_goals": 4
     },
     {
       "season": "2021-22",
@@ -2436,10 +2436,10 @@
     {
       "season": "2021-22",
       "date": "2022-04-09",
-      "home": "Arsenal",
-      "away": "Brighton Hove",
-      "home_goals": 1,
-      "away_goals": 2
+      "home": "Southampton",
+      "away": "Chelsea",
+      "home_goals": 0,
+      "away_goals": 6
     },
     {
       "season": "2021-22",
@@ -2532,18 +2532,18 @@
     {
       "season": "2021-22",
       "date": "2022-04-20",
-      "home": "Chelsea",
-      "away": "Arsenal",
-      "home_goals": 2,
-      "away_goals": 4
-    },
-    {
-      "season": "2021-22",
-      "date": "2022-04-20",
       "home": "Man City",
       "away": "Brighton Hove",
       "home_goals": 3,
       "away_goals": 0
+    },
+    {
+      "season": "2021-22",
+      "date": "2022-04-20",
+      "home": "Chelsea",
+      "away": "Arsenal",
+      "home_goals": 2,
+      "away_goals": 4
     },
     {
       "season": "2021-22",
@@ -2568,6 +2568,14 @@
       "away": "Southampton",
       "home_goals": 2,
       "away_goals": 0
+    },
+    {
+      "season": "2021-22",
+      "date": "2022-04-23",
+      "home": "Arsenal",
+      "away": "Man United",
+      "home_goals": 3,
+      "away_goals": 1
     },
     {
       "season": "2021-22",
@@ -2603,18 +2611,18 @@
     },
     {
       "season": "2021-22",
-      "date": "2022-04-23",
-      "home": "Arsenal",
-      "away": "Man United",
-      "home_goals": 3,
-      "away_goals": 1
+      "date": "2022-04-24",
+      "home": "Burnley",
+      "away": "Wolves",
+      "home_goals": 1,
+      "away_goals": 0
     },
     {
       "season": "2021-22",
       "date": "2022-04-24",
-      "home": "Liverpool",
-      "away": "Everton",
-      "home_goals": 2,
+      "home": "Chelsea",
+      "away": "West Ham",
+      "home_goals": 1,
       "away_goals": 0
     },
     {
@@ -2628,17 +2636,9 @@
     {
       "season": "2021-22",
       "date": "2022-04-24",
-      "home": "Burnley",
-      "away": "Wolves",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2021-22",
-      "date": "2022-04-24",
-      "home": "Chelsea",
-      "away": "West Ham",
-      "home_goals": 1,
+      "home": "Liverpool",
+      "away": "Everton",
+      "home_goals": 2,
       "away_goals": 0
     },
     {
@@ -2660,26 +2660,10 @@
     {
       "season": "2021-22",
       "date": "2022-04-30",
-      "home": "Newcastle",
-      "away": "Liverpool",
+      "home": "Wolves",
+      "away": "Brighton Hove",
       "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2021-22",
-      "date": "2022-04-30",
-      "home": "Southampton",
-      "away": "Crystal Palace",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2021-22",
-      "date": "2022-04-30",
-      "home": "Aston Villa",
-      "away": "Norwich City",
-      "home_goals": 2,
-      "away_goals": 0
+      "away_goals": 3
     },
     {
       "season": "2021-22",
@@ -2692,18 +2676,34 @@
     {
       "season": "2021-22",
       "date": "2022-04-30",
-      "home": "Wolves",
-      "away": "Brighton Hove",
-      "home_goals": 0,
-      "away_goals": 3
-    },
-    {
-      "season": "2021-22",
-      "date": "2022-04-30",
       "home": "Leeds United",
       "away": "Man City",
       "home_goals": 0,
       "away_goals": 4
+    },
+    {
+      "season": "2021-22",
+      "date": "2022-04-30",
+      "home": "Aston Villa",
+      "away": "Norwich City",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2021-22",
+      "date": "2022-04-30",
+      "home": "Newcastle",
+      "away": "Liverpool",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2021-22",
+      "date": "2022-04-30",
+      "home": "Southampton",
+      "away": "Crystal Palace",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2021-22",
@@ -2740,6 +2740,14 @@
     {
       "season": "2021-22",
       "date": "2022-05-07",
+      "home": "Chelsea",
+      "away": "Wolves",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2021-22",
+      "date": "2022-05-07",
       "home": "Brentford",
       "away": "Southampton",
       "home_goals": 3,
@@ -2756,10 +2764,10 @@
     {
       "season": "2021-22",
       "date": "2022-05-07",
-      "home": "Chelsea",
-      "away": "Wolves",
-      "home_goals": 2,
-      "away_goals": 2
+      "home": "Liverpool",
+      "away": "Tottenham",
+      "home_goals": 1,
+      "away_goals": 1
     },
     {
       "season": "2021-22",
@@ -2768,14 +2776,6 @@
       "away": "Man United",
       "home_goals": 4,
       "away_goals": 0
-    },
-    {
-      "season": "2021-22",
-      "date": "2022-05-07",
-      "home": "Liverpool",
-      "away": "Tottenham",
-      "home_goals": 1,
-      "away_goals": 1
     },
     {
       "season": "2021-22",
@@ -2828,22 +2828,6 @@
     {
       "season": "2021-22",
       "date": "2022-05-11",
-      "home": "Wolves",
-      "away": "Man City",
-      "home_goals": 1,
-      "away_goals": 5
-    },
-    {
-      "season": "2021-22",
-      "date": "2022-05-11",
-      "home": "Leicester City",
-      "away": "Norwich City",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2021-22",
-      "date": "2022-05-11",
       "home": "Watford",
       "away": "Everton",
       "home_goals": 0,
@@ -2859,11 +2843,35 @@
     },
     {
       "season": "2021-22",
+      "date": "2022-05-11",
+      "home": "Wolves",
+      "away": "Man City",
+      "home_goals": 1,
+      "away_goals": 5
+    },
+    {
+      "season": "2021-22",
+      "date": "2022-05-11",
+      "home": "Leicester City",
+      "away": "Norwich City",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2021-22",
       "date": "2022-05-12",
       "home": "Tottenham",
       "away": "Arsenal",
       "home_goals": 3,
       "away_goals": 0
+    },
+    {
+      "season": "2021-22",
+      "date": "2022-05-15",
+      "home": "Everton",
+      "away": "Brentford",
+      "home_goals": 2,
+      "away_goals": 3
     },
     {
       "season": "2021-22",
@@ -2915,14 +2923,6 @@
     },
     {
       "season": "2021-22",
-      "date": "2022-05-15",
-      "home": "Everton",
-      "away": "Brentford",
-      "home_goals": 2,
-      "away_goals": 3
-    },
-    {
-      "season": "2021-22",
       "date": "2022-05-16",
       "home": "Newcastle",
       "away": "Arsenal",
@@ -2964,10 +2964,10 @@
     {
       "season": "2021-22",
       "date": "2022-05-22",
-      "home": "Brentford",
-      "away": "Leeds United",
-      "home_goals": 1,
-      "away_goals": 2
+      "home": "Arsenal",
+      "away": "Everton",
+      "home_goals": 5,
+      "away_goals": 1
     },
     {
       "season": "2021-22",
@@ -2996,10 +2996,10 @@
     {
       "season": "2021-22",
       "date": "2022-05-22",
-      "home": "Arsenal",
-      "away": "Everton",
-      "home_goals": 5,
-      "away_goals": 1
+      "home": "Brentford",
+      "away": "Leeds United",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2021-22",
@@ -3124,10 +3124,10 @@
     {
       "season": "2022-23",
       "date": "2022-08-13",
-      "home": "Brighton Hove",
-      "away": "Newcastle",
-      "home_goals": 0,
-      "away_goals": 0
+      "home": "Arsenal",
+      "away": "Leicester City",
+      "home_goals": 4,
+      "away_goals": 2
     },
     {
       "season": "2022-23",
@@ -3140,24 +3140,8 @@
     {
       "season": "2022-23",
       "date": "2022-08-13",
-      "home": "Man City",
-      "away": "Bournemouth",
-      "home_goals": 4,
-      "away_goals": 0
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-08-13",
-      "home": "Arsenal",
-      "away": "Leicester City",
-      "home_goals": 4,
-      "away_goals": 2
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-08-13",
-      "home": "Wolves",
-      "away": "Fulham",
+      "home": "Brighton Hove",
+      "away": "Newcastle",
       "home_goals": 0,
       "away_goals": 0
     },
@@ -3172,10 +3156,26 @@
     {
       "season": "2022-23",
       "date": "2022-08-13",
+      "home": "Wolves",
+      "away": "Fulham",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-08-13",
       "home": "Aston Villa",
       "away": "Everton",
       "home_goals": 2,
       "away_goals": 1
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-08-13",
+      "home": "Man City",
+      "away": "Bournemouth",
+      "home_goals": 4,
+      "away_goals": 0
     },
     {
       "season": "2022-23",
@@ -3252,10 +3252,10 @@
     {
       "season": "2022-23",
       "date": "2022-08-21",
-      "home": "West Ham",
-      "away": "Brighton Hove",
-      "home_goals": 0,
-      "away_goals": 2
+      "home": "Newcastle",
+      "away": "Man City",
+      "home_goals": 3,
+      "away_goals": 3
     },
     {
       "season": "2022-23",
@@ -3268,10 +3268,10 @@
     {
       "season": "2022-23",
       "date": "2022-08-21",
-      "home": "Newcastle",
-      "away": "Man City",
-      "home_goals": 3,
-      "away_goals": 3
+      "home": "West Ham",
+      "away": "Brighton Hove",
+      "home_goals": 0,
+      "away_goals": 2
     },
     {
       "season": "2022-23",
@@ -3340,6 +3340,14 @@
     {
       "season": "2022-23",
       "date": "2022-08-28",
+      "home": "Nottingham",
+      "away": "Tottenham",
+      "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-08-28",
       "home": "Wolves",
       "away": "Newcastle",
       "home_goals": 1,
@@ -3355,11 +3363,19 @@
     },
     {
       "season": "2022-23",
-      "date": "2022-08-28",
-      "home": "Nottingham",
-      "away": "Tottenham",
-      "home_goals": 0,
-      "away_goals": 2
+      "date": "2022-08-30",
+      "home": "Leeds United",
+      "away": "Everton",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-08-30",
+      "home": "Southampton",
+      "away": "Chelsea",
+      "home_goals": 2,
+      "away_goals": 1
     },
     {
       "season": "2022-23",
@@ -3379,35 +3395,11 @@
     },
     {
       "season": "2022-23",
-      "date": "2022-08-30",
-      "home": "Southampton",
-      "away": "Chelsea",
+      "date": "2022-08-31",
+      "home": "Liverpool",
+      "away": "Newcastle",
       "home_goals": 2,
       "away_goals": 1
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-08-30",
-      "home": "Leeds United",
-      "away": "Everton",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-08-31",
-      "home": "Bournemouth",
-      "away": "Wolves",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-08-31",
-      "home": "Man City",
-      "away": "Nottingham",
-      "home_goals": 6,
-      "away_goals": 0
     },
     {
       "season": "2022-23",
@@ -3428,10 +3420,18 @@
     {
       "season": "2022-23",
       "date": "2022-08-31",
-      "home": "Liverpool",
-      "away": "Newcastle",
-      "home_goals": 2,
-      "away_goals": 1
+      "home": "Man City",
+      "away": "Nottingham",
+      "home_goals": 6,
+      "away_goals": 0
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-08-31",
+      "home": "Bournemouth",
+      "away": "Wolves",
+      "home_goals": 0,
+      "away_goals": 0
     },
     {
       "season": "2022-23",
@@ -3444,34 +3444,18 @@
     {
       "season": "2022-23",
       "date": "2022-09-03",
-      "home": "Everton",
-      "away": "Liverpool",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-09-03",
-      "home": "Wolves",
-      "away": "Southampton",
+      "home": "Aston Villa",
+      "away": "Man City",
       "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-09-03",
-      "home": "Tottenham",
-      "away": "Fulham",
-      "home_goals": 2,
       "away_goals": 1
     },
     {
       "season": "2022-23",
       "date": "2022-09-03",
-      "home": "Nottingham",
-      "away": "Bournemouth",
-      "home_goals": 2,
-      "away_goals": 3
+      "home": "Brentford",
+      "away": "Leeds United",
+      "home_goals": 5,
+      "away_goals": 2
     },
     {
       "season": "2022-23",
@@ -3492,18 +3476,34 @@
     {
       "season": "2022-23",
       "date": "2022-09-03",
-      "home": "Brentford",
-      "away": "Leeds United",
-      "home_goals": 5,
-      "away_goals": 2
+      "home": "Tottenham",
+      "away": "Fulham",
+      "home_goals": 2,
+      "away_goals": 1
     },
     {
       "season": "2022-23",
       "date": "2022-09-03",
-      "home": "Aston Villa",
-      "away": "Man City",
+      "home": "Wolves",
+      "away": "Southampton",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 0
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-09-03",
+      "home": "Everton",
+      "away": "Liverpool",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-09-03",
+      "home": "Nottingham",
+      "away": "Bournemouth",
+      "home_goals": 2,
+      "away_goals": 3
     },
     {
       "season": "2022-23",
@@ -3524,18 +3524,18 @@
     {
       "season": "2022-23",
       "date": "2022-09-16",
-      "home": "Nottingham",
-      "away": "Fulham",
-      "home_goals": 2,
-      "away_goals": 3
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-09-16",
       "home": "Aston Villa",
       "away": "Southampton",
       "home_goals": 1,
       "away_goals": 0
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-09-16",
+      "home": "Nottingham",
+      "away": "Fulham",
+      "home_goals": 2,
+      "away_goals": 3
     },
     {
       "season": "2022-23",
@@ -3580,26 +3580,18 @@
     {
       "season": "2022-23",
       "date": "2022-10-01",
-      "home": "Arsenal",
-      "away": "Tottenham",
-      "home_goals": 3,
-      "away_goals": 1
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-10-01",
-      "home": "Southampton",
-      "away": "Everton",
+      "home": "Crystal Palace",
+      "away": "Chelsea",
       "home_goals": 1,
       "away_goals": 2
     },
     {
       "season": "2022-23",
       "date": "2022-10-01",
-      "home": "Liverpool",
-      "away": "Brighton Hove",
-      "home_goals": 3,
-      "away_goals": 3
+      "home": "West Ham",
+      "away": "Wolves",
+      "home_goals": 2,
+      "away_goals": 0
     },
     {
       "season": "2022-23",
@@ -3612,14 +3604,6 @@
     {
       "season": "2022-23",
       "date": "2022-10-01",
-      "home": "Crystal Palace",
-      "away": "Chelsea",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-10-01",
       "home": "Bournemouth",
       "away": "Brentford",
       "home_goals": 0,
@@ -3628,10 +3612,26 @@
     {
       "season": "2022-23",
       "date": "2022-10-01",
-      "home": "West Ham",
-      "away": "Wolves",
-      "home_goals": 2,
-      "away_goals": 0
+      "home": "Southampton",
+      "away": "Everton",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-10-01",
+      "home": "Arsenal",
+      "away": "Tottenham",
+      "home_goals": 3,
+      "away_goals": 1
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-10-01",
+      "home": "Liverpool",
+      "away": "Brighton Hove",
+      "home_goals": 3,
+      "away_goals": 3
     },
     {
       "season": "2022-23",
@@ -3748,22 +3748,6 @@
     {
       "season": "2022-23",
       "date": "2022-10-15",
-      "home": "Tottenham",
-      "away": "Everton",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-10-15",
-      "home": "Leicester City",
-      "away": "Crystal Palace",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-10-15",
       "home": "Wolves",
       "away": "Nottingham",
       "home_goals": 1,
@@ -3776,6 +3760,22 @@
       "away": "Bournemouth",
       "home_goals": 2,
       "away_goals": 2
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-10-15",
+      "home": "Leicester City",
+      "away": "Crystal Palace",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-10-15",
+      "home": "Tottenham",
+      "away": "Everton",
+      "home_goals": 2,
+      "away_goals": 0
     },
     {
       "season": "2022-23",
@@ -3836,14 +3836,6 @@
     {
       "season": "2022-23",
       "date": "2022-10-19",
-      "home": "Bournemouth",
-      "away": "Southampton",
-      "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-10-19",
       "home": "Liverpool",
       "away": "West Ham",
       "home_goals": 1,
@@ -3868,8 +3860,24 @@
     {
       "season": "2022-23",
       "date": "2022-10-19",
+      "home": "Bournemouth",
+      "away": "Southampton",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-10-19",
       "home": "Man United",
       "away": "Tottenham",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2022-23",
+      "date": "2022-10-20",
+      "home": "Leicester City",
+      "away": "Leeds United",
       "home_goals": 2,
       "away_goals": 0
     },
@@ -3883,10 +3891,10 @@
     },
     {
       "season": "2022-23",
-      "date": "2022-10-20",
-      "home": "Leicester City",
-      "away": "Leeds United",
-      "home_goals": 2,
+      "date": "2022-10-22",
+      "home": "Nottingham",
+      "away": "Liverpool",
+      "home_goals": 1,
       "away_goals": 0
     },
     {
@@ -3896,14 +3904,6 @@
       "away": "Brighton Hove",
       "home_goals": 3,
       "away_goals": 1
-    },
-    {
-      "season": "2022-23",
-      "date": "2022-10-22",
-      "home": "Nottingham",
-      "away": "Liverpool",
-      "home_goals": 1,
-      "away_goals": 0
     },
     {
       "season": "2022-23",
@@ -4612,18 +4612,18 @@
     {
       "season": "2022-23",
       "date": "2023-01-22",
-      "home": "Man City",
-      "away": "Wolves",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-01-22",
       "home": "Arsenal",
       "away": "Man United",
       "home_goals": 3,
       "away_goals": 2
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-01-22",
+      "home": "Man City",
+      "away": "Wolves",
+      "home_goals": 3,
+      "away_goals": 0
     },
     {
       "season": "2022-23",
@@ -4836,10 +4836,10 @@
     {
       "season": "2022-23",
       "date": "2023-02-18",
-      "home": "Everton",
-      "away": "Leeds United",
-      "home_goals": 1,
-      "away_goals": 0
+      "home": "Aston Villa",
+      "away": "Arsenal",
+      "home_goals": 2,
+      "away_goals": 4
     },
     {
       "season": "2022-23",
@@ -4868,10 +4868,10 @@
     {
       "season": "2022-23",
       "date": "2023-02-18",
-      "home": "Aston Villa",
-      "away": "Arsenal",
-      "home_goals": 2,
-      "away_goals": 4
+      "home": "Everton",
+      "away": "Leeds United",
+      "home_goals": 1,
+      "away_goals": 0
     },
     {
       "season": "2022-23",
@@ -5004,14 +5004,6 @@
     {
       "season": "2022-23",
       "date": "2023-03-04",
-      "home": "Aston Villa",
-      "away": "Crystal Palace",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-03-04",
       "home": "Southampton",
       "away": "Leicester City",
       "home_goals": 1,
@@ -5024,6 +5016,14 @@
       "away": "Bournemouth",
       "home_goals": 3,
       "away_goals": 2
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-03-04",
+      "home": "Aston Villa",
+      "away": "Crystal Palace",
+      "home_goals": 1,
+      "away_goals": 0
     },
     {
       "season": "2022-23",
@@ -5048,6 +5048,14 @@
       "away": "Fulham",
       "home_goals": 3,
       "away_goals": 2
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-03-11",
+      "home": "Crystal Palace",
+      "away": "Man City",
+      "home_goals": 0,
+      "away_goals": 1
     },
     {
       "season": "2022-23",
@@ -5091,11 +5099,11 @@
     },
     {
       "season": "2022-23",
-      "date": "2023-03-11",
-      "home": "Crystal Palace",
-      "away": "Man City",
+      "date": "2023-03-12",
+      "home": "Fulham",
+      "away": "Arsenal",
       "home_goals": 0,
-      "away_goals": 1
+      "away_goals": 3
     },
     {
       "season": "2022-23",
@@ -5104,14 +5112,6 @@
       "away": "Aston Villa",
       "home_goals": 1,
       "away_goals": 1
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-03-12",
-      "home": "Fulham",
-      "away": "Arsenal",
-      "home_goals": 0,
-      "away_goals": 3
     },
     {
       "season": "2022-23",
@@ -5220,17 +5220,17 @@
     {
       "season": "2022-23",
       "date": "2023-04-01",
-      "home": "Crystal Palace",
-      "away": "Leicester City",
-      "home_goals": 2,
+      "home": "Nottingham",
+      "away": "Wolves",
+      "home_goals": 1,
       "away_goals": 1
     },
     {
       "season": "2022-23",
       "date": "2023-04-01",
-      "home": "Nottingham",
-      "away": "Wolves",
-      "home_goals": 1,
+      "home": "Crystal Palace",
+      "away": "Leicester City",
+      "home_goals": 2,
       "away_goals": 1
     },
     {
@@ -5332,14 +5332,6 @@
     {
       "season": "2022-23",
       "date": "2023-04-08",
-      "home": "Tottenham",
-      "away": "Brighton Hove",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-04-08",
       "home": "Leicester City",
       "away": "Bournemouth",
       "home_goals": 0,
@@ -5364,10 +5356,26 @@
     {
       "season": "2022-23",
       "date": "2023-04-08",
+      "home": "Tottenham",
+      "away": "Brighton Hove",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-04-08",
       "home": "Brentford",
       "away": "Newcastle",
       "home_goals": 1,
       "away_goals": 2
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-04-08",
+      "home": "Southampton",
+      "away": "Man City",
+      "home_goals": 1,
+      "away_goals": 4
     },
     {
       "season": "2022-23",
@@ -5384,14 +5392,6 @@
       "away": "Nottingham",
       "home_goals": 2,
       "away_goals": 0
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-04-08",
-      "home": "Southampton",
-      "away": "Man City",
-      "home_goals": 1,
-      "away_goals": 4
     },
     {
       "season": "2022-23",
@@ -5468,17 +5468,17 @@
     {
       "season": "2022-23",
       "date": "2023-04-16",
-      "home": "Nottingham",
-      "away": "Man United",
-      "home_goals": 0,
+      "home": "West Ham",
+      "away": "Arsenal",
+      "home_goals": 2,
       "away_goals": 2
     },
     {
       "season": "2022-23",
       "date": "2023-04-16",
-      "home": "West Ham",
-      "away": "Arsenal",
-      "home_goals": 2,
+      "home": "Nottingham",
+      "away": "Man United",
+      "home_goals": 0,
       "away_goals": 2
     },
     {
@@ -5500,6 +5500,22 @@
     {
       "season": "2022-23",
       "date": "2023-04-22",
+      "home": "Brentford",
+      "away": "Aston Villa",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-04-22",
+      "home": "Crystal Palace",
+      "away": "Everton",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-04-22",
       "home": "Fulham",
       "away": "Leeds United",
       "home_goals": 2,
@@ -5519,22 +5535,6 @@
       "home": "Leicester City",
       "away": "Wolves",
       "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-04-22",
-      "home": "Crystal Palace",
-      "away": "Everton",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-04-22",
-      "home": "Brentford",
-      "away": "Aston Villa",
-      "home_goals": 1,
       "away_goals": 1
     },
     {
@@ -5588,14 +5588,6 @@
     {
       "season": "2022-23",
       "date": "2023-04-26",
-      "home": "Chelsea",
-      "away": "Brentford",
-      "home_goals": 0,
-      "away_goals": 2
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-04-26",
       "home": "Nottingham",
       "away": "Brighton Hove",
       "home_goals": 3,
@@ -5604,9 +5596,25 @@
     {
       "season": "2022-23",
       "date": "2023-04-26",
+      "home": "Chelsea",
+      "away": "Brentford",
+      "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-04-26",
       "home": "West Ham",
       "away": "Liverpool",
       "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-04-27",
+      "home": "Tottenham",
+      "away": "Man United",
+      "home_goals": 2,
       "away_goals": 2
     },
     {
@@ -5624,14 +5632,6 @@
       "away": "Newcastle",
       "home_goals": 1,
       "away_goals": 4
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-04-27",
-      "home": "Tottenham",
-      "away": "Man United",
-      "home_goals": 2,
-      "away_goals": 2
     },
     {
       "season": "2022-23",
@@ -5660,10 +5660,18 @@
     {
       "season": "2022-23",
       "date": "2023-04-30",
-      "home": "Liverpool",
-      "away": "Tottenham",
+      "home": "Fulham",
+      "away": "Man City",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-04-30",
+      "home": "Bournemouth",
+      "away": "Leeds United",
       "home_goals": 4,
-      "away_goals": 3
+      "away_goals": 1
     },
     {
       "season": "2022-23",
@@ -5684,18 +5692,10 @@
     {
       "season": "2022-23",
       "date": "2023-04-30",
-      "home": "Fulham",
-      "away": "Man City",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-04-30",
-      "home": "Bournemouth",
-      "away": "Leeds United",
+      "home": "Liverpool",
+      "away": "Tottenham",
       "home_goals": 4,
-      "away_goals": 1
+      "away_goals": 3
     },
     {
       "season": "2022-23",
@@ -5716,14 +5716,6 @@
     {
       "season": "2022-23",
       "date": "2023-05-03",
-      "home": "Man City",
-      "away": "West Ham",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-05-03",
       "home": "Liverpool",
       "away": "Fulham",
       "home_goals": 1,
@@ -5731,9 +5723,25 @@
     },
     {
       "season": "2022-23",
+      "date": "2023-05-03",
+      "home": "Man City",
+      "away": "West Ham",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2022-23",
       "date": "2023-05-04",
       "home": "Brighton Hove",
       "away": "Man United",
+      "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-05-06",
+      "home": "Liverpool",
+      "away": "Brentford",
       "home_goals": 1,
       "away_goals": 0
     },
@@ -5748,16 +5756,16 @@
     {
       "season": "2022-23",
       "date": "2023-05-06",
-      "home": "Wolves",
-      "away": "Aston Villa",
+      "home": "Tottenham",
+      "away": "Crystal Palace",
       "home_goals": 1,
       "away_goals": 0
     },
     {
       "season": "2022-23",
       "date": "2023-05-06",
-      "home": "Tottenham",
-      "away": "Crystal Palace",
+      "home": "Wolves",
+      "away": "Aston Villa",
       "home_goals": 1,
       "away_goals": 0
     },
@@ -5768,14 +5776,6 @@
       "away": "Leeds United",
       "home_goals": 2,
       "away_goals": 1
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-05-06",
-      "home": "Liverpool",
-      "away": "Brentford",
-      "home_goals": 1,
-      "away_goals": 0
     },
     {
       "season": "2022-23",
@@ -5796,18 +5796,18 @@
     {
       "season": "2022-23",
       "date": "2023-05-08",
-      "home": "Nottingham",
-      "away": "Southampton",
-      "home_goals": 4,
-      "away_goals": 3
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-05-08",
       "home": "Brighton Hove",
       "away": "Everton",
       "home_goals": 1,
       "away_goals": 5
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-05-08",
+      "home": "Nottingham",
+      "away": "Southampton",
+      "home_goals": 4,
+      "away_goals": 3
     },
     {
       "season": "2022-23",
@@ -5828,14 +5828,6 @@
     {
       "season": "2022-23",
       "date": "2023-05-13",
-      "home": "Aston Villa",
-      "away": "Tottenham",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-05-13",
       "home": "Crystal Palace",
       "away": "Bournemouth",
       "home_goals": 2,
@@ -5844,10 +5836,10 @@
     {
       "season": "2022-23",
       "date": "2023-05-13",
-      "home": "Man United",
-      "away": "Wolves",
+      "home": "Aston Villa",
+      "away": "Tottenham",
       "home_goals": 2,
-      "away_goals": 0
+      "away_goals": 1
     },
     {
       "season": "2022-23",
@@ -5867,6 +5859,22 @@
     },
     {
       "season": "2022-23",
+      "date": "2023-05-13",
+      "home": "Man United",
+      "away": "Wolves",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2022-23",
+      "date": "2023-05-14",
+      "home": "Arsenal",
+      "away": "Brighton Hove",
+      "home_goals": 0,
+      "away_goals": 3
+    },
+    {
+      "season": "2022-23",
       "date": "2023-05-14",
       "home": "Everton",
       "away": "Man City",
@@ -5880,14 +5888,6 @@
       "away": "West Ham",
       "home_goals": 2,
       "away_goals": 0
-    },
-    {
-      "season": "2022-23",
-      "date": "2023-05-14",
-      "home": "Arsenal",
-      "away": "Brighton Hove",
-      "home_goals": 0,
-      "away_goals": 3
     },
     {
       "season": "2022-23",
@@ -6100,14 +6100,6 @@
     {
       "season": "2023-24",
       "date": "2023-08-12",
-      "home": "Arsenal",
-      "away": "Nottingham",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-08-12",
       "home": "Brighton Hove",
       "away": "Luton Town",
       "home_goals": 4,
@@ -6116,9 +6108,9 @@
     {
       "season": "2023-24",
       "date": "2023-08-12",
-      "home": "Newcastle",
-      "away": "Aston Villa",
-      "home_goals": 5,
+      "home": "Arsenal",
+      "away": "Nottingham",
+      "home_goals": 2,
       "away_goals": 1
     },
     {
@@ -6135,6 +6127,14 @@
       "home": "Everton",
       "away": "Fulham",
       "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-08-12",
+      "home": "Newcastle",
+      "away": "Aston Villa",
+      "home_goals": 5,
       "away_goals": 1
     },
     {
@@ -6172,26 +6172,10 @@
     {
       "season": "2023-24",
       "date": "2023-08-19",
-      "home": "Man City",
-      "away": "Newcastle",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-08-19",
-      "home": "Tottenham",
-      "away": "Man United",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-08-19",
-      "home": "Liverpool",
-      "away": "Bournemouth",
-      "home_goals": 3,
-      "away_goals": 1
+      "home": "Fulham",
+      "away": "Brentford",
+      "home_goals": 0,
+      "away_goals": 3
     },
     {
       "season": "2023-24",
@@ -6204,10 +6188,26 @@
     {
       "season": "2023-24",
       "date": "2023-08-19",
-      "home": "Fulham",
-      "away": "Brentford",
-      "home_goals": 0,
-      "away_goals": 3
+      "home": "Liverpool",
+      "away": "Bournemouth",
+      "home_goals": 3,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-08-19",
+      "home": "Tottenham",
+      "away": "Man United",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-08-19",
+      "home": "Man City",
+      "away": "Newcastle",
+      "home_goals": 1,
+      "away_goals": 0
     },
     {
       "season": "2023-24",
@@ -6244,6 +6244,30 @@
     {
       "season": "2023-24",
       "date": "2023-08-26",
+      "home": "Brighton Hove",
+      "away": "West Ham",
+      "home_goals": 1,
+      "away_goals": 3
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-08-26",
+      "home": "Brentford",
+      "away": "Crystal Palace",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-08-26",
+      "home": "Arsenal",
+      "away": "Fulham",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-08-26",
       "home": "Bournemouth",
       "away": "Tottenham",
       "home_goals": 0,
@@ -6264,30 +6288,6 @@
       "away": "Nottingham",
       "home_goals": 3,
       "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-08-26",
-      "home": "Arsenal",
-      "away": "Fulham",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-08-26",
-      "home": "Brentford",
-      "away": "Crystal Palace",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-08-26",
-      "home": "Brighton Hove",
-      "away": "West Ham",
-      "home_goals": 1,
-      "away_goals": 3
     },
     {
       "season": "2023-24",
@@ -6332,22 +6332,6 @@
     {
       "season": "2023-24",
       "date": "2023-09-02",
-      "home": "Man City",
-      "away": "Fulham",
-      "home_goals": 5,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-09-02",
-      "home": "Chelsea",
-      "away": "Nottingham",
-      "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-09-02",
       "home": "Sheffield United",
       "away": "Everton",
       "home_goals": 2,
@@ -6371,6 +6355,30 @@
     },
     {
       "season": "2023-24",
+      "date": "2023-09-02",
+      "home": "Chelsea",
+      "away": "Nottingham",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-09-02",
+      "home": "Man City",
+      "away": "Fulham",
+      "home_goals": 5,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-09-03",
+      "home": "Arsenal",
+      "away": "Man United",
+      "home_goals": 3,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
       "date": "2023-09-03",
       "home": "Crystal Palace",
       "away": "Wolves",
@@ -6384,14 +6392,6 @@
       "away": "Aston Villa",
       "home_goals": 3,
       "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-09-03",
-      "home": "Arsenal",
-      "away": "Man United",
-      "home_goals": 3,
-      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -6476,17 +6476,9 @@
     {
       "season": "2023-24",
       "date": "2023-09-23",
-      "home": "Crystal Palace",
-      "away": "Fulham",
+      "home": "Burnley",
+      "away": "Man United",
       "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-09-23",
-      "home": "Luton Town",
-      "away": "Wolves",
-      "home_goals": 1,
       "away_goals": 1
     },
     {
@@ -6508,9 +6500,17 @@
     {
       "season": "2023-24",
       "date": "2023-09-23",
-      "home": "Burnley",
-      "away": "Man United",
+      "home": "Crystal Palace",
+      "away": "Fulham",
       "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-09-23",
+      "home": "Luton Town",
+      "away": "Wolves",
+      "home_goals": 1,
       "away_goals": 1
     },
     {
@@ -6564,17 +6564,33 @@
     {
       "season": "2023-24",
       "date": "2023-09-30",
-      "home": "West Ham",
-      "away": "Sheffield United",
-      "home_goals": 2,
-      "away_goals": 0
+      "home": "Aston Villa",
+      "away": "Brighton Hove",
+      "home_goals": 6,
+      "away_goals": 1
     },
     {
       "season": "2023-24",
       "date": "2023-09-30",
-      "home": "Tottenham",
-      "away": "Liverpool",
-      "home_goals": 2,
+      "home": "Bournemouth",
+      "away": "Arsenal",
+      "home_goals": 0,
+      "away_goals": 4
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-09-30",
+      "home": "Everton",
+      "away": "Luton Town",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-09-30",
+      "home": "Man United",
+      "away": "Crystal Palace",
+      "home_goals": 0,
       "away_goals": 1
     },
     {
@@ -6588,33 +6604,17 @@
     {
       "season": "2023-24",
       "date": "2023-09-30",
-      "home": "Everton",
-      "away": "Luton Town",
-      "home_goals": 1,
-      "away_goals": 2
+      "home": "West Ham",
+      "away": "Sheffield United",
+      "home_goals": 2,
+      "away_goals": 0
     },
     {
       "season": "2023-24",
       "date": "2023-09-30",
-      "home": "Bournemouth",
-      "away": "Arsenal",
-      "home_goals": 0,
-      "away_goals": 4
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-09-30",
-      "home": "Aston Villa",
-      "away": "Brighton Hove",
-      "home_goals": 6,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-09-30",
-      "home": "Man United",
-      "away": "Crystal Palace",
-      "home_goals": 0,
+      "home": "Tottenham",
+      "away": "Liverpool",
+      "home_goals": 2,
       "away_goals": 1
     },
     {
@@ -6692,22 +6692,6 @@
     {
       "season": "2023-24",
       "date": "2023-10-08",
-      "home": "Arsenal",
-      "away": "Man City",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-10-08",
-      "home": "Wolves",
-      "away": "Aston Villa",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-10-08",
       "home": "Brighton Hove",
       "away": "Liverpool",
       "home_goals": 2,
@@ -6723,10 +6707,50 @@
     },
     {
       "season": "2023-24",
+      "date": "2023-10-08",
+      "home": "Wolves",
+      "away": "Aston Villa",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-10-08",
+      "home": "Arsenal",
+      "away": "Man City",
+      "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
       "date": "2023-10-21",
-      "home": "Liverpool",
-      "away": "Everton",
+      "home": "Sheffield United",
+      "away": "Man United",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-10-21",
+      "home": "Chelsea",
+      "away": "Arsenal",
       "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-10-21",
+      "home": "Nottingham",
+      "away": "Luton Town",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-10-21",
+      "home": "Newcastle",
+      "away": "Crystal Palace",
+      "home_goals": 4,
       "away_goals": 0
     },
     {
@@ -6748,42 +6772,18 @@
     {
       "season": "2023-24",
       "date": "2023-10-21",
-      "home": "Man City",
-      "away": "Brighton Hove",
+      "home": "Liverpool",
+      "away": "Everton",
       "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-10-21",
-      "home": "Newcastle",
-      "away": "Crystal Palace",
-      "home_goals": 4,
       "away_goals": 0
     },
     {
       "season": "2023-24",
       "date": "2023-10-21",
-      "home": "Nottingham",
-      "away": "Luton Town",
+      "home": "Man City",
+      "away": "Brighton Hove",
       "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-10-21",
-      "home": "Chelsea",
-      "away": "Arsenal",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-10-21",
-      "home": "Sheffield United",
-      "away": "Man United",
-      "home_goals": 1,
-      "away_goals": 2
+      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -6812,6 +6812,14 @@
     {
       "season": "2023-24",
       "date": "2023-10-28",
+      "home": "Arsenal",
+      "away": "Sheffield United",
+      "home_goals": 5,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-10-28",
       "home": "Chelsea",
       "away": "Brentford",
       "home_goals": 0,
@@ -6828,42 +6836,10 @@
     {
       "season": "2023-24",
       "date": "2023-10-28",
-      "home": "Arsenal",
-      "away": "Sheffield United",
-      "home_goals": 5,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-10-28",
       "home": "Wolves",
       "away": "Newcastle",
       "home_goals": 2,
       "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-10-29",
-      "home": "West Ham",
-      "away": "Everton",
-      "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-10-29",
-      "home": "Aston Villa",
-      "away": "Luton Town",
-      "home_goals": 3,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-10-29",
-      "home": "Brighton Hove",
-      "away": "Fulham",
-      "home_goals": 1,
-      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -6883,42 +6859,26 @@
     },
     {
       "season": "2023-24",
-      "date": "2023-11-04",
-      "home": "Fulham",
-      "away": "Man United",
-      "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-11-04",
-      "home": "Brentford",
-      "away": "West Ham",
-      "home_goals": 3,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-11-04",
-      "home": "Burnley",
-      "away": "Crystal Palace",
-      "home_goals": 0,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-11-04",
-      "home": "Everton",
-      "away": "Brighton Hove",
+      "date": "2023-10-29",
+      "home": "Brighton Hove",
+      "away": "Fulham",
       "home_goals": 1,
       "away_goals": 1
     },
     {
       "season": "2023-24",
-      "date": "2023-11-04",
-      "home": "Sheffield United",
-      "away": "Wolves",
-      "home_goals": 2,
+      "date": "2023-10-29",
+      "home": "Aston Villa",
+      "away": "Luton Town",
+      "home_goals": 3,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-10-29",
+      "home": "West Ham",
+      "away": "Everton",
+      "home_goals": 0,
       "away_goals": 1
     },
     {
@@ -6932,9 +6892,49 @@
     {
       "season": "2023-24",
       "date": "2023-11-04",
+      "home": "Sheffield United",
+      "away": "Wolves",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-11-04",
       "home": "Man City",
       "away": "Bournemouth",
       "home_goals": 6,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-11-04",
+      "home": "Burnley",
+      "away": "Crystal Palace",
+      "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-11-04",
+      "home": "Brentford",
+      "away": "West Ham",
+      "home_goals": 3,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-11-04",
+      "home": "Fulham",
+      "away": "Man United",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-11-04",
+      "home": "Everton",
+      "away": "Brighton Hove",
+      "home_goals": 1,
       "away_goals": 1
     },
     {
@@ -7044,14 +7044,6 @@
     {
       "season": "2023-24",
       "date": "2023-11-25",
-      "home": "Sheffield United",
-      "away": "Bournemouth",
-      "home_goals": 1,
-      "away_goals": 3
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-11-25",
       "home": "Brentford",
       "away": "Arsenal",
       "home_goals": 0,
@@ -7060,10 +7052,10 @@
     {
       "season": "2023-24",
       "date": "2023-11-25",
-      "home": "Nottingham",
-      "away": "Brighton Hove",
-      "home_goals": 2,
-      "away_goals": 3
+      "home": "Man City",
+      "away": "Liverpool",
+      "home_goals": 1,
+      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -7084,14 +7076,6 @@
     {
       "season": "2023-24",
       "date": "2023-11-25",
-      "home": "Man City",
-      "away": "Liverpool",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-11-25",
       "home": "Newcastle",
       "away": "Chelsea",
       "home_goals": 4,
@@ -7099,11 +7083,19 @@
     },
     {
       "season": "2023-24",
-      "date": "2023-11-26",
-      "home": "Tottenham",
-      "away": "Aston Villa",
+      "date": "2023-11-25",
+      "home": "Nottingham",
+      "away": "Brighton Hove",
+      "home_goals": 2,
+      "away_goals": 3
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-11-25",
+      "home": "Sheffield United",
+      "away": "Bournemouth",
       "home_goals": 1,
-      "away_goals": 2
+      "away_goals": 3
     },
     {
       "season": "2023-24",
@@ -7112,6 +7104,14 @@
       "away": "Man United",
       "home_goals": 0,
       "away_goals": 3
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-11-26",
+      "home": "Tottenham",
+      "away": "Aston Villa",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2023-24",
@@ -7164,10 +7164,18 @@
     {
       "season": "2023-24",
       "date": "2023-12-03",
-      "home": "Man City",
-      "away": "Tottenham",
+      "home": "Bournemouth",
+      "away": "Aston Villa",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-12-03",
+      "home": "Chelsea",
+      "away": "Brighton Hove",
       "home_goals": 3,
-      "away_goals": 3
+      "away_goals": 2
     },
     {
       "season": "2023-24",
@@ -7188,18 +7196,10 @@
     {
       "season": "2023-24",
       "date": "2023-12-03",
-      "home": "Bournemouth",
-      "away": "Aston Villa",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-12-03",
-      "home": "Chelsea",
-      "away": "Brighton Hove",
+      "home": "Man City",
+      "away": "Tottenham",
       "home_goals": 3,
-      "away_goals": 2
+      "away_goals": 3
     },
     {
       "season": "2023-24",
@@ -7216,6 +7216,30 @@
       "away": "Arsenal",
       "home_goals": 3,
       "away_goals": 4
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-12-06",
+      "home": "Sheffield United",
+      "away": "Liverpool",
+      "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-12-06",
+      "home": "Brighton Hove",
+      "away": "Brentford",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-12-06",
+      "home": "Fulham",
+      "away": "Nottingham",
+      "home_goals": 5,
+      "away_goals": 0
     },
     {
       "season": "2023-24",
@@ -7243,30 +7267,6 @@
     },
     {
       "season": "2023-24",
-      "date": "2023-12-06",
-      "home": "Fulham",
-      "away": "Nottingham",
-      "home_goals": 5,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-12-06",
-      "home": "Brighton Hove",
-      "away": "Brentford",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-12-06",
-      "home": "Sheffield United",
-      "away": "Liverpool",
-      "home_goals": 0,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
       "date": "2023-12-07",
       "home": "Everton",
       "away": "Newcastle",
@@ -7284,24 +7284,8 @@
     {
       "season": "2023-24",
       "date": "2023-12-09",
-      "home": "Wolves",
-      "away": "Nottingham",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-12-09",
       "home": "Aston Villa",
       "away": "Arsenal",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-12-09",
-      "home": "Sheffield United",
-      "away": "Brentford",
       "home_goals": 1,
       "away_goals": 0
     },
@@ -7331,19 +7315,27 @@
     },
     {
       "season": "2023-24",
-      "date": "2023-12-10",
-      "home": "Luton Town",
-      "away": "Man City",
+      "date": "2023-12-09",
+      "home": "Sheffield United",
+      "away": "Brentford",
       "home_goals": 1,
-      "away_goals": 2
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-12-09",
+      "home": "Wolves",
+      "away": "Nottingham",
+      "home_goals": 1,
+      "away_goals": 1
     },
     {
       "season": "2023-24",
       "date": "2023-12-10",
-      "home": "Everton",
-      "away": "Chelsea",
-      "home_goals": 2,
-      "away_goals": 0
+      "home": "Tottenham",
+      "away": "Newcastle",
+      "home_goals": 4,
+      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -7356,10 +7348,18 @@
     {
       "season": "2023-24",
       "date": "2023-12-10",
-      "home": "Tottenham",
-      "away": "Newcastle",
-      "home_goals": 4,
-      "away_goals": 1
+      "home": "Everton",
+      "away": "Chelsea",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-12-10",
+      "home": "Luton Town",
+      "away": "Man City",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2023-24",
@@ -7404,17 +7404,9 @@
     {
       "season": "2023-24",
       "date": "2023-12-17",
-      "home": "Liverpool",
-      "away": "Man United",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-12-17",
-      "home": "West Ham",
-      "away": "Wolves",
-      "home_goals": 3,
+      "home": "Arsenal",
+      "away": "Brighton Hove",
+      "home_goals": 2,
       "away_goals": 0
     },
     {
@@ -7428,9 +7420,17 @@
     {
       "season": "2023-24",
       "date": "2023-12-17",
-      "home": "Arsenal",
-      "away": "Brighton Hove",
-      "home_goals": 2,
+      "home": "West Ham",
+      "away": "Wolves",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-12-17",
+      "home": "Liverpool",
+      "away": "Man United",
+      "home_goals": 0,
       "away_goals": 0
     },
     {
@@ -7452,34 +7452,10 @@
     {
       "season": "2023-24",
       "date": "2023-12-23",
-      "home": "Liverpool",
-      "away": "Arsenal",
+      "home": "Luton Town",
+      "away": "Newcastle",
       "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-12-23",
-      "home": "Tottenham",
-      "away": "Everton",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-12-23",
-      "home": "Nottingham",
-      "away": "Bournemouth",
-      "home_goals": 2,
-      "away_goals": 3
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-12-23",
-      "home": "Fulham",
-      "away": "Burnley",
-      "home_goals": 0,
-      "away_goals": 2
+      "away_goals": 0
     },
     {
       "season": "2023-24",
@@ -7492,10 +7468,34 @@
     {
       "season": "2023-24",
       "date": "2023-12-23",
-      "home": "Luton Town",
-      "away": "Newcastle",
+      "home": "Fulham",
+      "away": "Burnley",
+      "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-12-23",
+      "home": "Tottenham",
+      "away": "Everton",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-12-23",
+      "home": "Liverpool",
+      "away": "Arsenal",
       "home_goals": 1,
-      "away_goals": 0
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-12-23",
+      "home": "Nottingham",
+      "away": "Bournemouth",
+      "home_goals": 2,
+      "away_goals": 3
     },
     {
       "season": "2023-24",
@@ -7508,10 +7508,18 @@
     {
       "season": "2023-24",
       "date": "2023-12-26",
-      "home": "Man United",
-      "away": "Aston Villa",
+      "home": "Newcastle",
+      "away": "Nottingham",
+      "home_goals": 1,
+      "away_goals": 3
+    },
+    {
+      "season": "2023-24",
+      "date": "2023-12-26",
+      "home": "Bournemouth",
+      "away": "Fulham",
       "home_goals": 3,
-      "away_goals": 2
+      "away_goals": 0
     },
     {
       "season": "2023-24",
@@ -7532,18 +7540,18 @@
     {
       "season": "2023-24",
       "date": "2023-12-26",
-      "home": "Newcastle",
-      "away": "Nottingham",
-      "home_goals": 1,
-      "away_goals": 3
+      "home": "Man United",
+      "away": "Aston Villa",
+      "home_goals": 3,
+      "away_goals": 2
     },
     {
       "season": "2023-24",
-      "date": "2023-12-26",
-      "home": "Bournemouth",
-      "away": "Fulham",
-      "home_goals": 3,
-      "away_goals": 0
+      "date": "2023-12-27",
+      "home": "Everton",
+      "away": "Man City",
+      "home_goals": 1,
+      "away_goals": 3
     },
     {
       "season": "2023-24",
@@ -7563,11 +7571,11 @@
     },
     {
       "season": "2023-24",
-      "date": "2023-12-27",
-      "home": "Everton",
-      "away": "Man City",
-      "home_goals": 1,
-      "away_goals": 3
+      "date": "2023-12-28",
+      "home": "Arsenal",
+      "away": "West Ham",
+      "home_goals": 0,
+      "away_goals": 2
     },
     {
       "season": "2023-24",
@@ -7575,14 +7583,6 @@
       "home": "Brighton Hove",
       "away": "Tottenham",
       "home_goals": 4,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2023-12-28",
-      "home": "Arsenal",
-      "away": "West Ham",
-      "home_goals": 0,
       "away_goals": 2
     },
     {
@@ -7636,17 +7636,17 @@
     {
       "season": "2023-24",
       "date": "2023-12-31",
-      "home": "Tottenham",
-      "away": "Bournemouth",
-      "home_goals": 3,
+      "home": "Fulham",
+      "away": "Arsenal",
+      "home_goals": 2,
       "away_goals": 1
     },
     {
       "season": "2023-24",
       "date": "2023-12-31",
-      "home": "Fulham",
-      "away": "Arsenal",
-      "home_goals": 2,
+      "home": "Tottenham",
+      "away": "Bournemouth",
+      "home_goals": 3,
       "away_goals": 1
     },
     {
@@ -7692,18 +7692,18 @@
     {
       "season": "2023-24",
       "date": "2024-01-14",
-      "home": "Everton",
-      "away": "Aston Villa",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-01-14",
       "home": "Man United",
       "away": "Tottenham",
       "home_goals": 2,
       "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-01-14",
+      "home": "Everton",
+      "away": "Aston Villa",
+      "home_goals": 0,
+      "away_goals": 0
     },
     {
       "season": "2023-24",
@@ -7748,30 +7748,6 @@
     {
       "season": "2023-24",
       "date": "2024-01-30",
-      "home": "Crystal Palace",
-      "away": "Sheffield United",
-      "home_goals": 3,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-01-30",
-      "home": "Fulham",
-      "away": "Everton",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-01-30",
-      "home": "Aston Villa",
-      "away": "Newcastle",
-      "home_goals": 1,
-      "away_goals": 3
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-01-30",
       "home": "Nottingham",
       "away": "Arsenal",
       "home_goals": 1,
@@ -7787,11 +7763,35 @@
     },
     {
       "season": "2023-24",
+      "date": "2024-01-30",
+      "home": "Fulham",
+      "away": "Everton",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-01-30",
+      "home": "Crystal Palace",
+      "away": "Sheffield United",
+      "home_goals": 3,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-01-30",
+      "home": "Aston Villa",
+      "away": "Newcastle",
+      "home_goals": 1,
+      "away_goals": 3
+    },
+    {
+      "season": "2023-24",
       "date": "2024-01-31",
-      "home": "Liverpool",
-      "away": "Chelsea",
-      "home_goals": 4,
-      "away_goals": 1
+      "home": "Tottenham",
+      "away": "Brentford",
+      "home_goals": 3,
+      "away_goals": 2
     },
     {
       "season": "2023-24",
@@ -7804,10 +7804,10 @@
     {
       "season": "2023-24",
       "date": "2024-01-31",
-      "home": "Tottenham",
-      "away": "Brentford",
-      "home_goals": 3,
-      "away_goals": 2
+      "home": "Liverpool",
+      "away": "Chelsea",
+      "home_goals": 4,
+      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -7828,10 +7828,18 @@
     {
       "season": "2023-24",
       "date": "2024-02-03",
-      "home": "Sheffield United",
-      "away": "Aston Villa",
-      "home_goals": 0,
-      "away_goals": 5
+      "home": "Burnley",
+      "away": "Fulham",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-02-03",
+      "home": "Everton",
+      "away": "Tottenham",
+      "home_goals": 2,
+      "away_goals": 2
     },
     {
       "season": "2023-24",
@@ -7852,18 +7860,10 @@
     {
       "season": "2023-24",
       "date": "2024-02-03",
-      "home": "Everton",
-      "away": "Tottenham",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-02-03",
-      "home": "Burnley",
-      "away": "Fulham",
-      "home_goals": 2,
-      "away_goals": 2
+      "home": "Sheffield United",
+      "away": "Aston Villa",
+      "home_goals": 0,
+      "away_goals": 5
     },
     {
       "season": "2023-24",
@@ -7964,18 +7964,18 @@
     {
       "season": "2023-24",
       "date": "2024-02-11",
-      "home": "West Ham",
-      "away": "Arsenal",
-      "home_goals": 0,
-      "away_goals": 6
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-02-11",
       "home": "Aston Villa",
       "away": "Man United",
       "home_goals": 1,
       "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-02-11",
+      "home": "West Ham",
+      "away": "Arsenal",
+      "home_goals": 0,
+      "away_goals": 6
     },
     {
       "season": "2023-24",
@@ -7988,42 +7988,10 @@
     {
       "season": "2023-24",
       "date": "2024-02-17",
-      "home": "Nottingham",
-      "away": "West Ham",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-02-17",
-      "home": "Newcastle",
-      "away": "Bournemouth",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-02-17",
-      "home": "Fulham",
-      "away": "Aston Villa",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-02-17",
       "home": "Man City",
       "away": "Chelsea",
       "home_goals": 1,
       "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-02-17",
-      "home": "Brentford",
-      "away": "Liverpool",
-      "home_goals": 1,
-      "away_goals": 4
     },
     {
       "season": "2023-24",
@@ -8036,10 +8004,42 @@
     {
       "season": "2023-24",
       "date": "2024-02-17",
+      "home": "Brentford",
+      "away": "Liverpool",
+      "home_goals": 1,
+      "away_goals": 4
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-02-17",
       "home": "Burnley",
       "away": "Arsenal",
       "home_goals": 0,
       "away_goals": 5
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-02-17",
+      "home": "Fulham",
+      "away": "Aston Villa",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-02-17",
+      "home": "Newcastle",
+      "away": "Bournemouth",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-02-17",
+      "home": "Nottingham",
+      "away": "West Ham",
+      "home_goals": 2,
+      "away_goals": 0
     },
     {
       "season": "2023-24",
@@ -8084,17 +8084,17 @@
     {
       "season": "2023-24",
       "date": "2024-02-24",
-      "home": "Arsenal",
-      "away": "Newcastle",
-      "home_goals": 4,
+      "home": "Bournemouth",
+      "away": "Man City",
+      "home_goals": 0,
       "away_goals": 1
     },
     {
       "season": "2023-24",
       "date": "2024-02-24",
-      "home": "Bournemouth",
-      "away": "Man City",
-      "home_goals": 0,
+      "home": "Arsenal",
+      "away": "Newcastle",
+      "home_goals": 4,
       "away_goals": 1
     },
     {
@@ -8108,18 +8108,18 @@
     {
       "season": "2023-24",
       "date": "2024-02-24",
-      "home": "Brighton Hove",
-      "away": "Everton",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-02-24",
       "home": "Aston Villa",
       "away": "Nottingham",
       "home_goals": 4,
       "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-02-24",
+      "home": "Brighton Hove",
+      "away": "Everton",
+      "home_goals": 1,
+      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -8148,6 +8148,46 @@
     {
       "season": "2023-24",
       "date": "2024-03-02",
+      "home": "Luton Town",
+      "away": "Aston Villa",
+      "home_goals": 2,
+      "away_goals": 3
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-02",
+      "home": "Tottenham",
+      "away": "Crystal Palace",
+      "home_goals": 3,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-02",
+      "home": "Newcastle",
+      "away": "Wolves",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-02",
+      "home": "Nottingham",
+      "away": "Liverpool",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-02",
+      "home": "Everton",
+      "away": "West Ham",
+      "home_goals": 1,
+      "away_goals": 3
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-02",
       "home": "Brentford",
       "away": "Chelsea",
       "home_goals": 2,
@@ -8163,42 +8203,10 @@
     },
     {
       "season": "2023-24",
-      "date": "2024-03-02",
-      "home": "Everton",
-      "away": "West Ham",
-      "home_goals": 1,
-      "away_goals": 3
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-03-02",
-      "home": "Luton Town",
-      "away": "Aston Villa",
-      "home_goals": 2,
-      "away_goals": 3
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-03-02",
-      "home": "Newcastle",
-      "away": "Wolves",
+      "date": "2024-03-03",
+      "home": "Man City",
+      "away": "Man United",
       "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-03-02",
-      "home": "Tottenham",
-      "away": "Crystal Palace",
-      "home_goals": 3,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-03-02",
-      "home": "Nottingham",
-      "away": "Liverpool",
-      "home_goals": 0,
       "away_goals": 1
     },
     {
@@ -8208,14 +8216,6 @@
       "away": "Bournemouth",
       "home_goals": 0,
       "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-03-03",
-      "home": "Man City",
-      "away": "Man United",
-      "home_goals": 3,
-      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -8268,18 +8268,10 @@
     {
       "season": "2023-24",
       "date": "2024-03-10",
-      "home": "Liverpool",
-      "away": "Man City",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-03-10",
-      "home": "Brighton Hove",
-      "away": "Nottingham",
-      "home_goals": 1,
-      "away_goals": 0
+      "home": "West Ham",
+      "away": "Burnley",
+      "home_goals": 2,
+      "away_goals": 2
     },
     {
       "season": "2023-24",
@@ -8292,10 +8284,18 @@
     {
       "season": "2023-24",
       "date": "2024-03-10",
-      "home": "West Ham",
-      "away": "Burnley",
-      "home_goals": 2,
-      "away_goals": 2
+      "home": "Brighton Hove",
+      "away": "Nottingham",
+      "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-10",
+      "home": "Liverpool",
+      "away": "Man City",
+      "home_goals": 1,
+      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -8316,6 +8316,14 @@
     {
       "season": "2023-24",
       "date": "2024-03-16",
+      "home": "Fulham",
+      "away": "Tottenham",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-16",
       "home": "Burnley",
       "away": "Brentford",
       "home_goals": 2,
@@ -8331,66 +8339,10 @@
     },
     {
       "season": "2023-24",
-      "date": "2024-03-16",
-      "home": "Fulham",
-      "away": "Tottenham",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
       "date": "2024-03-17",
       "home": "West Ham",
       "away": "Aston Villa",
       "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-03-30",
-      "home": "Aston Villa",
-      "away": "Wolves",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-03-30",
-      "home": "Tottenham",
-      "away": "Luton Town",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-03-30",
-      "home": "Sheffield United",
-      "away": "Fulham",
-      "home_goals": 3,
-      "away_goals": 3
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-03-30",
-      "home": "Brentford",
-      "away": "Man United",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-03-30",
-      "home": "Chelsea",
-      "away": "Burnley",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-03-30",
-      "home": "Bournemouth",
-      "away": "Everton",
-      "home_goals": 2,
       "away_goals": 1
     },
     {
@@ -8404,8 +8356,56 @@
     {
       "season": "2023-24",
       "date": "2024-03-30",
+      "home": "Bournemouth",
+      "away": "Everton",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-30",
+      "home": "Chelsea",
+      "away": "Burnley",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-30",
       "home": "Nottingham",
       "away": "Crystal Palace",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-30",
+      "home": "Sheffield United",
+      "away": "Fulham",
+      "home_goals": 3,
+      "away_goals": 3
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-30",
+      "home": "Tottenham",
+      "away": "Luton Town",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-30",
+      "home": "Aston Villa",
+      "away": "Wolves",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-03-30",
+      "home": "Brentford",
+      "away": "Man United",
       "home_goals": 1,
       "away_goals": 1
     },
@@ -8436,14 +8436,6 @@
     {
       "season": "2023-24",
       "date": "2024-04-02",
-      "home": "Bournemouth",
-      "away": "Crystal Palace",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-04-02",
       "home": "Burnley",
       "away": "Wolves",
       "home_goals": 1,
@@ -8464,6 +8456,14 @@
       "away": "Everton",
       "home_goals": 1,
       "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-04-02",
+      "home": "Bournemouth",
+      "away": "Crystal Palace",
+      "home_goals": 1,
+      "away_goals": 0
     },
     {
       "season": "2023-24",
@@ -8508,14 +8508,6 @@
     {
       "season": "2023-24",
       "date": "2024-04-06",
-      "home": "Aston Villa",
-      "away": "Brentford",
-      "home_goals": 3,
-      "away_goals": 3
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-04-06",
       "home": "Crystal Palace",
       "away": "Man City",
       "home_goals": 2,
@@ -8532,10 +8524,18 @@
     {
       "season": "2023-24",
       "date": "2024-04-06",
-      "home": "Luton Town",
-      "away": "Bournemouth",
-      "home_goals": 2,
-      "away_goals": 1
+      "home": "Everton",
+      "away": "Burnley",
+      "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-04-06",
+      "home": "Aston Villa",
+      "away": "Brentford",
+      "home_goals": 3,
+      "away_goals": 3
     },
     {
       "season": "2023-24",
@@ -8548,18 +8548,18 @@
     {
       "season": "2023-24",
       "date": "2024-04-06",
-      "home": "Brighton Hove",
-      "away": "Arsenal",
-      "home_goals": 0,
-      "away_goals": 3
+      "home": "Luton Town",
+      "away": "Bournemouth",
+      "home_goals": 2,
+      "away_goals": 1
     },
     {
       "season": "2023-24",
       "date": "2024-04-06",
-      "home": "Everton",
-      "away": "Burnley",
-      "home_goals": 1,
-      "away_goals": 0
+      "home": "Brighton Hove",
+      "away": "Arsenal",
+      "home_goals": 0,
+      "away_goals": 3
     },
     {
       "season": "2023-24",
@@ -8732,6 +8732,22 @@
     {
       "season": "2023-24",
       "date": "2024-04-24",
+      "home": "Crystal Palace",
+      "away": "Newcastle",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-04-24",
+      "home": "Man United",
+      "away": "Sheffield United",
+      "home_goals": 4,
+      "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-04-24",
       "home": "Everton",
       "away": "Liverpool",
       "home_goals": 2,
@@ -8747,22 +8763,6 @@
     },
     {
       "season": "2023-24",
-      "date": "2024-04-24",
-      "home": "Man United",
-      "away": "Sheffield United",
-      "home_goals": 4,
-      "away_goals": 2
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-04-24",
-      "home": "Crystal Palace",
-      "away": "Newcastle",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
       "date": "2024-04-25",
       "home": "Brighton Hove",
       "away": "Man City",
@@ -8772,10 +8772,34 @@
     {
       "season": "2023-24",
       "date": "2024-04-27",
-      "home": "West Ham",
-      "away": "Liverpool",
+      "home": "Wolves",
+      "away": "Luton Town",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-04-27",
+      "home": "Aston Villa",
+      "away": "Chelsea",
       "home_goals": 2,
       "away_goals": 2
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-04-27",
+      "home": "Newcastle",
+      "away": "Sheffield United",
+      "home_goals": 5,
+      "away_goals": 1
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-04-27",
+      "home": "Everton",
+      "away": "Brentford",
+      "home_goals": 1,
+      "away_goals": 0
     },
     {
       "season": "2023-24",
@@ -8796,32 +8820,8 @@
     {
       "season": "2023-24",
       "date": "2024-04-27",
-      "home": "Newcastle",
-      "away": "Sheffield United",
-      "home_goals": 5,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-04-27",
-      "home": "Wolves",
-      "away": "Luton Town",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-04-27",
-      "home": "Everton",
-      "away": "Brentford",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-04-27",
-      "home": "Aston Villa",
-      "away": "Chelsea",
+      "home": "West Ham",
+      "away": "Liverpool",
       "home_goals": 2,
       "away_goals": 2
     },
@@ -8868,26 +8868,10 @@
     {
       "season": "2023-24",
       "date": "2024-05-04",
-      "home": "Man City",
-      "away": "Wolves",
-      "home_goals": 5,
-      "away_goals": 1
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-05-04",
-      "home": "Arsenal",
-      "away": "Bournemouth",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-05-04",
-      "home": "Brentford",
-      "away": "Fulham",
-      "home_goals": 0,
-      "away_goals": 0
+      "home": "Sheffield United",
+      "away": "Nottingham",
+      "home_goals": 1,
+      "away_goals": 3
     },
     {
       "season": "2023-24",
@@ -8900,10 +8884,26 @@
     {
       "season": "2023-24",
       "date": "2024-05-04",
-      "home": "Sheffield United",
-      "away": "Nottingham",
-      "home_goals": 1,
-      "away_goals": 3
+      "home": "Brentford",
+      "away": "Fulham",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-05-04",
+      "home": "Arsenal",
+      "away": "Bournemouth",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-05-04",
+      "home": "Man City",
+      "away": "Wolves",
+      "home_goals": 5,
+      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -8940,6 +8940,14 @@
     {
       "season": "2023-24",
       "date": "2024-05-11",
+      "home": "Fulham",
+      "away": "Man City",
+      "home_goals": 0,
+      "away_goals": 4
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-05-11",
       "home": "Bournemouth",
       "away": "Brentford",
       "home_goals": 1,
@@ -8964,10 +8972,10 @@
     {
       "season": "2023-24",
       "date": "2024-05-11",
-      "home": "Fulham",
-      "away": "Man City",
-      "home_goals": 0,
-      "away_goals": 4
+      "home": "Wolves",
+      "away": "Crystal Palace",
+      "home_goals": 1,
+      "away_goals": 3
     },
     {
       "season": "2023-24",
@@ -8983,14 +8991,6 @@
       "home": "Nottingham",
       "away": "Chelsea",
       "home_goals": 2,
-      "away_goals": 3
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-05-11",
-      "home": "Wolves",
-      "away": "Crystal Palace",
-      "home_goals": 1,
       "away_goals": 3
     },
     {
@@ -9044,10 +9044,10 @@
     {
       "season": "2023-24",
       "date": "2024-05-19",
-      "home": "Arsenal",
-      "away": "Everton",
-      "home_goals": 2,
-      "away_goals": 1
+      "home": "Burnley",
+      "away": "Nottingham",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2023-24",
@@ -9056,6 +9056,14 @@
       "away": "Newcastle",
       "home_goals": 2,
       "away_goals": 4
+    },
+    {
+      "season": "2023-24",
+      "date": "2024-05-19",
+      "home": "Arsenal",
+      "away": "Everton",
+      "home_goals": 2,
+      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -9076,10 +9084,10 @@
     {
       "season": "2023-24",
       "date": "2024-05-19",
-      "home": "Burnley",
-      "away": "Nottingham",
-      "home_goals": 1,
-      "away_goals": 2
+      "home": "Man City",
+      "away": "West Ham",
+      "home_goals": 3,
+      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -9096,14 +9104,6 @@
       "away": "Fulham",
       "home_goals": 2,
       "away_goals": 4
-    },
-    {
-      "season": "2023-24",
-      "date": "2024-05-19",
-      "home": "Man City",
-      "away": "West Ham",
-      "home_goals": 3,
-      "away_goals": 1
     },
     {
       "season": "2023-24",
@@ -9132,25 +9132,17 @@
     {
       "season": "2024-25",
       "date": "2024-08-17",
-      "home": "West Ham",
-      "away": "Aston Villa",
-      "home_goals": 1,
+      "home": "Ipswich Town",
+      "away": "Liverpool",
+      "home_goals": 0,
       "away_goals": 2
     },
     {
       "season": "2024-25",
       "date": "2024-08-17",
-      "home": "Nottingham",
-      "away": "Bournemouth",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-08-17",
-      "home": "Newcastle",
-      "away": "Southampton",
-      "home_goals": 1,
+      "home": "Arsenal",
+      "away": "Wolves",
+      "home_goals": 2,
       "away_goals": 0
     },
     {
@@ -9164,18 +9156,26 @@
     {
       "season": "2024-25",
       "date": "2024-08-17",
-      "home": "Ipswich Town",
-      "away": "Liverpool",
-      "home_goals": 0,
-      "away_goals": 2
+      "home": "Newcastle",
+      "away": "Southampton",
+      "home_goals": 1,
+      "away_goals": 0
     },
     {
       "season": "2024-25",
       "date": "2024-08-17",
-      "home": "Arsenal",
-      "away": "Wolves",
-      "home_goals": 2,
-      "away_goals": 0
+      "home": "Nottingham",
+      "away": "Bournemouth",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-08-17",
+      "home": "West Ham",
+      "away": "Aston Villa",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -9204,6 +9204,38 @@
     {
       "season": "2024-25",
       "date": "2024-08-24",
+      "home": "Brighton Hove",
+      "away": "Man United",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-08-24",
+      "home": "Crystal Palace",
+      "away": "West Ham",
+      "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-08-24",
+      "home": "Fulham",
+      "away": "Leicester City",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-08-24",
+      "home": "Man City",
+      "away": "Ipswich Town",
+      "home_goals": 4,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-08-24",
       "home": "Southampton",
       "away": "Nottingham",
       "home_goals": 0,
@@ -9220,42 +9252,10 @@
     {
       "season": "2024-25",
       "date": "2024-08-24",
-      "home": "Man City",
-      "away": "Ipswich Town",
-      "home_goals": 4,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-08-24",
       "home": "Aston Villa",
       "away": "Arsenal",
       "home_goals": 0,
       "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-08-24",
-      "home": "Crystal Palace",
-      "away": "West Ham",
-      "home_goals": 0,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-08-24",
-      "home": "Brighton Hove",
-      "away": "Man United",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-08-24",
-      "home": "Fulham",
-      "away": "Leicester City",
-      "home_goals": 2,
-      "away_goals": 1
     },
     {
       "season": "2024-25",
@@ -9284,9 +9284,25 @@
     {
       "season": "2024-25",
       "date": "2024-08-31",
-      "home": "West Ham",
-      "away": "Man City",
+      "home": "Brentford",
+      "away": "Southampton",
+      "home_goals": 3,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-08-31",
+      "home": "Arsenal",
+      "away": "Brighton Hove",
       "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-08-31",
+      "home": "Everton",
+      "away": "Bournemouth",
+      "home_goals": 2,
       "away_goals": 3
     },
     {
@@ -9316,34 +9332,18 @@
     {
       "season": "2024-25",
       "date": "2024-08-31",
-      "home": "Everton",
-      "away": "Bournemouth",
-      "home_goals": 2,
-      "away_goals": 3
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-08-31",
-      "home": "Brentford",
-      "away": "Southampton",
-      "home_goals": 3,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-08-31",
-      "home": "Arsenal",
-      "away": "Brighton Hove",
+      "home": "West Ham",
+      "away": "Man City",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 3
     },
     {
       "season": "2024-25",
       "date": "2024-09-01",
-      "home": "Man United",
-      "away": "Liverpool",
-      "home_goals": 0,
-      "away_goals": 3
+      "home": "Chelsea",
+      "away": "Crystal Palace",
+      "home_goals": 1,
+      "away_goals": 1
     },
     {
       "season": "2024-25",
@@ -9356,10 +9356,10 @@
     {
       "season": "2024-25",
       "date": "2024-09-01",
-      "home": "Chelsea",
-      "away": "Crystal Palace",
-      "home_goals": 1,
-      "away_goals": 1
+      "home": "Man United",
+      "away": "Liverpool",
+      "home_goals": 0,
+      "away_goals": 3
     },
     {
       "season": "2024-25",
@@ -9428,14 +9428,6 @@
     {
       "season": "2024-25",
       "date": "2024-09-15",
-      "home": "Tottenham",
-      "away": "Arsenal",
-      "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-09-15",
       "home": "Wolves",
       "away": "Newcastle",
       "home_goals": 1,
@@ -9443,18 +9435,42 @@
     },
     {
       "season": "2024-25",
-      "date": "2024-09-21",
-      "home": "Aston Villa",
-      "away": "Wolves",
-      "home_goals": 3,
+      "date": "2024-09-15",
+      "home": "Tottenham",
+      "away": "Arsenal",
+      "home_goals": 0,
       "away_goals": 1
     },
     {
       "season": "2024-25",
       "date": "2024-09-21",
-      "home": "Leicester City",
-      "away": "Everton",
+      "home": "Crystal Palace",
+      "away": "Man United",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-09-21",
+      "home": "Southampton",
+      "away": "Ipswich Town",
       "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-09-21",
+      "home": "Liverpool",
+      "away": "Bournemouth",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-09-21",
+      "home": "Tottenham",
+      "away": "Brentford",
+      "home_goals": 3,
       "away_goals": 1
     },
     {
@@ -9476,32 +9492,16 @@
     {
       "season": "2024-25",
       "date": "2024-09-21",
-      "home": "Liverpool",
-      "away": "Bournemouth",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-09-21",
-      "home": "Southampton",
-      "away": "Ipswich Town",
+      "home": "Leicester City",
+      "away": "Everton",
       "home_goals": 1,
       "away_goals": 1
     },
     {
       "season": "2024-25",
       "date": "2024-09-21",
-      "home": "Crystal Palace",
-      "away": "Man United",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-09-21",
-      "home": "Tottenham",
-      "away": "Brentford",
+      "home": "Aston Villa",
+      "away": "Wolves",
       "home_goals": 3,
       "away_goals": 1
     },
@@ -9524,14 +9524,6 @@
     {
       "season": "2024-25",
       "date": "2024-09-28",
-      "home": "Wolves",
-      "away": "Liverpool",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-09-28",
       "home": "Nottingham",
       "away": "Fulham",
       "home_goals": 0,
@@ -9548,18 +9540,18 @@
     {
       "season": "2024-25",
       "date": "2024-09-28",
-      "home": "Chelsea",
-      "away": "Brighton Hove",
-      "home_goals": 4,
+      "home": "Wolves",
+      "away": "Liverpool",
+      "home_goals": 1,
       "away_goals": 2
     },
     {
       "season": "2024-25",
       "date": "2024-09-28",
-      "home": "Brentford",
-      "away": "West Ham",
-      "home_goals": 1,
-      "away_goals": 1
+      "home": "Chelsea",
+      "away": "Brighton Hove",
+      "home_goals": 4,
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -9574,6 +9566,14 @@
       "date": "2024-09-28",
       "home": "Newcastle",
       "away": "Man City",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-09-28",
+      "home": "Brentford",
+      "away": "West Ham",
       "home_goals": 1,
       "away_goals": 1
     },
@@ -9604,33 +9604,17 @@
     {
       "season": "2024-25",
       "date": "2024-10-05",
-      "home": "Everton",
-      "away": "Newcastle",
+      "home": "Crystal Palace",
+      "away": "Liverpool",
       "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-10-05",
-      "home": "West Ham",
-      "away": "Ipswich Town",
-      "home_goals": 4,
       "away_goals": 1
     },
     {
       "season": "2024-25",
       "date": "2024-10-05",
-      "home": "Man City",
-      "away": "Fulham",
+      "home": "Arsenal",
+      "away": "Southampton",
       "home_goals": 3,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-10-05",
-      "home": "Crystal Palace",
-      "away": "Liverpool",
-      "home_goals": 0,
       "away_goals": 1
     },
     {
@@ -9644,14 +9628,6 @@
     {
       "season": "2024-25",
       "date": "2024-10-05",
-      "home": "Arsenal",
-      "away": "Southampton",
-      "home_goals": 3,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-10-05",
       "home": "Leicester City",
       "away": "Bournemouth",
       "home_goals": 1,
@@ -9659,11 +9635,35 @@
     },
     {
       "season": "2024-25",
-      "date": "2024-10-06",
-      "home": "Aston Villa",
-      "away": "Man United",
+      "date": "2024-10-05",
+      "home": "Man City",
+      "away": "Fulham",
+      "home_goals": 3,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-10-05",
+      "home": "West Ham",
+      "away": "Ipswich Town",
+      "home_goals": 4,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-10-05",
+      "home": "Everton",
+      "away": "Newcastle",
       "home_goals": 0,
       "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-10-06",
+      "home": "Brighton Hove",
+      "away": "Tottenham",
+      "home_goals": 3,
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -9676,18 +9676,10 @@
     {
       "season": "2024-25",
       "date": "2024-10-06",
-      "home": "Brighton Hove",
-      "away": "Tottenham",
-      "home_goals": 3,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-10-19",
-      "home": "Tottenham",
-      "away": "West Ham",
-      "home_goals": 4,
-      "away_goals": 1
+      "home": "Aston Villa",
+      "away": "Man United",
+      "home_goals": 0,
+      "away_goals": 0
     },
     {
       "season": "2024-25",
@@ -9732,9 +9724,25 @@
     {
       "season": "2024-25",
       "date": "2024-10-19",
+      "home": "Tottenham",
+      "away": "West Ham",
+      "home_goals": 4,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-10-19",
       "home": "Ipswich Town",
       "away": "Everton",
       "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-10-20",
+      "home": "Wolves",
+      "away": "Man City",
+      "home_goals": 1,
       "away_goals": 2
     },
     {
@@ -9744,14 +9752,6 @@
       "away": "Chelsea",
       "home_goals": 2,
       "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-10-20",
-      "home": "Wolves",
-      "away": "Man City",
-      "home_goals": 1,
-      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -9772,18 +9772,10 @@
     {
       "season": "2024-25",
       "date": "2024-10-26",
-      "home": "Aston Villa",
-      "away": "Bournemouth",
+      "home": "Everton",
+      "away": "Fulham",
       "home_goals": 1,
       "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-10-26",
-      "home": "Brentford",
-      "away": "Ipswich Town",
-      "home_goals": 4,
-      "away_goals": 3
     },
     {
       "season": "2024-25",
@@ -9804,8 +9796,16 @@
     {
       "season": "2024-25",
       "date": "2024-10-26",
-      "home": "Everton",
-      "away": "Fulham",
+      "home": "Brentford",
+      "away": "Ipswich Town",
+      "home_goals": 4,
+      "away_goals": 3
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-10-26",
+      "home": "Aston Villa",
+      "away": "Bournemouth",
       "home_goals": 1,
       "away_goals": 1
     },
@@ -9844,34 +9844,10 @@
     {
       "season": "2024-25",
       "date": "2024-11-02",
-      "home": "Wolves",
-      "away": "Crystal Palace",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-11-02",
-      "home": "Southampton",
-      "away": "Everton",
+      "home": "Newcastle",
+      "away": "Arsenal",
       "home_goals": 1,
       "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-11-02",
-      "home": "Nottingham",
-      "away": "West Ham",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-11-02",
-      "home": "Ipswich Town",
-      "away": "Leicester City",
-      "home_goals": 1,
-      "away_goals": 1
     },
     {
       "season": "2024-25",
@@ -9884,10 +9860,10 @@
     {
       "season": "2024-25",
       "date": "2024-11-02",
-      "home": "Newcastle",
-      "away": "Arsenal",
+      "home": "Ipswich Town",
+      "away": "Leicester City",
       "home_goals": 1,
-      "away_goals": 0
+      "away_goals": 1
     },
     {
       "season": "2024-25",
@@ -9899,11 +9875,27 @@
     },
     {
       "season": "2024-25",
-      "date": "2024-11-03",
-      "home": "Tottenham",
-      "away": "Aston Villa",
-      "home_goals": 4,
-      "away_goals": 1
+      "date": "2024-11-02",
+      "home": "Nottingham",
+      "away": "West Ham",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-11-02",
+      "home": "Southampton",
+      "away": "Everton",
+      "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-11-02",
+      "home": "Wolves",
+      "away": "Crystal Palace",
+      "home_goals": 2,
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -9911,6 +9903,14 @@
       "home": "Man United",
       "away": "Chelsea",
       "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-11-03",
+      "home": "Tottenham",
+      "away": "Aston Villa",
+      "home_goals": 4,
       "away_goals": 1
     },
     {
@@ -9972,18 +9972,10 @@
     {
       "season": "2024-25",
       "date": "2024-11-10",
-      "home": "Chelsea",
-      "away": "Arsenal",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-11-10",
-      "home": "Tottenham",
-      "away": "Ipswich Town",
-      "home_goals": 1,
-      "away_goals": 2
+      "home": "Man United",
+      "away": "Leicester City",
+      "home_goals": 3,
+      "away_goals": 0
     },
     {
       "season": "2024-25",
@@ -9996,50 +9988,18 @@
     {
       "season": "2024-25",
       "date": "2024-11-10",
-      "home": "Man United",
-      "away": "Leicester City",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-11-23",
-      "home": "Leicester City",
-      "away": "Chelsea",
+      "home": "Tottenham",
+      "away": "Ipswich Town",
       "home_goals": 1,
       "away_goals": 2
     },
     {
       "season": "2024-25",
-      "date": "2024-11-23",
-      "home": "Bournemouth",
-      "away": "Brighton Hove",
+      "date": "2024-11-10",
+      "home": "Chelsea",
+      "away": "Arsenal",
       "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-11-23",
-      "home": "Arsenal",
-      "away": "Nottingham",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-11-23",
-      "home": "Aston Villa",
-      "away": "Crystal Palace",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-11-23",
-      "home": "Everton",
-      "away": "Brentford",
-      "home_goals": 0,
-      "away_goals": 0
+      "away_goals": 1
     },
     {
       "season": "2024-25",
@@ -10056,6 +10016,46 @@
       "away": "Tottenham",
       "home_goals": 0,
       "away_goals": 4
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-11-23",
+      "home": "Everton",
+      "away": "Brentford",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-11-23",
+      "home": "Arsenal",
+      "away": "Nottingham",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-11-23",
+      "home": "Bournemouth",
+      "away": "Brighton Hove",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-11-23",
+      "home": "Leicester City",
+      "away": "Chelsea",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-11-23",
+      "home": "Aston Villa",
+      "away": "Crystal Palace",
+      "home_goals": 2,
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -10100,18 +10100,10 @@
     {
       "season": "2024-25",
       "date": "2024-11-30",
-      "home": "Wolves",
-      "away": "Bournemouth",
-      "home_goals": 2,
-      "away_goals": 4
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-11-30",
-      "home": "Nottingham",
-      "away": "Ipswich Town",
-      "home_goals": 1,
-      "away_goals": 0
+      "home": "Brentford",
+      "away": "Leicester City",
+      "home_goals": 4,
+      "away_goals": 1
     },
     {
       "season": "2024-25",
@@ -10124,25 +10116,25 @@
     {
       "season": "2024-25",
       "date": "2024-11-30",
-      "home": "Brentford",
-      "away": "Leicester City",
-      "home_goals": 4,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-01",
-      "home": "Chelsea",
-      "away": "Aston Villa",
-      "home_goals": 3,
+      "home": "Nottingham",
+      "away": "Ipswich Town",
+      "home_goals": 1,
       "away_goals": 0
     },
     {
       "season": "2024-25",
+      "date": "2024-11-30",
+      "home": "Wolves",
+      "away": "Bournemouth",
+      "home_goals": 2,
+      "away_goals": 4
+    },
+    {
+      "season": "2024-25",
       "date": "2024-12-01",
-      "home": "Man United",
-      "away": "Everton",
-      "home_goals": 4,
+      "home": "Liverpool",
+      "away": "Man City",
+      "home_goals": 2,
       "away_goals": 0
     },
     {
@@ -10156,9 +10148,17 @@
     {
       "season": "2024-25",
       "date": "2024-12-01",
-      "home": "Liverpool",
-      "away": "Man City",
-      "home_goals": 2,
+      "home": "Man United",
+      "away": "Everton",
+      "home_goals": 4,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-01",
+      "home": "Chelsea",
+      "away": "Aston Villa",
+      "home_goals": 3,
       "away_goals": 0
     },
     {
@@ -10176,6 +10176,14 @@
       "away": "West Ham",
       "home_goals": 3,
       "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-04",
+      "home": "Man City",
+      "away": "Nottingham",
+      "home_goals": 3,
+      "away_goals": 0
     },
     {
       "season": "2024-25",
@@ -10212,14 +10220,6 @@
     {
       "season": "2024-25",
       "date": "2024-12-04",
-      "home": "Man City",
-      "away": "Nottingham",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-04",
       "home": "Newcastle",
       "away": "Liverpool",
       "home_goals": 3,
@@ -10244,6 +10244,22 @@
     {
       "season": "2024-25",
       "date": "2024-12-07",
+      "home": "Crystal Palace",
+      "away": "Man City",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-07",
+      "home": "Man United",
+      "away": "Nottingham",
+      "home_goals": 2,
+      "away_goals": 3
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-07",
       "home": "Aston Villa",
       "away": "Southampton",
       "home_goals": 1,
@@ -10259,19 +10275,19 @@
     },
     {
       "season": "2024-25",
-      "date": "2024-12-07",
-      "home": "Crystal Palace",
-      "away": "Man City",
-      "home_goals": 2,
-      "away_goals": 2
+      "date": "2024-12-08",
+      "home": "Tottenham",
+      "away": "Chelsea",
+      "home_goals": 3,
+      "away_goals": 4
     },
     {
       "season": "2024-25",
-      "date": "2024-12-07",
-      "home": "Man United",
-      "away": "Nottingham",
+      "date": "2024-12-08",
+      "home": "Leicester City",
+      "away": "Brighton Hove",
       "home_goals": 2,
-      "away_goals": 3
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -10291,27 +10307,35 @@
     },
     {
       "season": "2024-25",
-      "date": "2024-12-08",
-      "home": "Leicester City",
-      "away": "Brighton Hove",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-08",
-      "home": "Tottenham",
-      "away": "Chelsea",
-      "home_goals": 3,
-      "away_goals": 4
-    },
-    {
-      "season": "2024-25",
       "date": "2024-12-09",
       "home": "West Ham",
       "away": "Wolves",
       "home_goals": 2,
       "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-14",
+      "home": "Arsenal",
+      "away": "Everton",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-14",
+      "home": "Liverpool",
+      "away": "Fulham",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-14",
+      "home": "Newcastle",
+      "away": "Leicester City",
+      "home_goals": 4,
+      "away_goals": 0
     },
     {
       "season": "2024-25",
@@ -10328,30 +10352,6 @@
       "away": "Aston Villa",
       "home_goals": 2,
       "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-14",
-      "home": "Newcastle",
-      "away": "Leicester City",
-      "home_goals": 4,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-14",
-      "home": "Liverpool",
-      "away": "Fulham",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-14",
-      "home": "Arsenal",
-      "away": "Everton",
-      "home_goals": 0,
-      "away_goals": 0
     },
     {
       "season": "2024-25",
@@ -10396,6 +10396,22 @@
     {
       "season": "2024-25",
       "date": "2024-12-21",
+      "home": "Brentford",
+      "away": "Nottingham",
+      "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-21",
+      "home": "Aston Villa",
+      "away": "Man City",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-21",
       "home": "Crystal Palace",
       "away": "Arsenal",
       "home_goals": 1,
@@ -10419,27 +10435,19 @@
     },
     {
       "season": "2024-25",
-      "date": "2024-12-21",
-      "home": "Aston Villa",
-      "away": "Man City",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-21",
-      "home": "Brentford",
-      "away": "Nottingham",
+      "date": "2024-12-22",
+      "home": "Everton",
+      "away": "Chelsea",
       "home_goals": 0,
-      "away_goals": 2
+      "away_goals": 0
     },
     {
       "season": "2024-25",
       "date": "2024-12-22",
-      "home": "Tottenham",
-      "away": "Liverpool",
-      "home_goals": 3,
-      "away_goals": 6
+      "home": "Fulham",
+      "away": "Southampton",
+      "home_goals": 0,
+      "away_goals": 0
     },
     {
       "season": "2024-25",
@@ -10460,66 +10468,10 @@
     {
       "season": "2024-25",
       "date": "2024-12-22",
-      "home": "Everton",
-      "away": "Chelsea",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-22",
-      "home": "Fulham",
-      "away": "Southampton",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-26",
-      "home": "Man City",
-      "away": "Everton",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-26",
-      "home": "Bournemouth",
-      "away": "Crystal Palace",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-26",
-      "home": "Chelsea",
-      "away": "Fulham",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-26",
-      "home": "Newcastle",
-      "away": "Aston Villa",
+      "home": "Tottenham",
+      "away": "Liverpool",
       "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-26",
-      "home": "Nottingham",
-      "away": "Tottenham",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-26",
-      "home": "Southampton",
-      "away": "West Ham",
-      "home_goals": 0,
-      "away_goals": 1
+      "away_goals": 6
     },
     {
       "season": "2024-25",
@@ -10539,10 +10491,50 @@
     },
     {
       "season": "2024-25",
-      "date": "2024-12-27",
-      "home": "Brighton Hove",
-      "away": "Brentford",
+      "date": "2024-12-26",
+      "home": "Southampton",
+      "away": "West Ham",
       "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-26",
+      "home": "Nottingham",
+      "away": "Tottenham",
+      "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-26",
+      "home": "Chelsea",
+      "away": "Fulham",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-26",
+      "home": "Bournemouth",
+      "away": "Crystal Palace",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-26",
+      "home": "Man City",
+      "away": "Everton",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-26",
+      "home": "Newcastle",
+      "away": "Aston Villa",
+      "home_goals": 3,
       "away_goals": 0
     },
     {
@@ -10555,35 +10547,11 @@
     },
     {
       "season": "2024-25",
-      "date": "2024-12-29",
-      "home": "West Ham",
-      "away": "Liverpool",
+      "date": "2024-12-27",
+      "home": "Brighton Hove",
+      "away": "Brentford",
       "home_goals": 0,
-      "away_goals": 5
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-29",
-      "home": "Tottenham",
-      "away": "Wolves",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-29",
-      "home": "Fulham",
-      "away": "Bournemouth",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2024-12-29",
-      "home": "Everton",
-      "away": "Nottingham",
-      "home_goals": 0,
-      "away_goals": 2
+      "away_goals": 0
     },
     {
       "season": "2024-25",
@@ -10603,11 +10571,35 @@
     },
     {
       "season": "2024-25",
-      "date": "2024-12-30",
-      "home": "Aston Villa",
-      "away": "Brighton Hove",
+      "date": "2024-12-29",
+      "home": "Everton",
+      "away": "Nottingham",
+      "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-29",
+      "home": "Fulham",
+      "away": "Bournemouth",
       "home_goals": 2,
       "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-29",
+      "home": "Tottenham",
+      "away": "Wolves",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2024-12-29",
+      "home": "West Ham",
+      "away": "Liverpool",
+      "home_goals": 0,
+      "away_goals": 5
     },
     {
       "season": "2024-25",
@@ -10627,6 +10619,14 @@
     },
     {
       "season": "2024-25",
+      "date": "2024-12-30",
+      "home": "Aston Villa",
+      "away": "Brighton Hove",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
       "date": "2025-01-01",
       "home": "Brentford",
       "away": "Arsenal",
@@ -10636,9 +10636,25 @@
     {
       "season": "2024-25",
       "date": "2025-01-04",
-      "home": "Crystal Palace",
-      "away": "Chelsea",
+      "home": "Brighton Hove",
+      "away": "Arsenal",
       "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-01-04",
+      "home": "Man City",
+      "away": "West Ham",
+      "home_goals": 4,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-01-04",
+      "home": "Aston Villa",
+      "away": "Leicester City",
+      "home_goals": 2,
       "away_goals": 1
     },
     {
@@ -10652,34 +10668,18 @@
     {
       "season": "2024-25",
       "date": "2025-01-04",
-      "home": "Southampton",
-      "away": "Brentford",
-      "home_goals": 0,
-      "away_goals": 5
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-01-04",
-      "home": "Man City",
-      "away": "West Ham",
-      "home_goals": 4,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-01-04",
-      "home": "Brighton Hove",
-      "away": "Arsenal",
+      "home": "Crystal Palace",
+      "away": "Chelsea",
       "home_goals": 1,
       "away_goals": 1
     },
     {
       "season": "2024-25",
       "date": "2025-01-04",
-      "home": "Aston Villa",
-      "away": "Leicester City",
-      "home_goals": 2,
-      "away_goals": 1
+      "home": "Southampton",
+      "away": "Brentford",
+      "home_goals": 0,
+      "away_goals": 5
     },
     {
       "season": "2024-25",
@@ -10716,10 +10716,10 @@
     {
       "season": "2024-25",
       "date": "2025-01-14",
-      "home": "Nottingham",
-      "away": "Liverpool",
-      "home_goals": 1,
-      "away_goals": 1
+      "home": "Brentford",
+      "away": "Man City",
+      "home_goals": 2,
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -10740,26 +10740,18 @@
     {
       "season": "2024-25",
       "date": "2025-01-14",
-      "home": "Brentford",
-      "away": "Man City",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-01-15",
-      "home": "Everton",
-      "away": "Aston Villa",
-      "home_goals": 0,
+      "home": "Nottingham",
+      "away": "Liverpool",
+      "home_goals": 1,
       "away_goals": 1
     },
     {
       "season": "2024-25",
       "date": "2025-01-15",
-      "home": "Leicester City",
-      "away": "Crystal Palace",
-      "home_goals": 0,
-      "away_goals": 2
+      "home": "Arsenal",
+      "away": "Tottenham",
+      "home_goals": 2,
+      "away_goals": 1
     },
     {
       "season": "2024-25",
@@ -10772,9 +10764,17 @@
     {
       "season": "2024-25",
       "date": "2025-01-15",
-      "home": "Arsenal",
-      "away": "Tottenham",
-      "home_goals": 2,
+      "home": "Leicester City",
+      "away": "Crystal Palace",
+      "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-01-15",
+      "home": "Everton",
+      "away": "Aston Villa",
+      "home_goals": 0,
       "away_goals": 1
     },
     {
@@ -10836,22 +10836,6 @@
     {
       "season": "2024-25",
       "date": "2025-01-19",
-      "home": "Ipswich Town",
-      "away": "Man City",
-      "home_goals": 0,
-      "away_goals": 6
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-01-19",
-      "home": "Everton",
-      "away": "Tottenham",
-      "home_goals": 3,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-01-19",
       "home": "Man United",
       "away": "Brighton Hove",
       "home_goals": 1,
@@ -10867,6 +10851,22 @@
     },
     {
       "season": "2024-25",
+      "date": "2025-01-19",
+      "home": "Everton",
+      "away": "Tottenham",
+      "home_goals": 3,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-01-19",
+      "home": "Ipswich Town",
+      "away": "Man City",
+      "home_goals": 0,
+      "away_goals": 6
+    },
+    {
+      "season": "2024-25",
       "date": "2025-01-20",
       "home": "Chelsea",
       "away": "Wolves",
@@ -10876,32 +10876,8 @@
     {
       "season": "2024-25",
       "date": "2025-01-25",
-      "home": "Bournemouth",
-      "away": "Nottingham",
-      "home_goals": 5,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-01-25",
-      "home": "Man City",
-      "away": "Chelsea",
-      "home_goals": 3,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-01-25",
-      "home": "Southampton",
-      "away": "Newcastle",
-      "home_goals": 1,
-      "away_goals": 3
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-01-25",
-      "home": "Brighton Hove",
-      "away": "Everton",
+      "home": "Wolves",
+      "away": "Arsenal",
       "home_goals": 0,
       "away_goals": 1
     },
@@ -10916,10 +10892,34 @@
     {
       "season": "2024-25",
       "date": "2025-01-25",
-      "home": "Wolves",
-      "away": "Arsenal",
+      "home": "Brighton Hove",
+      "away": "Everton",
       "home_goals": 0,
       "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-01-25",
+      "home": "Man City",
+      "away": "Chelsea",
+      "home_goals": 3,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-01-25",
+      "home": "Bournemouth",
+      "away": "Nottingham",
+      "home_goals": 5,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-01-25",
+      "home": "Southampton",
+      "away": "Newcastle",
+      "home_goals": 1,
+      "away_goals": 3
     },
     {
       "season": "2024-25",
@@ -10956,17 +10956,33 @@
     {
       "season": "2024-25",
       "date": "2025-02-01",
-      "home": "Ipswich Town",
-      "away": "Southampton",
+      "home": "Wolves",
+      "away": "Aston Villa",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-02-01",
+      "home": "Nottingham",
+      "away": "Brighton Hove",
+      "home_goals": 7,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-02-01",
+      "home": "Newcastle",
+      "away": "Fulham",
       "home_goals": 1,
       "away_goals": 2
     },
     {
       "season": "2024-25",
       "date": "2025-02-01",
-      "home": "Wolves",
-      "away": "Aston Villa",
-      "home_goals": 2,
+      "home": "Everton",
+      "away": "Leicester City",
+      "home_goals": 4,
       "away_goals": 0
     },
     {
@@ -10980,34 +10996,18 @@
     {
       "season": "2024-25",
       "date": "2025-02-01",
-      "home": "Newcastle",
-      "away": "Fulham",
+      "home": "Ipswich Town",
+      "away": "Southampton",
       "home_goals": 1,
       "away_goals": 2
     },
     {
       "season": "2024-25",
-      "date": "2025-02-01",
-      "home": "Nottingham",
-      "away": "Brighton Hove",
-      "home_goals": 7,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-02-01",
-      "home": "Everton",
-      "away": "Leicester City",
-      "home_goals": 4,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
       "date": "2025-02-02",
-      "home": "Arsenal",
-      "away": "Man City",
-      "home_goals": 5,
-      "away_goals": 1
+      "home": "Man United",
+      "away": "Crystal Palace",
+      "home_goals": 0,
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -11020,10 +11020,10 @@
     {
       "season": "2024-25",
       "date": "2025-02-02",
-      "home": "Man United",
-      "away": "Crystal Palace",
-      "home_goals": 0,
-      "away_goals": 2
+      "home": "Arsenal",
+      "away": "Man City",
+      "home_goals": 5,
+      "away_goals": 1
     },
     {
       "season": "2024-25",
@@ -11052,34 +11052,10 @@
     {
       "season": "2024-25",
       "date": "2025-02-15",
-      "home": "Fulham",
-      "away": "Nottingham",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-02-15",
-      "home": "Crystal Palace",
-      "away": "Everton",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-02-15",
-      "home": "Man City",
-      "away": "Newcastle",
-      "home_goals": 4,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-02-15",
-      "home": "West Ham",
-      "away": "Brentford",
+      "home": "Leicester City",
+      "away": "Arsenal",
       "home_goals": 0,
-      "away_goals": 1
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -11092,10 +11068,10 @@
     {
       "season": "2024-25",
       "date": "2025-02-15",
-      "home": "Leicester City",
-      "away": "Arsenal",
+      "home": "West Ham",
+      "away": "Brentford",
       "home_goals": 0,
-      "away_goals": 2
+      "away_goals": 1
     },
     {
       "season": "2024-25",
@@ -11104,6 +11080,30 @@
       "away": "Ipswich Town",
       "home_goals": 1,
       "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-02-15",
+      "home": "Man City",
+      "away": "Newcastle",
+      "home_goals": 4,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-02-15",
+      "home": "Fulham",
+      "away": "Nottingham",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-02-15",
+      "home": "Crystal Palace",
+      "away": "Everton",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -11140,6 +11140,38 @@
     {
       "season": "2024-25",
       "date": "2025-02-22",
+      "home": "Everton",
+      "away": "Man United",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-02-22",
+      "home": "Ipswich Town",
+      "away": "Tottenham",
+      "home_goals": 1,
+      "away_goals": 4
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-02-22",
+      "home": "Fulham",
+      "away": "Crystal Palace",
+      "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-02-22",
+      "home": "Arsenal",
+      "away": "West Ham",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-02-22",
       "home": "Bournemouth",
       "away": "Wolves",
       "home_goals": 0,
@@ -11156,50 +11188,10 @@
     {
       "season": "2024-25",
       "date": "2025-02-22",
-      "home": "Arsenal",
-      "away": "West Ham",
-      "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-02-22",
       "home": "Aston Villa",
       "away": "Chelsea",
       "home_goals": 2,
       "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-02-22",
-      "home": "Ipswich Town",
-      "away": "Tottenham",
-      "home_goals": 1,
-      "away_goals": 4
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-02-22",
-      "home": "Everton",
-      "away": "Man United",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-02-22",
-      "home": "Fulham",
-      "away": "Crystal Palace",
-      "home_goals": 0,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-02-23",
-      "home": "Man City",
-      "away": "Liverpool",
-      "home_goals": 0,
-      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -11208,6 +11200,14 @@
       "away": "Nottingham",
       "home_goals": 4,
       "away_goals": 3
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-02-23",
+      "home": "Man City",
+      "away": "Liverpool",
+      "home_goals": 0,
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -11244,6 +11244,22 @@
     {
       "season": "2024-25",
       "date": "2025-02-26",
+      "home": "Tottenham",
+      "away": "Man City",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-02-26",
+      "home": "Nottingham",
+      "away": "Arsenal",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-02-26",
       "home": "Liverpool",
       "away": "Newcastle",
       "home_goals": 2,
@@ -11267,22 +11283,6 @@
     },
     {
       "season": "2024-25",
-      "date": "2025-02-26",
-      "home": "Nottingham",
-      "away": "Arsenal",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-02-26",
-      "home": "Tottenham",
-      "away": "Man City",
-      "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
       "date": "2025-02-27",
       "home": "West Ham",
       "away": "Leicester City",
@@ -11292,10 +11292,26 @@
     {
       "season": "2024-25",
       "date": "2025-03-08",
-      "home": "Wolves",
-      "away": "Everton",
+      "home": "Nottingham",
+      "away": "Man City",
       "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-03-08",
+      "home": "Brighton Hove",
+      "away": "Fulham",
+      "home_goals": 2,
       "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-03-08",
+      "home": "Crystal Palace",
+      "away": "Ipswich Town",
+      "home_goals": 1,
+      "away_goals": 0
     },
     {
       "season": "2024-25",
@@ -11316,26 +11332,10 @@
     {
       "season": "2024-25",
       "date": "2025-03-08",
-      "home": "Brighton Hove",
-      "away": "Fulham",
-      "home_goals": 2,
+      "home": "Wolves",
+      "away": "Everton",
+      "home_goals": 1,
       "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-03-08",
-      "home": "Nottingham",
-      "away": "Man City",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-03-08",
-      "home": "Crystal Palace",
-      "away": "Ipswich Town",
-      "home_goals": 1,
-      "away_goals": 0
     },
     {
       "season": "2024-25",
@@ -11412,14 +11412,6 @@
     {
       "season": "2024-25",
       "date": "2025-03-16",
-      "home": "Leicester City",
-      "away": "Man United",
-      "home_goals": 0,
-      "away_goals": 3
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-03-16",
       "home": "Arsenal",
       "away": "Chelsea",
       "home_goals": 1,
@@ -11435,11 +11427,11 @@
     },
     {
       "season": "2024-25",
-      "date": "2025-04-01",
-      "home": "Nottingham",
+      "date": "2025-03-16",
+      "home": "Leicester City",
       "away": "Man United",
-      "home_goals": 1,
-      "away_goals": 0
+      "home_goals": 0,
+      "away_goals": 3
     },
     {
       "season": "2024-25",
@@ -11459,26 +11451,18 @@
     },
     {
       "season": "2024-25",
-      "date": "2025-04-02",
-      "home": "Southampton",
-      "away": "Crystal Palace",
+      "date": "2025-04-01",
+      "home": "Nottingham",
+      "away": "Man United",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 0
     },
     {
       "season": "2024-25",
       "date": "2025-04-02",
-      "home": "Newcastle",
-      "away": "Brentford",
+      "home": "Man City",
+      "away": "Leicester City",
       "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-04-02",
-      "home": "Liverpool",
-      "away": "Everton",
-      "home_goals": 1,
       "away_goals": 0
     },
     {
@@ -11500,9 +11484,25 @@
     {
       "season": "2024-25",
       "date": "2025-04-02",
-      "home": "Man City",
-      "away": "Leicester City",
+      "home": "Newcastle",
+      "away": "Brentford",
       "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-04-02",
+      "home": "Southampton",
+      "away": "Crystal Palace",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-04-02",
+      "home": "Liverpool",
+      "away": "Everton",
+      "home_goals": 1,
       "away_goals": 0
     },
     {
@@ -11512,14 +11512,6 @@
       "away": "Tottenham",
       "home_goals": 1,
       "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-04-05",
-      "home": "West Ham",
-      "away": "Bournemouth",
-      "home_goals": 2,
-      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -11548,25 +11540,17 @@
     {
       "season": "2024-25",
       "date": "2025-04-05",
+      "home": "West Ham",
+      "away": "Bournemouth",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-04-05",
       "home": "Aston Villa",
       "away": "Nottingham",
       "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-04-06",
-      "home": "Man United",
-      "away": "Man City",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-04-06",
-      "home": "Tottenham",
-      "away": "Southampton",
-      "home_goals": 3,
       "away_goals": 1
     },
     {
@@ -11587,6 +11571,22 @@
     },
     {
       "season": "2024-25",
+      "date": "2025-04-06",
+      "home": "Tottenham",
+      "away": "Southampton",
+      "home_goals": 3,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-04-06",
+      "home": "Man United",
+      "away": "Man City",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
       "date": "2025-04-07",
       "home": "Leicester City",
       "away": "Newcastle",
@@ -11604,10 +11604,10 @@
     {
       "season": "2024-25",
       "date": "2025-04-12",
-      "home": "Southampton",
-      "away": "Aston Villa",
-      "home_goals": 0,
-      "away_goals": 3
+      "home": "Man City",
+      "away": "Crystal Palace",
+      "home_goals": 5,
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -11620,6 +11620,14 @@
     {
       "season": "2024-25",
       "date": "2025-04-12",
+      "home": "Southampton",
+      "away": "Aston Villa",
+      "home_goals": 0,
+      "away_goals": 3
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-04-12",
       "home": "Arsenal",
       "away": "Brentford",
       "home_goals": 1,
@@ -11627,10 +11635,10 @@
     },
     {
       "season": "2024-25",
-      "date": "2025-04-12",
-      "home": "Man City",
-      "away": "Crystal Palace",
-      "home_goals": 5,
+      "date": "2025-04-13",
+      "home": "Chelsea",
+      "away": "Ipswich Town",
+      "home_goals": 2,
       "away_goals": 2
     },
     {
@@ -11647,14 +11655,6 @@
       "home": "Wolves",
       "away": "Tottenham",
       "home_goals": 4,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-04-13",
-      "home": "Chelsea",
-      "away": "Ipswich Town",
-      "home_goals": 2,
       "away_goals": 2
     },
     {
@@ -11692,17 +11692,9 @@
     {
       "season": "2024-25",
       "date": "2025-04-19",
-      "home": "West Ham",
-      "away": "Southampton",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-04-19",
-      "home": "Everton",
-      "away": "Man City",
-      "home_goals": 0,
+      "home": "Brentford",
+      "away": "Brighton Hove",
+      "home_goals": 4,
       "away_goals": 2
     },
     {
@@ -11716,17 +11708,17 @@
     {
       "season": "2024-25",
       "date": "2025-04-19",
-      "home": "Brentford",
-      "away": "Brighton Hove",
-      "home_goals": 4,
+      "home": "Everton",
+      "away": "Man City",
+      "home_goals": 0,
       "away_goals": 2
     },
     {
       "season": "2024-25",
-      "date": "2025-04-20",
-      "home": "Leicester City",
-      "away": "Liverpool",
-      "home_goals": 0,
+      "date": "2025-04-19",
+      "home": "West Ham",
+      "away": "Southampton",
+      "home_goals": 1,
       "away_goals": 1
     },
     {
@@ -11744,6 +11736,14 @@
       "away": "Chelsea",
       "home_goals": 1,
       "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-04-20",
+      "home": "Leicester City",
+      "away": "Liverpool",
+      "home_goals": 0,
+      "away_goals": 1
     },
     {
       "season": "2024-25",
@@ -11820,17 +11820,17 @@
     {
       "season": "2024-25",
       "date": "2025-04-27",
-      "home": "Liverpool",
-      "away": "Tottenham",
-      "home_goals": 5,
+      "home": "Bournemouth",
+      "away": "Man United",
+      "home_goals": 1,
       "away_goals": 1
     },
     {
       "season": "2024-25",
       "date": "2025-04-27",
-      "home": "Bournemouth",
-      "away": "Man United",
-      "home_goals": 1,
+      "home": "Liverpool",
+      "away": "Tottenham",
+      "home_goals": 5,
       "away_goals": 1
     },
     {
@@ -11852,22 +11852,6 @@
     {
       "season": "2024-25",
       "date": "2025-05-03",
-      "home": "Arsenal",
-      "away": "Bournemouth",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-05-03",
-      "home": "Leicester City",
-      "away": "Southampton",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-05-03",
       "home": "Aston Villa",
       "away": "Fulham",
       "home_goals": 1,
@@ -11880,6 +11864,22 @@
       "away": "Ipswich Town",
       "home_goals": 2,
       "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-05-03",
+      "home": "Arsenal",
+      "away": "Bournemouth",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-05-03",
+      "home": "Leicester City",
+      "away": "Southampton",
+      "home_goals": 2,
+      "away_goals": 0
     },
     {
       "season": "2024-25",
@@ -11940,14 +11940,6 @@
     {
       "season": "2024-25",
       "date": "2025-05-10",
-      "home": "Southampton",
-      "away": "Man City",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-05-10",
       "home": "Ipswich Town",
       "away": "Brentford",
       "home_goals": 0,
@@ -11960,6 +11952,22 @@
       "away": "Everton",
       "home_goals": 1,
       "away_goals": 3
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-05-10",
+      "home": "Southampton",
+      "away": "Man City",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-05-11",
+      "home": "Man United",
+      "away": "West Ham",
+      "home_goals": 0,
+      "away_goals": 2
     },
     {
       "season": "2024-25",
@@ -11988,14 +11996,6 @@
     {
       "season": "2024-25",
       "date": "2025-05-11",
-      "home": "Man United",
-      "away": "West Ham",
-      "home_goals": 0,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-05-11",
       "home": "Nottingham",
       "away": "Leicester City",
       "home_goals": 2,
@@ -12004,17 +12004,17 @@
     {
       "season": "2024-25",
       "date": "2025-05-16",
-      "home": "Aston Villa",
-      "away": "Tottenham",
-      "home_goals": 2,
+      "home": "Chelsea",
+      "away": "Man United",
+      "home_goals": 1,
       "away_goals": 0
     },
     {
       "season": "2024-25",
       "date": "2025-05-16",
-      "home": "Chelsea",
-      "away": "Man United",
-      "home_goals": 1,
+      "home": "Aston Villa",
+      "away": "Tottenham",
+      "home_goals": 2,
       "away_goals": 0
     },
     {
@@ -12084,9 +12084,57 @@
     {
       "season": "2024-25",
       "date": "2025-05-25",
-      "home": "Wolves",
-      "away": "Brentford",
+      "home": "Liverpool",
+      "away": "Crystal Palace",
       "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Man United",
+      "away": "Aston Villa",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Bournemouth",
+      "away": "Leicester City",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Ipswich Town",
+      "away": "West Ham",
+      "home_goals": 1,
+      "away_goals": 3
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Fulham",
+      "away": "Man City",
+      "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Southampton",
+      "away": "Arsenal",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Nottingham",
+      "away": "Chelsea",
+      "home_goals": 0,
       "away_goals": 1
     },
     {
@@ -12100,18 +12148,10 @@
     {
       "season": "2024-25",
       "date": "2025-05-25",
-      "home": "Nottingham",
-      "away": "Chelsea",
-      "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-05-25",
-      "home": "Southampton",
-      "away": "Arsenal",
+      "home": "Wolves",
+      "away": "Brentford",
       "home_goals": 1,
-      "away_goals": 2
+      "away_goals": 1
     },
     {
       "season": "2024-25",
@@ -12120,46 +12160,6 @@
       "away": "Everton",
       "home_goals": 0,
       "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-05-25",
-      "home": "Fulham",
-      "away": "Man City",
-      "home_goals": 0,
-      "away_goals": 2
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-05-25",
-      "home": "Liverpool",
-      "away": "Crystal Palace",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-05-25",
-      "home": "Ipswich Town",
-      "away": "West Ham",
-      "home_goals": 1,
-      "away_goals": 3
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-05-25",
-      "home": "Bournemouth",
-      "away": "Leicester City",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2024-25",
-      "date": "2025-05-25",
-      "home": "Man United",
-      "away": "Aston Villa",
-      "home_goals": 2,
-      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -12172,10 +12172,18 @@
     {
       "season": "2025-26",
       "date": "2025-08-16",
-      "home": "Brighton Hove",
-      "away": "Fulham",
-      "home_goals": 1,
-      "away_goals": 1
+      "home": "Tottenham",
+      "away": "Burnley",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-08-16",
+      "home": "Sunderland",
+      "away": "West Ham",
+      "home_goals": 3,
+      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -12196,18 +12204,10 @@
     {
       "season": "2025-26",
       "date": "2025-08-16",
-      "home": "Sunderland",
-      "away": "West Ham",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-08-16",
-      "home": "Tottenham",
-      "away": "Burnley",
-      "home_goals": 3,
-      "away_goals": 0
+      "home": "Brighton Hove",
+      "away": "Fulham",
+      "home_goals": 1,
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -12252,6 +12252,22 @@
     {
       "season": "2025-26",
       "date": "2025-08-23",
+      "home": "Arsenal",
+      "away": "Leeds United",
+      "home_goals": 5,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-08-23",
+      "home": "Brentford",
+      "away": "Aston Villa",
+      "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-08-23",
       "home": "Burnley",
       "away": "Sunderland",
       "home_goals": 2,
@@ -12275,18 +12291,10 @@
     },
     {
       "season": "2025-26",
-      "date": "2025-08-23",
-      "home": "Brentford",
-      "away": "Aston Villa",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-08-23",
-      "home": "Arsenal",
-      "away": "Leeds United",
-      "home_goals": 5,
+      "date": "2025-08-24",
+      "home": "Everton",
+      "away": "Brighton Hove",
+      "home_goals": 2,
       "away_goals": 0
     },
     {
@@ -12304,14 +12312,6 @@
       "away": "Man United",
       "home_goals": 1,
       "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-08-24",
-      "home": "Everton",
-      "away": "Brighton Hove",
-      "home_goals": 2,
-      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -12372,18 +12372,26 @@
     {
       "season": "2025-26",
       "date": "2025-08-31",
-      "home": "Brighton Hove",
-      "away": "Man City",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-08-31",
       "home": "Nottingham",
       "away": "West Ham",
       "home_goals": 0,
       "away_goals": 3
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-08-31",
+      "home": "Aston Villa",
+      "away": "Crystal Palace",
+      "home_goals": 0,
+      "away_goals": 3
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-08-31",
+      "home": "Brighton Hove",
+      "away": "Man City",
+      "home_goals": 2,
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -12395,11 +12403,51 @@
     },
     {
       "season": "2025-26",
-      "date": "2025-08-31",
-      "home": "Aston Villa",
-      "away": "Crystal Palace",
+      "date": "2025-09-13",
+      "home": "Brentford",
+      "away": "Chelsea",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-09-13",
+      "home": "West Ham",
+      "away": "Tottenham",
       "home_goals": 0,
       "away_goals": 3
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-09-13",
+      "home": "Newcastle",
+      "away": "Wolves",
+      "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-09-13",
+      "home": "Fulham",
+      "away": "Leeds United",
+      "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-09-13",
+      "home": "Bournemouth",
+      "away": "Brighton Hove",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-09-13",
+      "home": "Crystal Palace",
+      "away": "Sunderland",
+      "home_goals": 0,
+      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -12415,54 +12463,6 @@
       "home": "Everton",
       "away": "Aston Villa",
       "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-09-13",
-      "home": "Crystal Palace",
-      "away": "Sunderland",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-09-13",
-      "home": "Bournemouth",
-      "away": "Brighton Hove",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-09-13",
-      "home": "Newcastle",
-      "away": "Wolves",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-09-13",
-      "home": "West Ham",
-      "away": "Tottenham",
-      "home_goals": 0,
-      "away_goals": 3
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-09-13",
-      "home": "Brentford",
-      "away": "Chelsea",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-09-13",
-      "home": "Fulham",
-      "away": "Leeds United",
-      "home_goals": 1,
       "away_goals": 0
     },
     {
@@ -12484,42 +12484,18 @@
     {
       "season": "2025-26",
       "date": "2025-09-20",
-      "home": "Wolves",
-      "away": "Leeds United",
-      "home_goals": 1,
-      "away_goals": 3
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-09-20",
-      "home": "Man United",
-      "away": "Chelsea",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-09-20",
-      "home": "West Ham",
-      "away": "Crystal Palace",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-09-20",
-      "home": "Fulham",
-      "away": "Brentford",
-      "home_goals": 3,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-09-20",
       "home": "Brighton Hove",
       "away": "Tottenham",
       "home_goals": 2,
       "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-09-20",
+      "home": "Burnley",
+      "away": "Nottingham",
+      "home_goals": 1,
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -12532,18 +12508,34 @@
     {
       "season": "2025-26",
       "date": "2025-09-20",
-      "home": "Burnley",
-      "away": "Nottingham",
-      "home_goals": 1,
+      "home": "Fulham",
+      "away": "Brentford",
+      "home_goals": 3,
       "away_goals": 1
     },
     {
       "season": "2025-26",
-      "date": "2025-09-21",
-      "home": "Arsenal",
-      "away": "Man City",
-      "home_goals": 1,
+      "date": "2025-09-20",
+      "home": "Man United",
+      "away": "Chelsea",
+      "home_goals": 2,
       "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-09-20",
+      "home": "Wolves",
+      "away": "Leeds United",
+      "home_goals": 1,
+      "away_goals": 3
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-09-20",
+      "home": "West Ham",
+      "away": "Crystal Palace",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2025-26",
@@ -12558,6 +12550,14 @@
       "date": "2025-09-21",
       "home": "Sunderland",
       "away": "Aston Villa",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-09-21",
+      "home": "Arsenal",
+      "away": "Man City",
       "home_goals": 1,
       "away_goals": 1
     },
@@ -12620,18 +12620,18 @@
     {
       "season": "2025-26",
       "date": "2025-09-28",
-      "home": "Newcastle",
-      "away": "Arsenal",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-09-28",
       "home": "Aston Villa",
       "away": "Fulham",
       "home_goals": 3,
       "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-09-28",
+      "home": "Newcastle",
+      "away": "Arsenal",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2025-26",
@@ -12652,6 +12652,14 @@
     {
       "season": "2025-26",
       "date": "2025-10-04",
+      "home": "Leeds United",
+      "away": "Tottenham",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-10-04",
       "home": "Arsenal",
       "away": "West Ham",
       "home_goals": 2,
@@ -12668,33 +12676,9 @@
     {
       "season": "2025-26",
       "date": "2025-10-04",
-      "home": "Leeds United",
-      "away": "Tottenham",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-10-04",
       "home": "Chelsea",
       "away": "Liverpool",
       "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-10-05",
-      "home": "Brentford",
-      "away": "Man City",
-      "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-10-05",
-      "home": "Wolves",
-      "away": "Brighton Hove",
-      "home_goals": 1,
       "away_goals": 1
     },
     {
@@ -12723,42 +12707,18 @@
     },
     {
       "season": "2025-26",
-      "date": "2025-10-18",
-      "home": "Man City",
-      "away": "Everton",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-10-18",
-      "home": "Sunderland",
-      "away": "Wolves",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-10-18",
-      "home": "Burnley",
-      "away": "Leeds United",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-10-18",
-      "home": "Fulham",
-      "away": "Arsenal",
-      "home_goals": 0,
+      "date": "2025-10-05",
+      "home": "Wolves",
+      "away": "Brighton Hove",
+      "home_goals": 1,
       "away_goals": 1
     },
     {
       "season": "2025-26",
-      "date": "2025-10-18",
-      "home": "Brighton Hove",
-      "away": "Newcastle",
-      "home_goals": 2,
+      "date": "2025-10-05",
+      "home": "Brentford",
+      "away": "Man City",
+      "home_goals": 0,
       "away_goals": 1
     },
     {
@@ -12776,6 +12736,46 @@
       "away": "Bournemouth",
       "home_goals": 3,
       "away_goals": 3
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-10-18",
+      "home": "Brighton Hove",
+      "away": "Newcastle",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-10-18",
+      "home": "Man City",
+      "away": "Everton",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-10-18",
+      "home": "Burnley",
+      "away": "Leeds United",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-10-18",
+      "home": "Sunderland",
+      "away": "Wolves",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-10-18",
+      "home": "Fulham",
+      "away": "Arsenal",
+      "home_goals": 0,
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -12812,22 +12812,6 @@
     {
       "season": "2025-26",
       "date": "2025-10-25",
-      "home": "Brentford",
-      "away": "Liverpool",
-      "home_goals": 3,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-10-25",
-      "home": "Man United",
-      "away": "Brighton Hove",
-      "home_goals": 4,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-10-25",
       "home": "Chelsea",
       "away": "Sunderland",
       "home_goals": 1,
@@ -12843,25 +12827,25 @@
     },
     {
       "season": "2025-26",
-      "date": "2025-10-26",
-      "home": "Everton",
-      "away": "Tottenham",
-      "home_goals": 0,
-      "away_goals": 3
+      "date": "2025-10-25",
+      "home": "Man United",
+      "away": "Brighton Hove",
+      "home_goals": 4,
+      "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-10-25",
+      "home": "Brentford",
+      "away": "Liverpool",
+      "home_goals": 3,
+      "away_goals": 2
     },
     {
       "season": "2025-26",
       "date": "2025-10-26",
-      "home": "Wolves",
-      "away": "Burnley",
-      "home_goals": 2,
-      "away_goals": 3
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-10-26",
-      "home": "Arsenal",
-      "away": "Crystal Palace",
+      "home": "Aston Villa",
+      "away": "Man City",
       "home_goals": 1,
       "away_goals": 0
     },
@@ -12876,18 +12860,26 @@
     {
       "season": "2025-26",
       "date": "2025-10-26",
-      "home": "Aston Villa",
-      "away": "Man City",
+      "home": "Arsenal",
+      "away": "Crystal Palace",
       "home_goals": 1,
       "away_goals": 0
     },
     {
       "season": "2025-26",
-      "date": "2025-11-01",
-      "home": "Tottenham",
-      "away": "Chelsea",
+      "date": "2025-10-26",
+      "home": "Wolves",
+      "away": "Burnley",
+      "home_goals": 2,
+      "away_goals": 3
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-10-26",
+      "home": "Everton",
+      "away": "Tottenham",
       "home_goals": 0,
-      "away_goals": 1
+      "away_goals": 3
     },
     {
       "season": "2025-26",
@@ -12932,6 +12924,14 @@
     {
       "season": "2025-26",
       "date": "2025-11-01",
+      "home": "Tottenham",
+      "away": "Chelsea",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-11-01",
       "home": "Liverpool",
       "away": "Aston Villa",
       "home_goals": 2,
@@ -12940,16 +12940,16 @@
     {
       "season": "2025-26",
       "date": "2025-11-02",
-      "home": "Man City",
-      "away": "Bournemouth",
+      "home": "West Ham",
+      "away": "Newcastle",
       "home_goals": 3,
       "away_goals": 1
     },
     {
       "season": "2025-26",
       "date": "2025-11-02",
-      "home": "West Ham",
-      "away": "Newcastle",
+      "home": "Man City",
+      "away": "Bournemouth",
       "home_goals": 3,
       "away_goals": 1
     },
@@ -12964,17 +12964,17 @@
     {
       "season": "2025-26",
       "date": "2025-11-08",
-      "home": "Chelsea",
-      "away": "Wolves",
-      "home_goals": 3,
+      "home": "Everton",
+      "away": "Fulham",
+      "home_goals": 2,
       "away_goals": 0
     },
     {
       "season": "2025-26",
       "date": "2025-11-08",
-      "home": "West Ham",
-      "away": "Burnley",
-      "home_goals": 3,
+      "home": "Tottenham",
+      "away": "Man United",
+      "home_goals": 2,
       "away_goals": 2
     },
     {
@@ -12988,17 +12988,17 @@
     {
       "season": "2025-26",
       "date": "2025-11-08",
-      "home": "Tottenham",
-      "away": "Man United",
-      "home_goals": 2,
+      "home": "West Ham",
+      "away": "Burnley",
+      "home_goals": 3,
       "away_goals": 2
     },
     {
       "season": "2025-26",
       "date": "2025-11-08",
-      "home": "Everton",
-      "away": "Fulham",
-      "home_goals": 2,
+      "home": "Chelsea",
+      "away": "Wolves",
+      "home_goals": 3,
       "away_goals": 0
     },
     {
@@ -13044,14 +13044,6 @@
     {
       "season": "2025-26",
       "date": "2025-11-22",
-      "home": "Newcastle",
-      "away": "Man City",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-11-22",
       "home": "Wolves",
       "away": "Crystal Palace",
       "home_goals": 0,
@@ -13068,8 +13060,16 @@
     {
       "season": "2025-26",
       "date": "2025-11-22",
-      "home": "Brighton Hove",
-      "away": "Brentford",
+      "home": "Fulham",
+      "away": "Sunderland",
+      "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-11-22",
+      "home": "Newcastle",
+      "away": "Man City",
       "home_goals": 2,
       "away_goals": 1
     },
@@ -13092,10 +13092,10 @@
     {
       "season": "2025-26",
       "date": "2025-11-22",
-      "home": "Fulham",
-      "away": "Sunderland",
-      "home_goals": 1,
-      "away_goals": 0
+      "home": "Brighton Hove",
+      "away": "Brentford",
+      "home_goals": 2,
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -13124,6 +13124,30 @@
     {
       "season": "2025-26",
       "date": "2025-11-29",
+      "home": "Tottenham",
+      "away": "Fulham",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-11-29",
+      "home": "Everton",
+      "away": "Newcastle",
+      "home_goals": 1,
+      "away_goals": 4
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-11-29",
+      "home": "Man City",
+      "away": "Leeds United",
+      "home_goals": 3,
+      "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-11-29",
       "home": "Sunderland",
       "away": "Bournemouth",
       "home_goals": 3,
@@ -13139,51 +13163,11 @@
     },
     {
       "season": "2025-26",
-      "date": "2025-11-29",
-      "home": "Man City",
-      "away": "Leeds United",
-      "home_goals": 3,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-11-29",
-      "home": "Everton",
-      "away": "Newcastle",
-      "home_goals": 1,
-      "away_goals": 4
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-11-29",
-      "home": "Tottenham",
-      "away": "Fulham",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-11-30",
-      "home": "West Ham",
-      "away": "Liverpool",
-      "home_goals": 0,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
       "date": "2025-11-30",
       "home": "Chelsea",
       "away": "Arsenal",
       "home_goals": 1,
       "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-11-30",
-      "home": "Nottingham",
-      "away": "Brighton Hove",
-      "home_goals": 0,
-      "away_goals": 2
     },
     {
       "season": "2025-26",
@@ -13203,11 +13187,19 @@
     },
     {
       "season": "2025-26",
-      "date": "2025-12-02",
-      "home": "Bournemouth",
-      "away": "Everton",
+      "date": "2025-11-30",
+      "home": "Nottingham",
+      "away": "Brighton Hove",
       "home_goals": 0,
-      "away_goals": 1
+      "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-11-30",
+      "home": "West Ham",
+      "away": "Liverpool",
+      "home_goals": 0,
+      "away_goals": 2
     },
     {
       "season": "2025-26",
@@ -13224,6 +13216,14 @@
       "away": "Tottenham",
       "home_goals": 2,
       "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-12-02",
+      "home": "Bournemouth",
+      "away": "Everton",
+      "home_goals": 0,
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -13284,14 +13284,6 @@
     {
       "season": "2025-26",
       "date": "2025-12-06",
-      "home": "Leeds United",
-      "away": "Liverpool",
-      "home_goals": 3,
-      "away_goals": 3
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-12-06",
       "home": "Tottenham",
       "away": "Brentford",
       "home_goals": 2,
@@ -13300,8 +13292,8 @@
     {
       "season": "2025-26",
       "date": "2025-12-06",
-      "home": "Newcastle",
-      "away": "Burnley",
+      "home": "Aston Villa",
+      "away": "Arsenal",
       "home_goals": 2,
       "away_goals": 1
     },
@@ -13324,14 +13316,6 @@
     {
       "season": "2025-26",
       "date": "2025-12-06",
-      "home": "Aston Villa",
-      "away": "Arsenal",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-12-06",
       "home": "Man City",
       "away": "Sunderland",
       "home_goals": 3,
@@ -13339,11 +13323,19 @@
     },
     {
       "season": "2025-26",
-      "date": "2025-12-07",
-      "home": "Brighton Hove",
-      "away": "West Ham",
-      "home_goals": 1,
+      "date": "2025-12-06",
+      "home": "Newcastle",
+      "away": "Burnley",
+      "home_goals": 2,
       "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-12-06",
+      "home": "Leeds United",
+      "away": "Liverpool",
+      "home_goals": 3,
+      "away_goals": 3
     },
     {
       "season": "2025-26",
@@ -13352,6 +13344,14 @@
       "away": "Crystal Palace",
       "home_goals": 1,
       "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-12-07",
+      "home": "Brighton Hove",
+      "away": "West Ham",
+      "home_goals": 1,
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -13396,10 +13396,18 @@
     {
       "season": "2025-26",
       "date": "2025-12-14",
-      "home": "Brentford",
-      "away": "Leeds United",
+      "home": "Sunderland",
+      "away": "Newcastle",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-12-14",
+      "home": "Crystal Palace",
+      "away": "Man City",
+      "home_goals": 0,
+      "away_goals": 3
     },
     {
       "season": "2025-26",
@@ -13420,18 +13428,10 @@
     {
       "season": "2025-26",
       "date": "2025-12-14",
-      "home": "Sunderland",
-      "away": "Newcastle",
+      "home": "Brentford",
+      "away": "Leeds United",
       "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-12-14",
-      "home": "Crystal Palace",
-      "away": "Man City",
-      "home_goals": 0,
-      "away_goals": 3
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -13444,26 +13444,10 @@
     {
       "season": "2025-26",
       "date": "2025-12-20",
-      "home": "Newcastle",
-      "away": "Chelsea",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-12-20",
       "home": "Bournemouth",
       "away": "Burnley",
       "home_goals": 1,
       "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-12-20",
-      "home": "Man City",
-      "away": "West Ham",
-      "home_goals": 3,
-      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -13476,10 +13460,18 @@
     {
       "season": "2025-26",
       "date": "2025-12-20",
-      "home": "Tottenham",
-      "away": "Liverpool",
-      "home_goals": 1,
+      "home": "Newcastle",
+      "away": "Chelsea",
+      "home_goals": 2,
       "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-12-20",
+      "home": "Man City",
+      "away": "West Ham",
+      "home_goals": 3,
+      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -13488,6 +13480,14 @@
       "away": "Arsenal",
       "home_goals": 0,
       "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-12-20",
+      "home": "Tottenham",
+      "away": "Liverpool",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2025-26",
@@ -13548,6 +13548,14 @@
     {
       "season": "2025-26",
       "date": "2025-12-27",
+      "home": "Chelsea",
+      "away": "Aston Villa",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-12-27",
       "home": "Arsenal",
       "away": "Brighton Hove",
       "home_goals": 2,
@@ -13564,14 +13572,6 @@
     {
       "season": "2025-26",
       "date": "2025-12-27",
-      "home": "Burnley",
-      "away": "Everton",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2025-12-27",
       "home": "West Ham",
       "away": "Fulham",
       "home_goals": 0,
@@ -13580,10 +13580,10 @@
     {
       "season": "2025-26",
       "date": "2025-12-27",
-      "home": "Chelsea",
-      "away": "Aston Villa",
-      "home_goals": 1,
-      "away_goals": 2
+      "home": "Burnley",
+      "away": "Everton",
+      "home_goals": 0,
+      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -13599,6 +13599,14 @@
       "home": "Crystal Palace",
       "away": "Tottenham",
       "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2025-12-30",
+      "home": "Man United",
+      "away": "Wolves",
+      "home_goals": 1,
       "away_goals": 1
     },
     {
@@ -13643,25 +13651,17 @@
     },
     {
       "season": "2025-26",
-      "date": "2025-12-30",
-      "home": "Man United",
-      "away": "Wolves",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
       "date": "2026-01-01",
-      "home": "Sunderland",
-      "away": "Man City",
+      "home": "Liverpool",
+      "away": "Leeds United",
       "home_goals": 0,
       "away_goals": 0
     },
     {
       "season": "2025-26",
       "date": "2026-01-01",
-      "home": "Liverpool",
-      "away": "Leeds United",
+      "home": "Sunderland",
+      "away": "Man City",
       "home_goals": 0,
       "away_goals": 0
     },
@@ -13684,18 +13684,10 @@
     {
       "season": "2025-26",
       "date": "2026-01-03",
-      "home": "Wolves",
-      "away": "West Ham",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-01-03",
-      "home": "Bournemouth",
-      "away": "Arsenal",
+      "home": "Brighton Hove",
+      "away": "Burnley",
       "home_goals": 2,
-      "away_goals": 3
+      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -13708,9 +13700,17 @@
     {
       "season": "2025-26",
       "date": "2026-01-03",
-      "home": "Brighton Hove",
-      "away": "Burnley",
+      "home": "Bournemouth",
+      "away": "Arsenal",
       "home_goals": 2,
+      "away_goals": 3
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-01-03",
+      "home": "Wolves",
+      "away": "West Ham",
+      "home_goals": 3,
       "away_goals": 0
     },
     {
@@ -13788,14 +13788,6 @@
     {
       "season": "2025-26",
       "date": "2026-01-07",
-      "home": "Brentford",
-      "away": "Sunderland",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-01-07",
       "home": "Crystal Palace",
       "away": "Aston Villa",
       "home_goals": 0,
@@ -13804,10 +13796,10 @@
     {
       "season": "2025-26",
       "date": "2026-01-07",
-      "home": "Fulham",
-      "away": "Chelsea",
-      "home_goals": 2,
-      "away_goals": 1
+      "home": "Brentford",
+      "away": "Sunderland",
+      "home_goals": 3,
+      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -13815,6 +13807,14 @@
       "home": "Everton",
       "away": "Wolves",
       "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-01-07",
+      "home": "Fulham",
+      "away": "Chelsea",
+      "home_goals": 2,
       "away_goals": 1
     },
     {
@@ -13844,41 +13844,17 @@
     {
       "season": "2025-26",
       "date": "2026-01-17",
-      "home": "Nottingham",
-      "away": "Arsenal",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-01-17",
-      "home": "Man United",
-      "away": "Man City",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-01-17",
-      "home": "Sunderland",
-      "away": "Crystal Palace",
-      "home_goals": 2,
+      "home": "Liverpool",
+      "away": "Burnley",
+      "home_goals": 1,
       "away_goals": 1
     },
     {
       "season": "2025-26",
       "date": "2026-01-17",
-      "home": "Chelsea",
-      "away": "Brentford",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-01-17",
-      "home": "Leeds United",
-      "away": "Fulham",
-      "home_goals": 1,
+      "home": "Nottingham",
+      "away": "Arsenal",
+      "home_goals": 0,
       "away_goals": 0
     },
     {
@@ -13892,18 +13868,34 @@
     {
       "season": "2025-26",
       "date": "2026-01-17",
-      "home": "Liverpool",
-      "away": "Burnley",
+      "home": "Leeds United",
+      "away": "Fulham",
       "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-01-17",
+      "home": "Sunderland",
+      "away": "Crystal Palace",
+      "home_goals": 2,
       "away_goals": 1
     },
     {
       "season": "2025-26",
-      "date": "2026-01-18",
-      "home": "Aston Villa",
-      "away": "Everton",
-      "home_goals": 0,
-      "away_goals": 1
+      "date": "2026-01-17",
+      "home": "Man United",
+      "away": "Man City",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-01-17",
+      "home": "Chelsea",
+      "away": "Brentford",
+      "home_goals": 2,
+      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -13912,6 +13904,14 @@
       "away": "Newcastle",
       "home_goals": 0,
       "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-01-18",
+      "home": "Aston Villa",
+      "away": "Everton",
+      "home_goals": 0,
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -13924,26 +13924,10 @@
     {
       "season": "2025-26",
       "date": "2026-01-24",
-      "home": "Man City",
-      "away": "Wolves",
+      "home": "Fulham",
+      "away": "Brighton Hove",
       "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-01-24",
-      "home": "Bournemouth",
-      "away": "Liverpool",
-      "home_goals": 3,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-01-24",
-      "home": "Burnley",
-      "away": "Tottenham",
-      "home_goals": 2,
-      "away_goals": 2
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -13956,10 +13940,26 @@
     {
       "season": "2025-26",
       "date": "2026-01-24",
-      "home": "Fulham",
-      "away": "Brighton Hove",
+      "home": "Bournemouth",
+      "away": "Liverpool",
+      "home_goals": 3,
+      "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-01-24",
+      "home": "Man City",
+      "away": "Wolves",
       "home_goals": 2,
-      "away_goals": 1
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-01-24",
+      "home": "Burnley",
+      "away": "Tottenham",
+      "home_goals": 2,
+      "away_goals": 2
     },
     {
       "season": "2025-26",
@@ -14004,22 +14004,6 @@
     {
       "season": "2025-26",
       "date": "2026-01-31",
-      "home": "Chelsea",
-      "away": "West Ham",
-      "home_goals": 3,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-01-31",
-      "home": "Liverpool",
-      "away": "Newcastle",
-      "home_goals": 4,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-01-31",
       "home": "Brighton Hove",
       "away": "Everton",
       "home_goals": 1,
@@ -14043,18 +14027,18 @@
     },
     {
       "season": "2025-26",
-      "date": "2026-02-01",
-      "home": "Tottenham",
-      "away": "Man City",
-      "home_goals": 2,
+      "date": "2026-01-31",
+      "home": "Chelsea",
+      "away": "West Ham",
+      "home_goals": 3,
       "away_goals": 2
     },
     {
       "season": "2025-26",
-      "date": "2026-02-01",
-      "home": "Nottingham",
-      "away": "Crystal Palace",
-      "home_goals": 1,
+      "date": "2026-01-31",
+      "home": "Liverpool",
+      "away": "Newcastle",
+      "home_goals": 4,
       "away_goals": 1
     },
     {
@@ -14075,6 +14059,22 @@
     },
     {
       "season": "2025-26",
+      "date": "2026-02-01",
+      "home": "Nottingham",
+      "away": "Crystal Palace",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-02-01",
+      "home": "Tottenham",
+      "away": "Man City",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2025-26",
       "date": "2026-02-02",
       "home": "Sunderland",
       "away": "Burnley",
@@ -14088,6 +14088,38 @@
       "away": "Nottingham",
       "home_goals": 3,
       "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-02-07",
+      "home": "Man United",
+      "away": "Tottenham",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-02-07",
+      "home": "Bournemouth",
+      "away": "Aston Villa",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-02-07",
+      "home": "Arsenal",
+      "away": "Sunderland",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-02-07",
+      "home": "Burnley",
+      "away": "West Ham",
+      "home_goals": 0,
+      "away_goals": 2
     },
     {
       "season": "2025-26",
@@ -14108,50 +14140,10 @@
     {
       "season": "2025-26",
       "date": "2026-02-07",
-      "home": "Burnley",
-      "away": "West Ham",
-      "home_goals": 0,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-02-07",
       "home": "Newcastle",
       "away": "Brentford",
       "home_goals": 2,
       "away_goals": 3
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-02-07",
-      "home": "Bournemouth",
-      "away": "Aston Villa",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-02-07",
-      "home": "Man United",
-      "away": "Tottenham",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-02-07",
-      "home": "Arsenal",
-      "away": "Sunderland",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-02-08",
-      "home": "Brighton Hove",
-      "away": "Crystal Palace",
-      "home_goals": 0,
-      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -14163,9 +14155,17 @@
     },
     {
       "season": "2025-26",
+      "date": "2026-02-08",
+      "home": "Brighton Hove",
+      "away": "Crystal Palace",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
       "date": "2026-02-10",
-      "home": "Tottenham",
-      "away": "Newcastle",
+      "home": "Everton",
+      "away": "Bournemouth",
       "home_goals": 1,
       "away_goals": 2
     },
@@ -14180,17 +14180,17 @@
     {
       "season": "2025-26",
       "date": "2026-02-10",
-      "home": "Chelsea",
-      "away": "Leeds United",
-      "home_goals": 2,
+      "home": "Tottenham",
+      "away": "Newcastle",
+      "home_goals": 1,
       "away_goals": 2
     },
     {
       "season": "2025-26",
       "date": "2026-02-10",
-      "home": "Everton",
-      "away": "Bournemouth",
-      "home_goals": 1,
+      "home": "Chelsea",
+      "away": "Leeds United",
+      "home_goals": 2,
       "away_goals": 2
     },
     {
@@ -14260,22 +14260,6 @@
     {
       "season": "2025-26",
       "date": "2026-02-21",
-      "home": "Chelsea",
-      "away": "Burnley",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-02-21",
-      "home": "West Ham",
-      "away": "Bournemouth",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-02-21",
       "home": "Aston Villa",
       "away": "Leeds United",
       "home_goals": 1,
@@ -14291,19 +14275,27 @@
     },
     {
       "season": "2025-26",
-      "date": "2026-02-22",
-      "home": "Tottenham",
-      "away": "Arsenal",
+      "date": "2026-02-21",
+      "home": "Chelsea",
+      "away": "Burnley",
       "home_goals": 1,
-      "away_goals": 4
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-02-21",
+      "home": "West Ham",
+      "away": "Bournemouth",
+      "home_goals": 0,
+      "away_goals": 0
     },
     {
       "season": "2025-26",
       "date": "2026-02-22",
-      "home": "Nottingham",
-      "away": "Liverpool",
-      "home_goals": 0,
-      "away_goals": 1
+      "home": "Crystal Palace",
+      "away": "Wolves",
+      "home_goals": 1,
+      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -14316,10 +14308,18 @@
     {
       "season": "2025-26",
       "date": "2026-02-22",
-      "home": "Crystal Palace",
-      "away": "Wolves",
+      "home": "Nottingham",
+      "away": "Liverpool",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-02-22",
+      "home": "Tottenham",
+      "away": "Arsenal",
       "home_goals": 1,
-      "away_goals": 0
+      "away_goals": 4
     },
     {
       "season": "2025-26",
@@ -14336,6 +14336,14 @@
       "away": "Aston Villa",
       "home_goals": 2,
       "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-02-28",
+      "home": "Leeds United",
+      "away": "Man City",
+      "home_goals": 0,
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -14368,14 +14376,6 @@
       "away": "Everton",
       "home_goals": 2,
       "away_goals": 3
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-02-28",
-      "home": "Leeds United",
-      "away": "Man City",
-      "home_goals": 0,
-      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -14412,18 +14412,10 @@
     {
       "season": "2025-26",
       "date": "2026-03-03",
-      "home": "Wolves",
-      "away": "Liverpool",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-03-03",
-      "home": "Leeds United",
-      "away": "Sunderland",
+      "home": "Bournemouth",
+      "away": "Brentford",
       "home_goals": 0,
-      "away_goals": 1
+      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -14436,10 +14428,18 @@
     {
       "season": "2025-26",
       "date": "2026-03-03",
-      "home": "Bournemouth",
-      "away": "Brentford",
+      "home": "Wolves",
+      "away": "Liverpool",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-03-03",
+      "home": "Leeds United",
+      "away": "Sunderland",
       "home_goals": 0,
-      "away_goals": 0
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -14492,14 +14492,6 @@
     {
       "season": "2025-26",
       "date": "2026-03-14",
-      "home": "Burnley",
-      "away": "Bournemouth",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-03-14",
       "home": "West Ham",
       "away": "Man City",
       "home_goals": 1,
@@ -14516,18 +14508,26 @@
     {
       "season": "2025-26",
       "date": "2026-03-14",
-      "home": "Sunderland",
-      "away": "Brighton Hove",
-      "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-03-14",
       "home": "Arsenal",
       "away": "Everton",
       "home_goals": 2,
       "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-03-14",
+      "home": "Burnley",
+      "away": "Bournemouth",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-03-14",
+      "home": "Sunderland",
+      "away": "Brighton Hove",
+      "home_goals": 0,
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -14580,17 +14580,17 @@
     {
       "season": "2025-26",
       "date": "2026-03-21",
-      "home": "Fulham",
-      "away": "Burnley",
+      "home": "Everton",
+      "away": "Chelsea",
       "home_goals": 3,
-      "away_goals": 1
+      "away_goals": 0
     },
     {
       "season": "2025-26",
       "date": "2026-03-21",
-      "home": "Everton",
-      "away": "Chelsea",
-      "home_goals": 3,
+      "home": "Leeds United",
+      "away": "Brentford",
+      "home_goals": 0,
       "away_goals": 0
     },
     {
@@ -14604,10 +14604,10 @@
     {
       "season": "2025-26",
       "date": "2026-03-21",
-      "home": "Leeds United",
-      "away": "Brentford",
-      "home_goals": 0,
-      "away_goals": 0
+      "home": "Fulham",
+      "away": "Burnley",
+      "home_goals": 3,
+      "away_goals": 1
     },
     {
       "season": "2025-26",
@@ -14620,18 +14620,18 @@
     {
       "season": "2025-26",
       "date": "2026-03-22",
-      "home": "Newcastle",
-      "away": "Sunderland",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-03-22",
       "home": "Tottenham",
       "away": "Nottingham",
       "home_goals": 0,
       "away_goals": 3
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-03-22",
+      "home": "Newcastle",
+      "away": "Sunderland",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2025-26",
@@ -14644,17 +14644,9 @@
     {
       "season": "2025-26",
       "date": "2026-04-11",
-      "home": "Liverpool",
-      "away": "Fulham",
-      "home_goals": 2,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-04-11",
-      "home": "Burnley",
-      "away": "Brighton Hove",
-      "home_goals": 0,
+      "home": "Arsenal",
+      "away": "Bournemouth",
+      "home_goals": 1,
       "away_goals": 2
     },
     {
@@ -14668,10 +14660,18 @@
     {
       "season": "2025-26",
       "date": "2026-04-11",
-      "home": "Arsenal",
-      "away": "Bournemouth",
-      "home_goals": 1,
+      "home": "Burnley",
+      "away": "Brighton Hove",
+      "home_goals": 0,
       "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-04-11",
+      "home": "Liverpool",
+      "away": "Fulham",
+      "home_goals": 2,
+      "away_goals": 0
     },
     {
       "season": "2025-26",
@@ -14828,14 +14828,6 @@
     {
       "season": "2025-26",
       "date": "2026-04-25",
-      "home": "Arsenal",
-      "away": "Newcastle",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-04-25",
       "home": "Fulham",
       "away": "Aston Villa",
       "home_goals": 1,
@@ -14867,6 +14859,14 @@
     },
     {
       "season": "2025-26",
+      "date": "2026-04-25",
+      "home": "Arsenal",
+      "away": "Newcastle",
+      "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
       "date": "2026-04-27",
       "home": "Man United",
       "away": "Brentford",
@@ -14884,22 +14884,6 @@
     {
       "season": "2025-26",
       "date": "2026-05-02",
-      "home": "Arsenal",
-      "away": "Fulham",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-05-02",
-      "home": "Newcastle",
-      "away": "Brighton Hove",
-      "home_goals": 3,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-05-02",
       "home": "Brentford",
       "away": "West Ham",
       "home_goals": 3,
@@ -14911,6 +14895,22 @@
       "home": "Wolves",
       "away": "Sunderland",
       "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-05-02",
+      "home": "Arsenal",
+      "away": "Fulham",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-05-02",
+      "home": "Newcastle",
+      "away": "Brighton Hove",
+      "home_goals": 3,
       "away_goals": 1
     },
     {
@@ -14996,22 +14996,6 @@
     {
       "season": "2025-26",
       "date": "2026-05-10",
-      "home": "Crystal Palace",
-      "away": "Everton",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-05-10",
-      "home": "Burnley",
-      "away": "Aston Villa",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-05-10",
       "home": "West Ham",
       "away": "Arsenal",
       "home_goals": 0,
@@ -15024,6 +15008,22 @@
       "away": "Newcastle",
       "home_goals": 1,
       "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-05-10",
+      "home": "Burnley",
+      "away": "Aston Villa",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-05-10",
+      "home": "Crystal Palace",
+      "away": "Everton",
+      "home_goals": 2,
+      "away_goals": 2
     },
     {
       "season": "2025-26",
@@ -15108,14 +15108,6 @@
     {
       "season": "2025-26",
       "date": "2026-05-19",
-      "home": "Bournemouth",
-      "away": "Man City",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-05-19",
       "home": "Chelsea",
       "away": "Tottenham",
       "home_goals": 2,
@@ -15123,19 +15115,51 @@
     },
     {
       "season": "2025-26",
-      "date": "2026-05-24",
-      "home": "Man City",
-      "away": "Aston Villa",
+      "date": "2026-05-19",
+      "home": "Bournemouth",
+      "away": "Man City",
       "home_goals": 1,
-      "away_goals": 2
+      "away_goals": 1
     },
     {
       "season": "2025-26",
       "date": "2026-05-24",
-      "home": "Liverpool",
-      "away": "Brentford",
+      "home": "West Ham",
+      "away": "Leeds United",
+      "home_goals": 3,
+      "away_goals": 0
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-05-24",
+      "home": "Burnley",
+      "away": "Wolves",
       "home_goals": 1,
       "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-05-24",
+      "home": "Sunderland",
+      "away": "Chelsea",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-05-24",
+      "home": "Brighton Hove",
+      "away": "Man United",
+      "home_goals": 0,
+      "away_goals": 3
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-05-24",
+      "home": "Crystal Palace",
+      "away": "Arsenal",
+      "home_goals": 1,
+      "away_goals": 2
     },
     {
       "season": "2025-26",
@@ -15156,6 +15180,14 @@
     {
       "season": "2025-26",
       "date": "2026-05-24",
+      "home": "Man City",
+      "away": "Aston Villa",
+      "home_goals": 1,
+      "away_goals": 2
+    },
+    {
+      "season": "2025-26",
+      "date": "2026-05-24",
       "home": "Tottenham",
       "away": "Everton",
       "home_goals": 1,
@@ -15164,42 +15196,10 @@
     {
       "season": "2025-26",
       "date": "2026-05-24",
-      "home": "Crystal Palace",
-      "away": "Arsenal",
-      "home_goals": 1,
-      "away_goals": 2
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-05-24",
-      "home": "Brighton Hove",
-      "away": "Man United",
-      "home_goals": 0,
-      "away_goals": 3
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-05-24",
-      "home": "Sunderland",
-      "away": "Chelsea",
-      "home_goals": 2,
-      "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-05-24",
-      "home": "Burnley",
-      "away": "Wolves",
+      "home": "Liverpool",
+      "away": "Brentford",
       "home_goals": 1,
       "away_goals": 1
-    },
-    {
-      "season": "2025-26",
-      "date": "2026-05-24",
-      "home": "West Ham",
-      "away": "Leeds United",
-      "home_goals": 3,
-      "away_goals": 0
     },
     {
       "season": "2026-27",
@@ -15212,16 +15212,8 @@
     {
       "season": "2026-27",
       "date": "2026-08-22",
-      "home": "Brentford",
-      "away": "Tottenham",
-      "home_goals": 3,
-      "away_goals": 0
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-08-22",
-      "home": "Everton",
-      "away": "Crystal Palace",
+      "home": "Hull City",
+      "away": "Man United",
       "home_goals": 2,
       "away_goals": 0
     },
@@ -15236,18 +15228,26 @@
     {
       "season": "2026-27",
       "date": "2026-08-22",
-      "home": "Hull City",
-      "away": "Man United",
+      "home": "Nottingham",
+      "away": "Leeds United",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-08-22",
+      "home": "Everton",
+      "away": "Crystal Palace",
       "home_goals": 2,
       "away_goals": 0
     },
     {
       "season": "2026-27",
       "date": "2026-08-22",
-      "home": "Nottingham",
-      "away": "Leeds United",
-      "home_goals": 0,
-      "away_goals": 1
+      "home": "Brentford",
+      "away": "Tottenham",
+      "home_goals": 3,
+      "away_goals": 0
     },
     {
       "season": "2026-27",
@@ -15300,6 +15300,14 @@
     {
       "season": "2026-27",
       "date": "2026-08-29",
+      "home": "Coventry City",
+      "away": "Hull City",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-08-29",
       "home": "Liverpool",
       "away": "Nottingham",
       "home_goals": 2,
@@ -15312,30 +15320,6 @@
       "away": "Everton",
       "home_goals": 1,
       "away_goals": 1
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-08-29",
-      "home": "Coventry City",
-      "away": "Hull City",
-      "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-08-30",
-      "home": "Leeds United",
-      "away": "Brentford",
-      "home_goals": 1,
-      "away_goals": 1
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-08-30",
-      "home": "Man United",
-      "away": "Ipswich Town",
-      "home_goals": 5,
-      "away_goals": 2
     },
     {
       "season": "2026-27",
@@ -15355,6 +15339,22 @@
     },
     {
       "season": "2026-27",
+      "date": "2026-08-30",
+      "home": "Leeds United",
+      "away": "Brentford",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-08-30",
+      "home": "Man United",
+      "away": "Ipswich Town",
+      "home_goals": 5,
+      "away_goals": 2
+    },
+    {
+      "season": "2026-27",
       "date": "2026-08-31",
       "home": "Aston Villa",
       "away": "Arsenal",
@@ -15368,38 +15368,6 @@
       "away": "Liverpool",
       "home_goals": 0,
       "away_goals": 2
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-09-05",
-      "home": "Newcastle",
-      "away": "Bournemouth",
-      "home_goals": 2,
-      "away_goals": 2
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-09-05",
-      "home": "Nottingham",
-      "away": "Tottenham",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-09-05",
-      "home": "Man City",
-      "away": "Coventry City",
-      "home_goals": 1,
-      "away_goals": 0
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-09-05",
-      "home": "Brighton Hove",
-      "away": "Leeds United",
-      "home_goals": 1,
-      "away_goals": 1
     },
     {
       "season": "2026-27",
@@ -15427,6 +15395,38 @@
     },
     {
       "season": "2026-27",
+      "date": "2026-09-05",
+      "home": "Man City",
+      "away": "Coventry City",
+      "home_goals": 1,
+      "away_goals": 0
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-09-05",
+      "home": "Nottingham",
+      "away": "Tottenham",
+      "home_goals": 0,
+      "away_goals": 0
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-09-05",
+      "home": "Newcastle",
+      "away": "Bournemouth",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-09-05",
+      "home": "Brighton Hove",
+      "away": "Leeds United",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2026-27",
       "date": "2026-09-06",
       "home": "Everton",
       "away": "Man United",
@@ -15444,26 +15444,10 @@
     {
       "season": "2026-27",
       "date": "2026-09-12",
-      "home": "Sunderland",
-      "away": "Arsenal",
-      "home_goals": 0,
-      "away_goals": 2
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-09-12",
-      "home": "Tottenham",
-      "away": "Everton",
-      "home_goals": 0,
-      "away_goals": 0
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-09-12",
-      "home": "Chelsea",
-      "away": "Hull City",
+      "home": "Crystal Palace",
+      "away": "Ipswich Town",
       "home_goals": 2,
-      "away_goals": 2
+      "away_goals": 3
     },
     {
       "season": "2026-27",
@@ -15484,14 +15468,6 @@
     {
       "season": "2026-27",
       "date": "2026-09-12",
-      "home": "Crystal Palace",
-      "away": "Ipswich Town",
-      "home_goals": 2,
-      "away_goals": 3
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-09-12",
       "home": "Bournemouth",
       "away": "Brentford",
       "home_goals": 2,
@@ -15499,11 +15475,27 @@
     },
     {
       "season": "2026-27",
-      "date": "2026-09-13",
-      "home": "Coventry City",
-      "away": "Brighton Hove",
+      "date": "2026-09-12",
+      "home": "Chelsea",
+      "away": "Hull City",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-09-12",
+      "home": "Tottenham",
+      "away": "Everton",
       "home_goals": 0,
-      "away_goals": 5
+      "away_goals": 0
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-09-12",
+      "home": "Sunderland",
+      "away": "Arsenal",
+      "home_goals": 0,
+      "away_goals": 2
     },
     {
       "season": "2026-27",
@@ -15512,6 +15504,14 @@
       "away": "Man City",
       "home_goals": 0,
       "away_goals": 1
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-09-13",
+      "home": "Coventry City",
+      "away": "Brighton Hove",
+      "home_goals": 0,
+      "away_goals": 5
     },
     {
       "season": "2026-27",
@@ -15528,14 +15528,6 @@
       "away": "Chelsea",
       "home_goals": 3,
       "away_goals": 0
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-09-19",
-      "home": "Nottingham",
-      "away": "Coventry City",
-      "home_goals": 0,
-      "away_goals": 1
     },
     {
       "season": "2026-27",
@@ -15571,6 +15563,22 @@
     },
     {
       "season": "2026-27",
+      "date": "2026-09-19",
+      "home": "Nottingham",
+      "away": "Coventry City",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-09-20",
+      "home": "Bournemouth",
+      "away": "Liverpool",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "season": "2026-27",
       "date": "2026-09-20",
       "home": "Leeds United",
       "away": "Crystal Palace",
@@ -15588,18 +15596,82 @@
     {
       "season": "2026-27",
       "date": "2026-09-20",
-      "home": "Bournemouth",
-      "away": "Liverpool",
-      "home_goals": 0,
-      "away_goals": 1
-    },
-    {
-      "season": "2026-27",
-      "date": "2026-09-20",
       "home": "Fulham",
       "away": "Man United",
       "home_goals": 1,
       "away_goals": 1
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-10-10",
+      "home": "Ipswich Town",
+      "away": "Fulham",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-10-10",
+      "home": "Chelsea",
+      "away": "Bournemouth",
+      "home_goals": 5,
+      "away_goals": 1
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-10-10",
+      "home": "Aston Villa",
+      "away": "Brentford",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-10-10",
+      "home": "Arsenal",
+      "away": "Leeds United",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-10-10",
+      "home": "Sunderland",
+      "away": "Brighton Hove",
+      "home_goals": 0,
+      "away_goals": 2
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-10-10",
+      "home": "Man United",
+      "away": "Tottenham",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-10-11",
+      "home": "Crystal Palace",
+      "away": "Nottingham",
+      "home_goals": 3,
+      "away_goals": 1
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-10-11",
+      "home": "Hull City",
+      "away": "Everton",
+      "home_goals": 2,
+      "away_goals": 2
+    },
+    {
+      "season": "2026-27",
+      "date": "2026-10-11",
+      "home": "Liverpool",
+      "away": "Man City",
+      "home_goals": 0,
+      "away_goals": 3
     }
   ]
 }
