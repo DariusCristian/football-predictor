@@ -14,24 +14,6 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<!-- Shared hatch masks for strips drawn from thin evidence. Not display:none:
-     some browsers drop patterns defined inside an undisplayed SVG. -->
-<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
-  <defs>
-    <pattern id="hatch-low" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <rect width="3.5" height="9" fill="#fff"/>
-    </pattern>
-    <pattern id="hatch-medium" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <rect width="6.5" height="9" fill="#fff"/>
-    </pattern>
-    <mask id="mask-low" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="40">
-      <rect width="1000" height="40" fill="url(#hatch-low)"/>
-    </mask>
-    <mask id="mask-medium" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="40">
-      <rect width="1000" height="40" fill="url(#hatch-medium)"/>
-    </mask>
-  </defs>
-</svg>
 
 <!-- Links are rewritten from route() in app.js on load; these hrefs are
      the same routes, so the markup reads correctly before it runs. -->
@@ -175,7 +157,7 @@
         <h3>Where it is weakest: newly promoted teams</h3>
         <p>A team with only a handful of Premier League matches in the data gets ratings that take those few results at face value. Regularisation stops them running to infinity, but it pulls them towards the reference team (Arsenal, first alphabetically), not towards an average side, so a promoted team's flattering defence can look even better than it should.</p>
         <p id="method-now"></p>
-        <p>The proper fix is a hierarchical prior, which pulls each team towards the league average in proportion to how little data it has. That isn't built. Until it is, this site shows the match count beside every team and marks predictions that depend on thin evidence with <span class="dagger-inline">†</span> and hatching.</p>
+        <p>The proper fix is a hierarchical prior, which pulls each team towards the league average in proportion to how little data it has. That isn't built. Until it is, this site shows the match count beside every team and marks predictions that depend on thin evidence with <span class="dagger-inline">†</span> and a low-confidence label.</p>
       </div>
     </div>
   </section>

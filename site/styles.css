@@ -77,7 +77,6 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .skip:focus { top: 0.5rem; }
 
-.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
 
 /* ---------- Masthead ---------- */
 
@@ -115,7 +114,7 @@ main:focus, h1[tabindex="-1"]:focus { outline: none; }
 
 /* ---------- Layout: main column plus margin notes ---------- */
 
-.section { padding: 2.75rem 0 1rem; border-bottom: 1px solid var(--rule-strong); }
+.section { padding: 2.25rem 0 1rem; border-bottom: 1px solid var(--rule-strong); }
 .section:last-of-type { border-bottom: 0; }
 
 .layout {
@@ -163,23 +162,43 @@ main:focus, h1[tabindex="-1"]:focus { outline: none; }
 .swatch-home { background: var(--home); }
 .swatch-draw { background: var(--level); }
 .swatch-away { background: var(--away); }
-.swatch-hatch {
-  background: repeating-linear-gradient(45deg, var(--navy) 0 2px, transparent 2px 5px);
-  box-shadow: inset 0 0 0 1px var(--navy);
-}
 
 /* ---------- Fixture rows ---------- */
 
-.fixture { padding: 1.25rem 0 1.1rem; border-top: 1px solid var(--rule); }
+.fixture { padding: 0.6rem 0 0.55rem; border-top: 1px solid var(--rule); }
 .fixture-list > .fixture:first-child { border-top-color: var(--rule-strong); }
 
-.kickoff { font-size: 0.9rem; margin: 0 0 0.35rem; }
+.kickoff {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.5rem;
+  font-size: 0.85rem; line-height: 1.3; margin: 0 0 0.15rem;
+}
+
+/* Thin evidence, marked beside the strip rather than on it. */
+.conf-tag {
+  margin-left: auto;
+  font-size: 0.75rem; font-weight: 600; line-height: 1.2; white-space: nowrap;
+  padding: 0.05rem 0.4rem; border: 1px solid var(--navy); border-radius: 2px;
+}
+.conf-tag.conf-medium { border-color: var(--rule-strong); font-weight: 400; }
+.key .conf-tag { margin-left: 0; }
 
 .pair {
   display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
   font-size: 1.2rem; font-weight: 600; margin: 0;
 }
 .pair .away-name { text-align: right; }
+.pair .side-home, .pair .side-away { display: flex; align-items: baseline; gap: 0.6rem; min-width: 0; }
+.pair .side-away { justify-content: flex-end; }
+.inline-n { display: none; font-size: 0.8rem; font-weight: 400; white-space: nowrap; }
+/* Above phone width the counts fit on the name line; the row underneath
+   stays for screen readers only. */
+@media (min-width: 481px) {
+  .inline-n { display: inline; }
+  .gauges-card {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; margin: 0;
+  }
+}
 
 /* In the fixture list the pair is a link to the match page. */
 .pair-heading { margin: 0; font-size: inherit; }
@@ -190,39 +209,24 @@ a.pair:hover .home-name, a.pair:hover .away-name {
 
 .gauges {
   display: flex; justify-content: space-between; gap: 1rem;
-  margin: 0.25rem 0 0.55rem;
+  margin: 0 0 0.3rem; line-height: 1.3;
 }
 .gauges .side-away { justify-content: flex-end; text-align: right; }
 
 .dagger { font-family: var(--text); font-weight: 700; margin-left: 0.12em; }
 .dagger-inline { font-weight: 700; }
 
-/* Evidence gauge: one block per full season, one tick per match since. */
-.gauge-wrap {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 0.2rem 0.5rem;
-  font-size: 0.8rem;
-}
-.gauge { display: inline-flex; align-items: center; gap: 2px; height: 0.8rem; }
-.g-season { width: 14px; height: 0.8rem; background: var(--navy); }
-.g-match { width: 3px; height: 0.8rem; background: var(--navy); }
-.g-season + .g-match { margin-left: 3px; }
+/* Match count: the number alone. */
+.gauge-wrap { display: flex; align-items: baseline; font-size: 0.8rem; }
 .g-n { color: var(--navy); white-space: nowrap; }
 
-@media (max-width: 480px) {
-  .g-season { width: 9px; }
-}
-
 /* The 100-match strip. */
-.strip { display: block; width: 100%; height: auto; overflow: visible; }
+.strip { display: block; width: 100%; height: 1.25rem; overflow: visible; margin-top: 0.3rem; }
 .t-home { fill: var(--home); }
 .t-draw { fill: var(--level); }
 .t-away { fill: var(--away); }
-.o-home, .o-draw, .o-away { fill: none; stroke-width: 1.1; }
-.o-home { stroke: var(--home); }
-.o-draw { stroke: var(--level); }
-.o-away { stroke: var(--away); }
 
-.nums { position: relative; height: 1.7rem; margin-top: 0.3rem; }
+.nums { position: relative; height: 1.7rem; margin-top: 0.15rem; }
 .nums span {
   position: absolute; top: 0;
   font-family: var(--mono); font-variant-numeric: tabular-nums;
@@ -232,11 +236,12 @@ a.pair:hover .home-name, a.pair:hover .away-name {
 .n-draw { transform: translateX(-50%); color: var(--level); }
 .n-away { right: 0; color: var(--away); }
 
-.score-line { font-size: 0.92rem; margin: 0.4rem 0 0; }
+.score-line { font-size: 0.88rem; line-height: 1.4; margin: 0.1rem 0 0; }
 .score-line .conf { font-weight: 600; }
 
 .big .pair { font-size: 1.5rem; }
 .big .nums { height: 2.1rem; }
+.big .strip { height: 1.8rem; }
 .big .nums span { font-size: 1.55rem; }
 
 /* ---------- Head-to-head ---------- */
@@ -311,7 +316,7 @@ select {
 
 .back { margin: 0 0 0.25rem; font-size: 0.92rem; }
 #match .fixture { border-top: 0; padding-top: 0.5rem; }
-.match-detail .match-h { margin-top: 2.25rem; }
+.match-detail .match-h { margin-top: 1.75rem; }
 .match-detail > .col-main > .match-h:first-child { margin-top: 0.5rem; }
 /* Same columns for both teams' tables; phones size them to content. */
 @media (min-width: 481px) {
@@ -321,7 +326,7 @@ select {
   .results th:nth-child(3), .results th:nth-child(5) { width: 14%; }
 }
 .match-h .tag { font-size: 0.95rem; }
-.recent { margin-bottom: 1.75rem; }
+.recent { margin-bottom: 1.25rem; }
 .recent h3 { margin: 1rem 0 0.4rem; }
 .subnote { font-size: 0.85rem; color: var(--level); margin: 0 0 0.4rem; }
 .h2h-total { font-weight: 600; }
@@ -436,7 +441,7 @@ select {
 .subhead { margin-top: 0.25rem; }
 .tag { font-size: 0.95rem; font-weight: 400; color: var(--level); }
 
-.ruler { position: relative; margin: 2.6rem 0 2.8rem; height: 2px; background: var(--navy); }
+.ruler { position: relative; margin: 2.4rem 0 2.6rem; height: 2px; background: var(--navy); }
 .ruler .mark { position: absolute; top: -0.45rem; width: 2px; height: 0.95rem; background: var(--navy); transform: translateX(-1px); }
 .ruler .mark.m-model { background: var(--home); width: 3px; }
 .ruler .label {
@@ -466,7 +471,7 @@ select {
 .ledger li {
   border: 1px dashed var(--rule-strong);
   background: var(--chalk);
-  padding: 0.6rem 0.7rem;
+  padding: 0.5rem 0.65rem;
   font-size: 0.85rem; line-height: 1.35;
 }
 .ledger .when { color: var(--level); display: block; margin-bottom: 0.15rem; }
@@ -478,6 +483,88 @@ select {
 .ledger .result { display: block; color: var(--level); border-top: 1px dashed var(--rule); padding-top: 0.3rem; }
 
 .live-stat { font-size: 1.05rem; }
+
+/* Live comparison: n first, then one row per reference on a shared scale.
+   The band is the live figure's rough range, repeated on every row so it
+   reads as one vertical strip the other references fall inside. */
+.live-n { margin: 1.25rem 0 0.4rem; display: flex; align-items: baseline; gap: 0.5rem; }
+.live-n .num { font-size: 2.6rem; font-weight: 700; line-height: 1; }
+.live-n span:last-child { font-size: 1.15rem; font-weight: 600; }
+
+.dots { margin: 0.75rem 0 1rem; }
+.dot-row {
+  display: grid; grid-template-columns: 9.5rem 3.5rem minmax(0, 1fr);
+  align-items: center; column-gap: 0.75rem;
+  padding: 0.35rem 0; font-size: 0.92rem;
+}
+.dot-row + .dot-row { border-top: 1px solid var(--rule); }
+.dot-row.dot-axis { border-top-color: var(--rule-strong); padding-top: 0.2rem; }
+.dot-name { line-height: 1.25; }
+.dot-detail { display: block; font-size: 0.78rem; color: var(--level); }
+.dot-value { text-align: right; }
+.dot-track {
+  position: relative; height: 1.1rem;
+  background: linear-gradient(var(--rule-strong), var(--rule-strong)) center / 100% 1px no-repeat;
+}
+.dot-axis .dot-track { background: none; }
+.dot-track .band {
+  position: absolute; top: 0; bottom: 0; background: var(--rule);
+  border-left: 1px solid var(--rule-strong); border-right: 1px solid var(--rule-strong);
+}
+.dot-track .dot {
+  position: absolute; top: 50%; width: 0.7rem; height: 0.7rem; border-radius: 50%;
+  background: var(--navy); transform: translate(-50%, -50%);
+}
+.is-model .dot-name, .is-model .dot-value { font-weight: 700; }
+.is-model .dot { background: var(--home); width: 0.85rem; height: 0.85rem; }
+.is-backtest { color: var(--level); }
+.is-backtest .dot { background: var(--chalk); box-shadow: inset 0 0 0 2px var(--level); }
+.dot-axis .tick { position: absolute; top: 0; font-family: var(--mono); font-size: 0.75rem; color: var(--level); }
+.dot-axis .tick.anchor-start { left: 0; }
+.dot-axis .tick.anchor-end { right: 0; }
+.range-note { font-size: 0.95rem; }
+.band-key {
+  display: inline-block; width: 1.4rem; height: 0.8rem; margin-right: 0.4rem;
+  background: var(--rule); vertical-align: -0.05rem;
+}
+
+@media (max-width: 480px) {
+  .dot-row { grid-template-columns: 6.6rem 2.9rem minmax(0, 1fr); column-gap: 0.5rem; font-size: 0.85rem; }
+  .live-n .num { font-size: 2.2rem; }
+}
+
+/* Scored forecasts: the whole forecast per row, what happened outlined.
+   No colour or mark says right or wrong; the colours are the outcome kinds. */
+.scored { margin: 1.5rem 0 1.25rem; }
+.scored-table th, .scored-table td { padding-top: 0.3rem; padding-bottom: 0.3rem; }
+.scored-h { font-size: 1rem; font-weight: 600; margin: 0 0 0.4rem; }
+.scored-table .when { display: block; font-weight: 400; font-size: 0.78rem; color: var(--level); font-family: var(--mono); }
+.scored-table .c-match { font-weight: 400; }
+.scored-table .c-match a { font-weight: 600; }
+.scored-table .sc { white-space: nowrap; padding: 0 0.1rem; }
+.scored-table th.c-p, .scored-table td.c-p { text-align: center; width: 3.6rem; padding-right: 0.25rem; padding-left: 0.25rem; }
+.scored-table th.c-loss, .scored-table td.c-loss { text-align: right; width: 4rem; padding-right: 0; }
+.scored-table thead .axis-note { display: block; font-weight: 400; font-size: 0.75rem; color: var(--level); }
+.scored-table td.c-p { font-weight: 600; }
+.scored-table td.p-home { color: var(--home); }
+.scored-table td.p-draw { color: var(--level); }
+.scored-table td.p-away { color: var(--away); }
+.scored-table td.c-loss { color: var(--level); }
+.happened .pv, .happened-key {
+  display: inline-block; min-width: 2.2rem; padding: 0.05rem 0.3rem;
+  border: 2px solid var(--navy); border-radius: 2px;
+}
+.happened-key { font-family: var(--mono); font-weight: 600; text-align: center; margin-right: 0.15rem; font-size: 0.85rem; min-width: 0; }
+
+@media (max-width: 480px) {
+  .scored-table th.c-p, .scored-table td.c-p { width: 2.6rem; padding-left: 0.1rem; padding-right: 0.1rem; }
+  .scored-table th.c-loss, .scored-table td.c-loss { width: 3.2rem; }
+  .happened .pv { min-width: 1.9rem; padding: 0 0.15rem; }
+}
+
+/* A played match's page. */
+.pair .final { font-size: 1.35rem; font-weight: 700; white-space: nowrap; }
+.recorded-as { font-size: 0.88rem; color: var(--level); margin: 0.5rem 0 0.35rem; }
 
 /* ---------- Method ---------- */
 

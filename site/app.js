@@ -259,6 +259,8 @@ function buildContext(loaded) {
   if (loaded.predictions.ok) {
     ctx.prediction = new Map(loaded.predictions.data.predictions.map((p) => [p.slug, p]));
   }
+  ctx.scored = new Map(loaded.scoreboard.ok
+    ? (loaded.scoreboard.data.live.matches || []).map((m) => [m.slug, m]) : []);
   return ctx;
 }
 
@@ -307,7 +309,8 @@ function teamLabel(ctx, name) {
   ];
 }
 
-// One block per full season before this one, one tick per match since.
+// The match count as a number. Seasons and later matches stay in the
+// text equivalent, where they read better than any tally.
 function gauge(team) {
   const n = team.matches_in_training;
   const current = team.season_matches;
@@ -317,16 +320,22 @@ function gauge(team) {
   const label = seasons
     ? `${n} Premier League matches in the training data: ${seasons} full ${plural(seasons, "season", "seasons")} and ${ticks} more`
     : `${n} Premier League ${plural(n, "match", "matches")} in the training data`;
-  const g = el("span", { class: "gauge", "aria-hidden": "true" });
-  for (let i = 0; i < seasons; i++) g.append(el("span", { class: "g-season" }));
-  for (let i = 0; i < ticks; i++) g.append(el("span", { class: "g-match" }));
   return el("span", { class: "gauge-wrap", title: label },
-    g, el("span", { class: "g-n num", "aria-hidden": "true", text: `${n} ${plural(n, "match", "matches")}` }),
+    el("span", { class: "g-n num", "aria-hidden": "true", text: `${n} ${plural(n, "match", "matches")}` }),
     hidden(label));
 }
 
 /* 100 ticks, grouped in tens: if this match were played 100 times.
- * Thin evidence keeps the same ticks but masks them with hatching. */
+ * Always solid: thin evidence is marked beside the strip (confidenceTag),
+ * never on it, so the proportions read the same for every fixture. */
+// The match count beside a team name; hidden from assistive tech, which
+// gets the gauge() sentence instead.
+function inlineCount(team) {
+  if (!team) return null;
+  const n = team.matches_in_training;
+  return el("span", { class: "inline-n num", "aria-hidden": "true", text: `${n} ${plural(n, "match", "matches")}` });
+}
+
 function strip(probs, confidence, home, away) {
   const p = [probs.home, probs.draw, probs.away];
   const counts = outOf100(p);
@@ -335,20 +344,17 @@ function strip(probs, confidence, home, away) {
   const aria = `If played 100 times: ${home} win ${labels[0]}, draw ${labels[1]}, ${away} win ${labels[2]}`
     + (conf === "high" ? "." : `. ${conf[0].toUpperCase()}${conf.slice(1)} confidence: thin evidence.`);
 
-  const svg = svgEl("svg", { viewBox: "0 0 1000 40", class: `strip c-${conf}`, role: "img", "aria-label": aria, preserveAspectRatio: "xMinYMid meet" });
-  const solid = svgEl("g", conf === "high" ? {} : { mask: `url(#mask-${conf})` });
-  const outline = conf === "high" ? null : svgEl("g");
+  // Fixed height from CSS, so the ticks stretch rather than the strip
+  // shrinking to a sliver on a phone.
+  const svg = svgEl("svg", { viewBox: "0 0 1000 40", class: `strip c-${conf}`, role: "img", "aria-label": aria, preserveAspectRatio: "none" });
   let i = 0;
   counts.forEach((count, k) => {
     for (let j = 0; j < count; j++, i++) {
       // 99 periods + 9 group gaps + one tick width = 1000.
       const x = i * 9.79 + Math.floor(i / 10) * 2.6;
-      solid.append(svgEl("rect", { x, y: 0, width: 6.4, height: 40, class: `t-${KINDS[k]}` }));
-      if (outline) outline.append(svgEl("rect", { x: x + 0.55, y: 0.55, width: 5.3, height: 38.9, class: `o-${KINDS[k]}` }));
+      svg.append(svgEl("rect", { x, y: 0, width: 6.4, height: 40, class: `t-${KINDS[k]}` }));
     }
   });
-  svg.append(solid);
-  if (outline) svg.append(outline);
 
   // Draw label sits over the middle of its segment, kept inside the strip.
   const drawCentre = Math.min(84, Math.max(16, counts[0] + counts[1] / 2));
@@ -357,6 +363,14 @@ function strip(probs, confidence, home, away) {
     el("span", { class: "n-draw", style: `left:${drawCentre}%`, text: labels[1] }),
     el("span", { class: "n-away", text: labels[2] }));
   return [svg, nums];
+}
+
+// The visible marker for thin evidence, at the end of the kickoff line.
+// aria-hidden: the strip's label and confidenceText already say it.
+function confidenceTag(level) {
+  return isThin(level)
+    ? el("span", { class: `conf-tag conf-${level}`, "aria-hidden": "true", text: `† ${level} confidence` })
+    : null;
 }
 
 function confidenceText(level) {
@@ -416,9 +430,7 @@ function renderFixtures(loaded, ctx) {
     el("span", {}, el("span", { class: "swatch swatch-home", "aria-hidden": "true" }), "home win"),
     el("span", {}, el("span", { class: "swatch swatch-draw", "aria-hidden": "true" }), "draw"),
     el("span", {}, el("span", { class: "swatch swatch-away", "aria-hidden": "true" }), "away win"),
-    el("span", {}, el("span", { class: "swatch swatch-hatch", "aria-hidden": "true" }), "† hatched: a team with few matches in the data"),
-    el("span", {}, el("span", { class: "g-season", "aria-hidden": "true" }), "one full season of matches,",
-      el("span", { class: "g-match", "aria-hidden": "true" }), "one match"),
+    el("span", {}, el("span", { class: "conf-tag conf-low", "aria-hidden": "true", text: "† low confidence" }), "a team with few matches in the data"),
   );
   key.hidden = false;
 
@@ -435,19 +447,21 @@ function predictionCard(ctx, pred, asPage = false) {
   const thin = thinTeams(ctx, pred.home, pred.away);
   const top = pairing && pairing.top_scores && pairing.top_scores[0];
   const [svg, nums] = strip(pred.probabilities, level, pred.home, pred.away);
+  // Above phone width the match counts sit on the name line (inlineCount);
+  // the .gauges row below keeps the full sentence for screen readers.
   const names = [
-    el("span", { class: "home-name" }, teamLabel(ctx, pred.home)),
+    el("span", { class: "side-home" }, el("span", { class: "home-name" }, teamLabel(ctx, pred.home)), inlineCount(homeT)),
     hidden(" v "),
-    el("span", { class: "away-name" }, teamLabel(ctx, pred.away)),
+    el("span", { class: "side-away" }, inlineCount(awayT), el("span", { class: "away-name" }, teamLabel(ctx, pred.away))),
   ];
   const heading = asPage
     ? el("h1", { class: "pair", tabindex: "-1" }, names)
     : el("h3", { class: "pair-heading" }, el("a", { class: "pair", href: route("match", pred.slug) }, names));
 
   const main = el("div", { class: "col-main" },
-    el("p", { class: "kickoff" }, el("time", { datetime: pred.kickoff, text: fmtKickoff(pred.kickoff) }), hidden(" UK time")),
+    el("p", { class: "kickoff" }, el("time", { datetime: pred.kickoff, text: fmtKickoff(pred.kickoff) }), hidden(" UK time"), confidenceTag(level)),
     heading,
-    el("div", { class: "gauges" },
+    el("div", { class: "gauges gauges-card" },
       homeT ? el("div", { class: "side-home gauge-wrap" }, gauge(homeT)) : el("span"),
       awayT ? el("div", { class: "side-away gauge-wrap" }, gauge(awayT)) : el("span")),
     svg, nums,
@@ -467,12 +481,20 @@ function predictionCard(ctx, pred, asPage = false) {
 
 /* ---------- Match details ---------- */
 
-// Draws the page for slug. Returns false when no upcoming fixture has it.
+function backLink(view, text) {
+  return el("div", { class: "layout" }, el("div", { class: "col-main" },
+    el("p", { class: "back" }, el("a", { href: route(view) },
+      el("span", { "aria-hidden": "true", text: "← " }), text))));
+}
+
+// Draws the page for slug. Returns false when no recorded prediction has it.
 function renderMatch(loaded, ctx, slug) {
   const out = document.getElementById("match-out");
-  const back = el("div", { class: "layout" }, el("div", { class: "col-main" },
-    el("p", { class: "back" }, el("a", { href: route("fixtures") },
-      el("span", { "aria-hidden": "true", text: "← " }), "All fixtures"))));
+  if (!(ctx.prediction && ctx.prediction.has(slug)) && ctx.scored.has(slug)) {
+    renderPlayed(loaded, ctx, ctx.scored.get(slug));
+    return true;
+  }
+  const back = backLink("fixtures", "All fixtures");
   const missing = missingFor(loaded, SECTIONS.match.needs);
   if (missing.length) {
     const err = el("div");
@@ -498,30 +520,76 @@ function renderMatch(loaded, ctx, slug) {
     main.append(el("div", { class: "section-error" }, el("p", {}, `matrix.json has no score grid for ${home} v ${away}.`)));
   }
 
-  const history = el("div");
-  if (!loaded.fixture_detail.ok) {
-    sectionError(history, loaded, ["fixture_detail"], "Recent results and head-to-head");
-  } else {
-    const detail = loaded.fixture_detail.data.fixtures[slug];
-    if (!detail) {
-      history.append(el("div", { class: "section-error" }, el("p", {},
-        el("code", { text: "data/fixture_detail.json" }), ` has no entry for ${home} v ${away}; it may be from an older build than `,
-        el("code", { text: "data/predictions.json" }), ".")));
-    } else {
-      const { recent_results: k, data_starts: since } = loaded.fixture_detail.data;
-      history.append(
-        el("h2", { class: "match-h" }, `Last ${k} results`, el("span", { class: "tag", text: " most recent first" })),
-        recentBlock(ctx, home, detail.recent.home, k),
-        recentBlock(ctx, away, detail.recent.away, k),
-        headToHead(home, away, detail.head_to_head, since));
-    }
-  }
-  main.append(history);
+  main.append(historyBlock(loaded, ctx, slug, home, away, "predictions"));
 
   out.replaceChildren(back, predictionCard(ctx, pred, true),
     el("div", { class: "layout match-detail" }, main, el("aside", { class: "col-note" })));
   document.title = `${home} v ${away} · ${SITE_TITLE}`;
   return true;
+}
+
+// Recent results and head-to-head, from matches before kickoff only.
+function historyBlock(loaded, ctx, slug, home, away, source) {
+  const history = el("div");
+  if (!loaded.fixture_detail.ok) {
+    sectionError(history, loaded, ["fixture_detail"], "Recent results and head-to-head");
+    return history;
+  }
+  const detail = loaded.fixture_detail.data.fixtures[slug];
+  if (!detail) {
+    history.append(el("div", { class: "section-error" }, el("p", {},
+      el("code", { text: "data/fixture_detail.json" }), ` has no entry for ${home} v ${away}; it may be from an older build than `,
+      el("code", { text: `data/${source}.json` }), ".")));
+    return history;
+  }
+  const { recent_results: k, data_starts: since } = loaded.fixture_detail.data;
+  history.append(
+    el("h2", { class: "match-h" }, `Last ${k} results`, el("span", { class: "tag", text: " before kickoff, most recent first" })),
+    recentBlock(ctx, home, detail.recent.home, k),
+    recentBlock(ctx, away, detail.recent.away, k),
+    headToHead(home, away, detail.head_to_head, since));
+  return history;
+}
+
+// Plain-language name for one outcome of home v away.
+const outcomeName = (kind, home, away) =>
+  kind === "home" ? `${home} win` : kind === "away" ? `${away} win` : "draw";
+
+/* A match that has been played and scored. Only what was recorded before
+ * kickoff is shown: the score grid and evidence gauges come from the
+ * current model, which has since been refitted on the result. */
+function renderPlayed(loaded, ctx, m) {
+  const out = document.getElementById("match-out");
+  const { home, away } = m;
+  const pr = KINDS.map((k) => m.probabilities[k]);
+  const labels = outOf100(pr).map((c, i) => countLabel(c, pr[i]));
+  const given = labels[KINDS.indexOf(m.outcome)];
+  const [svg, nums] = strip(m.probabilities, m.confidence, home, away);
+
+  const card = el("article", { class: `fixture layout c-${isThin(m.confidence) ? m.confidence : "high"} big` },
+    el("div", { class: "col-main" },
+      el("p", { class: "kickoff" }, el("time", { datetime: m.date, text: fmtKickoff(m.date) }), hidden(" UK time"),
+        el("span", { class: "tag", text: " · played" }), confidenceTag(m.confidence)),
+      el("h1", { class: "pair", tabindex: "-1" },
+        el("span", { class: "home-name" }, home),
+        el("span", { class: "final num" }, hidden(", final score "), `${m.score[0]}–${m.score[1]}`),
+        el("span", { class: "away-name" }, away)),
+      el("p", { class: "recorded-as" }, `Forecast recorded ${fmtStamp(m.predicted_at)}, before kickoff:`),
+      svg, nums,
+      el("p", { class: "score-line" },
+        `It was a ${outcomeName(m.outcome, home, away)}, which the forecast gave `, num(given), " in 100. ",
+        `Likeliest score was ${m.most_likely_score[0]}–${m.most_likely_score[1]}`,
+        confidenceText(m.confidence), ".")),
+    el("aside", { class: "col-note" },
+      el("p", { class: "note", text: "These are the probabilities written to the store before kickoff, not the model's current view. A single result can't show whether they were good; only many results together can." }),
+      el("p", { class: "note" }, "This match added ", num(m.log_loss.toFixed(3)), " to the live log loss. ",
+        el("a", { href: route("record"), text: "The live record" }), ".")));
+
+  out.replaceChildren(backLink("record", "Record"), card,
+    el("div", { class: "layout match-detail" },
+      el("div", { class: "col-main" }, historyBlock(loaded, ctx, m.slug, home, away, "scoreboard")),
+      el("aside", { class: "col-note" })));
+  document.title = `${home} ${m.score[0]}–${m.score[1]} ${away} · ${SITE_TITLE}`;
 }
 
 function recentBlock(ctx, team, results, k) {
@@ -629,7 +697,7 @@ function renderTable(loaded) {
     const named = list.length === 1 ? list[0] : `${list.slice(0, -1).join(", ")} and ${list[list.length - 1]}`;
     notes.append(el("p", { class: "note" },
       el("span", { class: "dagger", "aria-hidden": "true", text: "†" }),
-      `Matches in the training data: ${named}. These are the promoted sides the model knows least about, so every prediction involving them is marked † and hatched on the `,
+      `Matches in the training data: ${named}. These are the promoted sides the model knows least about, so every prediction involving them is marked † and labelled low confidence on the `,
       el("a", { href: route("fixtures"), text: "fixtures page" }), "."));
   }
   notes.append(el("p", { class: "note", text: "Teams level on points, goal difference and goals scored are listed alphabetically; the league's head-to-head tiebreaks aren't applied." }));
@@ -1022,6 +1090,95 @@ function backtestBlock(bt) {
   return el("div", { class: "layout record-block" }, main, notes);
 }
 
+/* The live comparison and the scored predictions beneath it. The
+ * comparison is the finding; the rows are evidence for it, shown as full
+ * forecasts with what happened marked, never as hits and misses. */
+function scoredBlock(loaded, live) {
+  const backtest = loaded.scoreboard.data.backtest.models.find((m) => m.model === "poisson");
+  const refs = [
+    { name: MODEL_NAMES.poisson, value: live.log_loss, cls: "is-model" },
+    { name: "league average", value: live.league_average_log_loss },
+    { name: "one third each", value: live.uniform_log_loss },
+  ];
+  if (backtest) refs.push({ name: "backtest", value: backtest.log_loss, cls: "is-backtest", detail: `${backtest.n} past matches` });
+  const range = live.rough_range;
+  const values = refs.map((r) => r.value).concat(range || []);
+  const lo = Math.floor((Math.min(...values) - 0.05) * 10) / 10;
+  const hi = Math.ceil((Math.max(...values) + 0.05) * 10) / 10;
+  const at = (v) => ((v - lo) / (hi - lo)) * 100;
+  const n = live.n;
+  const N = countWord(n);
+
+  const band = range ? el("span", { class: "band", style: `left:${at(range[0])}%;width:${at(range[1]) - at(range[0])}%` }) : null;
+  const dots = el("div", { class: "dots" },
+    el("p", { class: "visually-hidden", text: `Log loss on the same ${n} matches, lower is better: ${refs.slice(0, 3).map((r) => `${r.name} ${r.value.toFixed(3)}`).join("; ")}.`
+      + (backtest ? ` For reference, the backtest scored ${backtest.log_loss.toFixed(3)} on ${backtest.n} past matches.` : "")
+      + (range ? ` With ${n} matches the live figure is only known to lie roughly between ${range[0].toFixed(2)} and ${range[1].toFixed(2)}.` : "") }),
+    el("div", { "aria-hidden": "true" },
+      refs.map((r) => el("div", { class: `dot-row ${r.cls || ""}` },
+        el("span", { class: "dot-name" }, r.name, r.detail ? el("span", { class: "dot-detail", text: r.detail }) : null),
+        el("span", { class: "dot-value num", text: r.value.toFixed(3) }),
+        el("span", { class: "dot-track" }, band ? band.cloneNode() : null,
+          el("span", { class: "dot", style: `left:${at(r.value)}%` })))),
+      el("div", { class: "dot-row dot-axis" }, el("span"), el("span"),
+        el("span", { class: "dot-track" },
+          el("span", { class: "tick anchor-start", text: lo.toFixed(1) }),
+          el("span", { class: "tick anchor-end", text: hi.toFixed(1) })))));
+
+  const inRange = (v) => range && v >= range[0] && v <= range[1];
+  const rivals = refs.slice(1, 3).filter((r) => inRange(r.value));
+  const parts = [
+    el("p", { class: "live-n" }, num(String(n)), el("span", { text: ` ${plural(n, "match", "matches")}: the whole live sample so far` })),
+    el("p", {}, `Log loss on the same ${n} matches, lower is better. The model is set against two references scored on exactly these matches: the league-average baseline, refitted before each one, and guessing one third for each result.`),
+    dots,
+  ];
+  if (range) {
+    const sentences = [`The shaded band is a rough range for the live figure: about ${range[0].toFixed(2)} to ${range[1].toFixed(2)} (two standard errors).`];
+    if (rivals.length) {
+      const names = rivals.map((r) => r.name).join(" and ");
+      sentences.push(`${names[0].toUpperCase()}${names.slice(1)} ${rivals.length === 1 ? "falls" : "both fall"} inside it, so ${N.toLowerCase()} ${plural(n, "match", "matches")} cannot tell the model apart from ${rivals.length === 1 ? "it" : "either"}.`);
+    }
+    if (backtest && inRange(backtest.log_loss)) {
+      sentences.push(`The backtest's ${backtest.log_loss.toFixed(3)} is inside it too, so ${plural(n, "it", "they")} cannot show whether the model is doing better or worse live than it did in testing.`);
+    }
+    parts.push(el("p", { class: "range-note" }, el("span", { class: "band-key", "aria-hidden": "true" }), sentences.join(" ")));
+  }
+  parts.push(scoredTable(live.matches, n));
+  return parts;
+}
+
+function scoredTable(matches, n) {
+  return el("div", { class: "scored" },
+    el("h4", { class: "scored-h", text: "The forecasts behind it" }),
+    el("p", {}, "Each row is the full forecast recorded before kickoff, as times in 100. ",
+      el("span", { class: "happened-key", "aria-hidden": "true", text: "40" }),
+      " An outline marks what happened. A result given 23 in 100 that happens is not a miss: if the forecasts are right, about 23 in every 100 such results should happen. "
+      + "One match can't show that; only the average over many can. The last column is each match's share of that average: lower when the forecast gave what happened a higher number."),
+    el("table", { class: "data scored-table" },
+      el("caption", { class: "visually-hidden", text: `${n} scored forecasts, most recent first, with what happened` }),
+      el("thead", {}, el("tr", {},
+        el("th", { scope: "col", text: "Match" }),
+        el("th", { scope: "col", class: "c-p" }, "Home", el("span", { class: "axis-note", text: "win" })),
+        el("th", { scope: "col", class: "c-p", text: "Draw" }),
+        el("th", { scope: "col", class: "c-p" }, "Away", el("span", { class: "axis-note", text: "win" })),
+        el("th", { scope: "col", class: "c-loss" }, "Log", el("span", { class: "axis-note", text: "loss" })))),
+      el("tbody", {}, matches.map((m) => {
+        const pr = KINDS.map((k) => m.probabilities[k]);
+        const labels = outOf100(pr).map((c, i) => countLabel(c, pr[i]));
+        return el("tr", {},
+          el("th", { scope: "row", class: "c-match" },
+            el("time", { class: "when", datetime: m.date, text: fmtShortDate(m.date.slice(0, 10)) }),
+            el("a", { href: route("match", m.slug) },
+              el("span", { class: "nm" }, m.home), " ",
+              el("span", { class: "num sc" }, `${m.score[0]}–${m.score[1]}`), " ",
+              el("span", { class: "nm" }, m.away))),
+          KINDS.map((k, i) => el("td", { class: `num c-p p-${k}${k === m.outcome ? " happened" : ""}` },
+            el("span", { class: "pv", text: labels[i] }),
+            k === m.outcome ? hidden(", what happened") : null)),
+          el("td", { class: "num c-loss", text: m.log_loss.toFixed(3) }));
+      }))));
+}
+
 function liveBlock(loaded, ctx, live) {
   const main = el("div", { class: "col-main" },
     el("h3", { class: "subhead", style: "margin-top:2.5rem" }, "Live ", el("span", { class: "tag", text: "tested on the future" })));
@@ -1033,6 +1190,7 @@ function liveBlock(loaded, ctx, live) {
     main.append(el("p", { class: "live-stat" },
       `Scored so far: `, num(String(live.n)), ` ${plural(live.n, "match", "matches")}, average log loss `, num(live.log_loss.toFixed(3)), "."));
     notes.append(el("p", { class: "note", text: `With ${live.n} ${plural(live.n, "match", "matches")}, one surprising result moves this a lot. Until it covers a few hundred matches, the backtest is the better guide.` }));
+    if (live.matches) main.append(...scoredBlock(loaded, live));
   }
 
   const ledgerOk = loaded.predictions.ok && loaded.matrix.ok && loaded.teams.ok;
@@ -1138,10 +1296,8 @@ function safely(key, target, fn) {
 
 const VIEW_TITLES = { fixtures: null, table: "Table", teams: "Teams", record: "Record", method: "Method" };
 
-function showView(view) {
+function showView(view, section = view) {
   for (const node of document.querySelectorAll(".view")) node.hidden = node.dataset.view !== view;
-  // A match page sits under Fixtures.
-  const section = view === "match" ? "fixtures" : view;
   for (const a of document.querySelectorAll("nav a[data-route]")) {
     if (a.dataset.route === section) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
@@ -1161,6 +1317,7 @@ function applyRoute(loaded, ctx) {
   const parsed = parseRoute(location.hash);
   if (parsed.redirect) history.replaceState(null, "", route(parsed.view));
   let { view } = parsed;
+  let section = view === "match" ? "fixtures" : view;
   let message = parsed.unknown
     ? `There's no page at “${parsed.unknown}”, so here are this round's fixtures.`
     : null;
@@ -1171,12 +1328,16 @@ function applyRoute(loaded, ctx) {
       ? safely("match", "match-out", () => renderMatch(loaded, ctx, slug))
       : (document.getElementById("match-out").replaceChildren(el("p", { class: "loading", text: "Loading match…" })), true);
     if (!found) {
-      view = "fixtures";
-      message = `There's no upcoming fixture at “${slug}”. Predictions leave this list once a match kicks off, so here are this round's fixtures.`;
+      view = section = "fixtures";
+      message = `There's no recorded prediction at “${slug}”. A prediction leaves the fixtures at kickoff and appears in the Record once its result is scored, so here are this round's fixtures.`;
+    } else {
+      // An upcoming match sits under Fixtures, a played one under Record.
+      const played = ctx && !(ctx.prediction && ctx.prediction.has(slug)) && ctx.scored.has(slug);
+      section = played ? "record" : "fixtures";
     }
   }
   setRouteMessage(message);
-  showView(view);
+  showView(view, section);
 
   // Not on first load: the browser starts at the top, and stealing focus
   // from the address bar would be unexpected.
