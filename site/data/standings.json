@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T15:12:35Z",
+  "generated_at": "2026-10-14T09:42:29Z",
   "season": "2026-27",
   "matchday": 6,
   "notes": {
@@ -162,15 +162,15 @@
       "position": 11,
       "team": "Newcastle",
       "slug": "newcastle",
-      "played": 5,
+      "played": 6,
       "won": 2,
       "drawn": 2,
-      "lost": 1,
-      "goals_for": 9,
-      "goals_against": 9,
-      "goal_difference": 0,
+      "lost": 2,
+      "goals_for": 10,
+      "goals_against": 13,
+      "goal_difference": -3,
       "points": 8,
-      "matches_in_training": 195,
+      "matches_in_training": 196,
       "confidence": "high"
     },
     {
@@ -205,6 +205,21 @@
     },
     {
       "position": 14,
+      "team": "Coventry City",
+      "slug": "coventry-city",
+      "played": 6,
+      "won": 2,
+      "drawn": 0,
+      "lost": 4,
+      "goals_for": 5,
+      "goals_against": 11,
+      "goal_difference": -6,
+      "points": 6,
+      "matches_in_training": 6,
+      "confidence": "low"
+    },
+    {
+      "position": 15,
       "team": "Nottingham",
       "slug": "nottingham",
       "played": 6,
@@ -219,7 +234,7 @@
       "confidence": "high"
     },
     {
-      "position": 15,
+      "position": 16,
       "team": "Aston Villa",
       "slug": "aston-villa",
       "played": 6,
@@ -234,7 +249,7 @@
       "confidence": "high"
     },
     {
-      "position": 16,
+      "position": 17,
       "team": "Sunderland",
       "slug": "sunderland",
       "played": 6,
@@ -249,7 +264,7 @@
       "confidence": "high"
     },
     {
-      "position": 17,
+      "position": 18,
       "team": "Bournemouth",
       "slug": "bournemouth",
       "played": 6,
@@ -264,7 +279,7 @@
       "confidence": "high"
     },
     {
-      "position": 18,
+      "position": 19,
       "team": "Tottenham",
       "slug": "tottenham",
       "played": 6,
@@ -277,21 +292,6 @@
       "points": 3,
       "matches_in_training": 196,
       "confidence": "high"
-    },
-    {
-      "position": 19,
-      "team": "Coventry City",
-      "slug": "coventry-city",
-      "played": 5,
-      "won": 1,
-      "drawn": 0,
-      "lost": 4,
-      "goals_for": 1,
-      "goals_against": 10,
-      "goal_difference": -9,
-      "points": 3,
-      "matches_in_training": 5,
-      "confidence": "low"
     },
     {
       "position": 20,

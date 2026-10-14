@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T15:12:35Z",
+  "generated_at": "2026-10-14T09:42:29Z",
   "backtest": {
     "window_start": "2024-08-01",
     "window_end": "2026-06-30",
@@ -25,15 +25,39 @@
     "uniform_log_loss": 1.0986
   },
   "live": {
-    "n": 9,
-    "log_loss": 1.013,
+    "n": 10,
+    "log_loss": 1.2028,
     "uniform_log_loss": 1.0986,
-    "league_average_log_loss": 1.0932,
+    "league_average_log_loss": 1.0661,
     "rough_range": [
-      0.7305,
-      1.2954
+      0.7467,
+      1.6588
     ],
     "matches": [
+      {
+        "date": "2026-10-12T19:00:00Z",
+        "home": "Coventry City",
+        "away": "Newcastle",
+        "slug": "coventry-city-newcastle",
+        "score": [
+          4,
+          1
+        ],
+        "probabilities": {
+          "home": 0.0544,
+          "draw": 0.2005,
+          "away": 0.7451
+        },
+        "outcome": "home",
+        "p_outcome": 0.0544,
+        "log_loss": 2.9113,
+        "most_likely_score": [
+          0,
+          1
+        ],
+        "predicted_at": "2026-09-29T11:00:09Z",
+        "confidence": "low"
+      },
       {
         "date": "2026-10-11T15:30:00Z",
         "home": "Liverpool",
