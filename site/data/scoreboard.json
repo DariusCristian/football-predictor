@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T09:42:29Z",
+  "generated_at": "2026-10-24T10:10:57Z",
   "backtest": {
     "window_start": "2024-08-01",
     "window_end": "2026-06-30",
@@ -25,15 +25,279 @@
     "uniform_log_loss": 1.0986
   },
   "live": {
-    "n": 10,
-    "log_loss": 1.2028,
+    "n": 21,
+    "log_loss": 1.019,
     "uniform_log_loss": 1.0986,
-    "league_average_log_loss": 1.0661,
+    "league_average_log_loss": 1.0565,
     "rough_range": [
-      0.7467,
-      1.6588
+      0.76,
+      1.2779
     ],
     "matches": [
+      {
+        "date": "2026-10-23T19:00:00Z",
+        "home": "Ipswich Town",
+        "away": "Nottingham",
+        "slug": "ipswich-town-nottingham",
+        "score": [
+          1,
+          1
+        ],
+        "probabilities": {
+          "home": 0.273,
+          "draw": 0.2427,
+          "away": 0.4843
+        },
+        "outcome": "draw",
+        "p_outcome": 0.2427,
+        "log_loss": 1.4158,
+        "most_likely_score": [
+          1,
+          1
+        ],
+        "predicted_at": "2026-10-14T09:42:27Z",
+        "confidence": "high"
+      },
+      {
+        "date": "2026-10-19T19:00:00Z",
+        "home": "Tottenham",
+        "away": "Coventry City",
+        "slug": "tottenham-coventry-city",
+        "score": [
+          3,
+          1
+        ],
+        "probabilities": {
+          "home": 0.6106,
+          "draw": 0.2126,
+          "away": 0.1768
+        },
+        "outcome": "home",
+        "p_outcome": 0.6106,
+        "log_loss": 0.4933,
+        "most_likely_score": [
+          1,
+          0
+        ],
+        "predicted_at": "2026-10-14T09:42:27Z",
+        "confidence": "low"
+      },
+      {
+        "date": "2026-10-18T15:30:00Z",
+        "home": "Nottingham",
+        "away": "Arsenal",
+        "slug": "nottingham-arsenal",
+        "score": [
+          0,
+          1
+        ],
+        "probabilities": {
+          "home": 0.1875,
+          "draw": 0.2282,
+          "away": 0.5843
+        },
+        "outcome": "away",
+        "p_outcome": 0.5843,
+        "log_loss": 0.5373,
+        "most_likely_score": [
+          0,
+          1
+        ],
+        "predicted_at": "2026-10-14T09:42:27Z",
+        "confidence": "high"
+      },
+      {
+        "date": "2026-10-18T13:00:00Z",
+        "home": "Bournemouth",
+        "away": "Sunderland",
+        "slug": "bournemouth-sunderland",
+        "score": [
+          2,
+          0
+        ],
+        "probabilities": {
+          "home": 0.4265,
+          "draw": 0.2701,
+          "away": 0.3034
+        },
+        "outcome": "home",
+        "p_outcome": 0.4265,
+        "log_loss": 0.8521,
+        "most_likely_score": [
+          1,
+          1
+        ],
+        "predicted_at": "2026-10-14T09:42:27Z",
+        "confidence": "high"
+      },
+      {
+        "date": "2026-10-18T13:00:00Z",
+        "home": "Brighton Hove",
+        "away": "Crystal Palace",
+        "slug": "brighton-hove-crystal-palace",
+        "score": [
+          5,
+          0
+        ],
+        "probabilities": {
+          "home": 0.4878,
+          "draw": 0.2518,
+          "away": 0.2604
+        },
+        "outcome": "home",
+        "p_outcome": 0.4878,
+        "log_loss": 0.7179,
+        "most_likely_score": [
+          1,
+          1
+        ],
+        "predicted_at": "2026-10-14T09:42:27Z",
+        "confidence": "high"
+      },
+      {
+        "date": "2026-10-18T13:00:00Z",
+        "home": "Leeds United",
+        "away": "Man United",
+        "slug": "leeds-united-man-united",
+        "score": [
+          1,
+          1
+        ],
+        "probabilities": {
+          "home": 0.2951,
+          "draw": 0.2393,
+          "away": 0.4656
+        },
+        "outcome": "draw",
+        "p_outcome": 0.2393,
+        "log_loss": 1.4302,
+        "most_likely_score": [
+          1,
+          1
+        ],
+        "predicted_at": "2026-10-14T09:42:27Z",
+        "confidence": "high"
+      },
+      {
+        "date": "2026-10-17T16:30:00Z",
+        "home": "Newcastle",
+        "away": "Aston Villa",
+        "slug": "newcastle-aston-villa",
+        "score": [
+          0,
+          1
+        ],
+        "probabilities": {
+          "home": 0.4704,
+          "draw": 0.2352,
+          "away": 0.2944
+        },
+        "outcome": "away",
+        "p_outcome": 0.2944,
+        "log_loss": 1.2228,
+        "most_likely_score": [
+          1,
+          1
+        ],
+        "predicted_at": "2026-10-14T09:42:27Z",
+        "confidence": "high"
+      },
+      {
+        "date": "2026-10-17T14:00:00Z",
+        "home": "Brentford",
+        "away": "Liverpool",
+        "slug": "brentford-liverpool",
+        "score": [
+          1,
+          2
+        ],
+        "probabilities": {
+          "home": 0.259,
+          "draw": 0.227,
+          "away": 0.514
+        },
+        "outcome": "away",
+        "p_outcome": 0.514,
+        "log_loss": 0.6655,
+        "most_likely_score": [
+          1,
+          1
+        ],
+        "predicted_at": "2026-10-14T09:42:27Z",
+        "confidence": "high"
+      },
+      {
+        "date": "2026-10-17T14:00:00Z",
+        "home": "Fulham",
+        "away": "Hull City",
+        "slug": "fulham-hull-city",
+        "score": [
+          1,
+          0
+        ],
+        "probabilities": {
+          "home": 0.3177,
+          "draw": 0.2817,
+          "away": 0.4006
+        },
+        "outcome": "home",
+        "p_outcome": 0.3177,
+        "log_loss": 1.1467,
+        "most_likely_score": [
+          1,
+          1
+        ],
+        "predicted_at": "2026-10-14T09:42:27Z",
+        "confidence": "low"
+      },
+      {
+        "date": "2026-10-17T14:00:00Z",
+        "home": "Man City",
+        "away": "Ipswich Town",
+        "slug": "man-city-ipswich-town",
+        "score": [
+          3,
+          2
+        ],
+        "probabilities": {
+          "home": 0.8979,
+          "draw": 0.0715,
+          "away": 0.0306
+        },
+        "outcome": "home",
+        "p_outcome": 0.8979,
+        "log_loss": 0.1077,
+        "most_likely_score": [
+          3,
+          0
+        ],
+        "predicted_at": "2026-10-14T09:42:27Z",
+        "confidence": "high"
+      },
+      {
+        "date": "2026-10-17T11:30:00Z",
+        "home": "Everton",
+        "away": "Chelsea",
+        "slug": "everton-chelsea",
+        "score": [
+          0,
+          2
+        ],
+        "probabilities": {
+          "home": 0.2764,
+          "draw": 0.2658,
+          "away": 0.4578
+        },
+        "outcome": "away",
+        "p_outcome": 0.4578,
+        "log_loss": 0.7812,
+        "most_likely_score": [
+          1,
+          1
+        ],
+        "predicted_at": "2026-10-14T09:42:27Z",
+        "confidence": "high"
+      },
       {
         "date": "2026-10-12T19:00:00Z",
         "home": "Coventry City",

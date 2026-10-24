@@ -1,193 +1,6 @@
 {
-  "generated_at": "2026-10-14T09:42:29Z",
+  "generated_at": "2026-10-24T10:10:57Z",
   "predictions": [
-    {
-      "slug": "everton-chelsea",
-      "kickoff": "2026-10-17T11:30:00Z",
-      "home": "Everton",
-      "away": "Chelsea",
-      "probabilities": {
-        "home": 0.2764,
-        "draw": 0.2658,
-        "away": 0.4578
-      },
-      "most_likely_score": [
-        1,
-        1
-      ],
-      "model_version": "poisson-unweighted-rho0-alpha1e-5",
-      "predicted_at": "2026-10-14T09:42:27Z"
-    },
-    {
-      "slug": "brentford-liverpool",
-      "kickoff": "2026-10-17T14:00:00Z",
-      "home": "Brentford",
-      "away": "Liverpool",
-      "probabilities": {
-        "home": 0.259,
-        "draw": 0.227,
-        "away": 0.514
-      },
-      "most_likely_score": [
-        1,
-        1
-      ],
-      "model_version": "poisson-unweighted-rho0-alpha1e-5",
-      "predicted_at": "2026-10-14T09:42:27Z"
-    },
-    {
-      "slug": "fulham-hull-city",
-      "kickoff": "2026-10-17T14:00:00Z",
-      "home": "Fulham",
-      "away": "Hull City",
-      "probabilities": {
-        "home": 0.3177,
-        "draw": 0.2817,
-        "away": 0.4006
-      },
-      "most_likely_score": [
-        1,
-        1
-      ],
-      "model_version": "poisson-unweighted-rho0-alpha1e-5",
-      "predicted_at": "2026-10-14T09:42:27Z"
-    },
-    {
-      "slug": "man-city-ipswich-town",
-      "kickoff": "2026-10-17T14:00:00Z",
-      "home": "Man City",
-      "away": "Ipswich Town",
-      "probabilities": {
-        "home": 0.8979,
-        "draw": 0.0715,
-        "away": 0.0306
-      },
-      "most_likely_score": [
-        3,
-        0
-      ],
-      "model_version": "poisson-unweighted-rho0-alpha1e-5",
-      "predicted_at": "2026-10-14T09:42:27Z"
-    },
-    {
-      "slug": "newcastle-aston-villa",
-      "kickoff": "2026-10-17T16:30:00Z",
-      "home": "Newcastle",
-      "away": "Aston Villa",
-      "probabilities": {
-        "home": 0.4704,
-        "draw": 0.2352,
-        "away": 0.2944
-      },
-      "most_likely_score": [
-        1,
-        1
-      ],
-      "model_version": "poisson-unweighted-rho0-alpha1e-5",
-      "predicted_at": "2026-10-14T09:42:27Z"
-    },
-    {
-      "slug": "bournemouth-sunderland",
-      "kickoff": "2026-10-18T13:00:00Z",
-      "home": "Bournemouth",
-      "away": "Sunderland",
-      "probabilities": {
-        "home": 0.4265,
-        "draw": 0.2701,
-        "away": 0.3034
-      },
-      "most_likely_score": [
-        1,
-        1
-      ],
-      "model_version": "poisson-unweighted-rho0-alpha1e-5",
-      "predicted_at": "2026-10-14T09:42:27Z"
-    },
-    {
-      "slug": "brighton-hove-crystal-palace",
-      "kickoff": "2026-10-18T13:00:00Z",
-      "home": "Brighton Hove",
-      "away": "Crystal Palace",
-      "probabilities": {
-        "home": 0.4878,
-        "draw": 0.2518,
-        "away": 0.2604
-      },
-      "most_likely_score": [
-        1,
-        1
-      ],
-      "model_version": "poisson-unweighted-rho0-alpha1e-5",
-      "predicted_at": "2026-10-14T09:42:27Z"
-    },
-    {
-      "slug": "leeds-united-man-united",
-      "kickoff": "2026-10-18T13:00:00Z",
-      "home": "Leeds United",
-      "away": "Man United",
-      "probabilities": {
-        "home": 0.2951,
-        "draw": 0.2393,
-        "away": 0.4656
-      },
-      "most_likely_score": [
-        1,
-        1
-      ],
-      "model_version": "poisson-unweighted-rho0-alpha1e-5",
-      "predicted_at": "2026-10-14T09:42:27Z"
-    },
-    {
-      "slug": "nottingham-arsenal",
-      "kickoff": "2026-10-18T15:30:00Z",
-      "home": "Nottingham",
-      "away": "Arsenal",
-      "probabilities": {
-        "home": 0.1875,
-        "draw": 0.2282,
-        "away": 0.5843
-      },
-      "most_likely_score": [
-        0,
-        1
-      ],
-      "model_version": "poisson-unweighted-rho0-alpha1e-5",
-      "predicted_at": "2026-10-14T09:42:27Z"
-    },
-    {
-      "slug": "tottenham-coventry-city",
-      "kickoff": "2026-10-19T19:00:00Z",
-      "home": "Tottenham",
-      "away": "Coventry City",
-      "probabilities": {
-        "home": 0.6106,
-        "draw": 0.2126,
-        "away": 0.1768
-      },
-      "most_likely_score": [
-        1,
-        0
-      ],
-      "model_version": "poisson-unweighted-rho0-alpha1e-5",
-      "predicted_at": "2026-10-14T09:42:27Z"
-    },
-    {
-      "slug": "ipswich-town-nottingham",
-      "kickoff": "2026-10-23T19:00:00Z",
-      "home": "Ipswich Town",
-      "away": "Nottingham",
-      "probabilities": {
-        "home": 0.273,
-        "draw": 0.2427,
-        "away": 0.4843
-      },
-      "most_likely_score": [
-        1,
-        1
-      ],
-      "model_version": "poisson-unweighted-rho0-alpha1e-5",
-      "predicted_at": "2026-10-14T09:42:27Z"
-    },
     {
       "slug": "aston-villa-man-city",
       "kickoff": "2026-10-24T11:30:00Z",
@@ -340,6 +153,193 @@
       ],
       "model_version": "poisson-unweighted-rho0-alpha1e-5",
       "predicted_at": "2026-10-14T09:42:27Z"
+    },
+    {
+      "slug": "chelsea-man-united",
+      "kickoff": "2026-10-31T12:30:00Z",
+      "home": "Chelsea",
+      "away": "Man United",
+      "probabilities": {
+        "home": 0.4997,
+        "draw": 0.2372,
+        "away": 0.2631
+      },
+      "most_likely_score": [
+        1,
+        1
+      ],
+      "model_version": "poisson-unweighted-rho0-alpha1e-5",
+      "predicted_at": "2026-10-24T10:10:39Z"
+    },
+    {
+      "slug": "bournemouth-leeds-united",
+      "kickoff": "2026-10-31T15:00:00Z",
+      "home": "Bournemouth",
+      "away": "Leeds United",
+      "probabilities": {
+        "home": 0.5285,
+        "draw": 0.2263,
+        "away": 0.2452
+      },
+      "most_likely_score": [
+        1,
+        1
+      ],
+      "model_version": "poisson-unweighted-rho0-alpha1e-5",
+      "predicted_at": "2026-10-24T10:10:39Z"
+    },
+    {
+      "slug": "brentford-nottingham",
+      "kickoff": "2026-10-31T15:00:00Z",
+      "home": "Brentford",
+      "away": "Nottingham",
+      "probabilities": {
+        "home": 0.5007,
+        "draw": 0.2427,
+        "away": 0.2566
+      },
+      "most_likely_score": [
+        1,
+        1
+      ],
+      "model_version": "poisson-unweighted-rho0-alpha1e-5",
+      "predicted_at": "2026-10-24T10:10:39Z"
+    },
+    {
+      "slug": "coventry-city-sunderland",
+      "kickoff": "2026-10-31T15:00:00Z",
+      "home": "Coventry City",
+      "away": "Sunderland",
+      "probabilities": {
+        "home": 0.313,
+        "draw": 0.2891,
+        "away": 0.3979
+      },
+      "most_likely_score": [
+        1,
+        1
+      ],
+      "model_version": "poisson-unweighted-rho0-alpha1e-5",
+      "predicted_at": "2026-10-24T10:10:39Z"
+    },
+    {
+      "slug": "hull-city-ipswich-town",
+      "kickoff": "2026-10-31T15:00:00Z",
+      "home": "Hull City",
+      "away": "Ipswich Town",
+      "probabilities": {
+        "home": 0.6507,
+        "draw": 0.2164,
+        "away": 0.1329
+      },
+      "most_likely_score": [
+        1,
+        0
+      ],
+      "model_version": "poisson-unweighted-rho0-alpha1e-5",
+      "predicted_at": "2026-10-24T10:10:39Z"
+    },
+    {
+      "slug": "man-city-brighton-hove",
+      "kickoff": "2026-10-31T15:00:00Z",
+      "home": "Man City",
+      "away": "Brighton Hove",
+      "probabilities": {
+        "home": 0.6909,
+        "draw": 0.178,
+        "away": 0.1311
+      },
+      "most_likely_score": [
+        2,
+        0
+      ],
+      "model_version": "poisson-unweighted-rho0-alpha1e-5",
+      "predicted_at": "2026-10-24T10:10:39Z"
+    },
+    {
+      "slug": "tottenham-crystal-palace",
+      "kickoff": "2026-10-31T17:30:00Z",
+      "home": "Tottenham",
+      "away": "Crystal Palace",
+      "probabilities": {
+        "home": 0.5008,
+        "draw": 0.2375,
+        "away": 0.2617
+      },
+      "most_likely_score": [
+        1,
+        1
+      ],
+      "model_version": "poisson-unweighted-rho0-alpha1e-5",
+      "predicted_at": "2026-10-24T10:10:39Z"
+    },
+    {
+      "slug": "aston-villa-fulham",
+      "kickoff": "2026-10-31T20:00:00Z",
+      "home": "Aston Villa",
+      "away": "Fulham",
+      "probabilities": {
+        "home": 0.475,
+        "draw": 0.2455,
+        "away": 0.2795
+      },
+      "most_likely_score": [
+        1,
+        1
+      ],
+      "model_version": "poisson-unweighted-rho0-alpha1e-5",
+      "predicted_at": "2026-10-24T10:10:39Z"
+    },
+    {
+      "slug": "liverpool-arsenal",
+      "kickoff": "2026-11-01T16:30:00Z",
+      "home": "Liverpool",
+      "away": "Arsenal",
+      "probabilities": {
+        "home": 0.4072,
+        "draw": 0.2496,
+        "away": 0.3432
+      },
+      "most_likely_score": [
+        1,
+        1
+      ],
+      "model_version": "poisson-unweighted-rho0-alpha1e-5",
+      "predicted_at": "2026-10-24T10:10:39Z"
+    },
+    {
+      "slug": "newcastle-everton",
+      "kickoff": "2026-11-02T20:00:00Z",
+      "home": "Newcastle",
+      "away": "Everton",
+      "probabilities": {
+        "home": 0.5563,
+        "draw": 0.2385,
+        "away": 0.2052
+      },
+      "most_likely_score": [
+        1,
+        0
+      ],
+      "model_version": "poisson-unweighted-rho0-alpha1e-5",
+      "predicted_at": "2026-10-24T10:10:39Z"
+    },
+    {
+      "slug": "everton-coventry-city",
+      "kickoff": "2026-11-06T20:00:00Z",
+      "home": "Everton",
+      "away": "Coventry City",
+      "probabilities": {
+        "home": 0.4895,
+        "draw": 0.2735,
+        "away": 0.237
+      },
+      "most_likely_score": [
+        1,
+        0
+      ],
+      "model_version": "poisson-unweighted-rho0-alpha1e-5",
+      "predicted_at": "2026-10-24T10:10:39Z"
     }
   ]
 }
